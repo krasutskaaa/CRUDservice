@@ -1,0 +1,66 @@
+name: admissions-lab
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-admissions}
+      POSTGRES_USER: ${POSTGRES_USER:-admissions}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?задайте POSTGRES_PASSWORD у файлі .env}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # схема накочується автоматично при ініціалізації порожнього тому
+      - ./db/init.sql:/docker-entrypoint-initdb.d/001-schema.sql:ro
+    healthcheck:
+      # -h 127.0.0.1: тимчасовий сервер ініціалізації слухає лише unix-сокет,
+      # тож перевірка по TCP спрацьовує лише коли база справді готова
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+    networks: [backend]
+
+  web:
+    build: .
+    image: admissions-web:lab1
+    environment:
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_NAME: ${POSTGRES_DB:-admissions}
+      DB_USER: ${POSTGRES_USER:-admissions}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:?задайте POSTGRES_PASSWORD у файлі .env}
+      PORT: "8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      # без curl і wget: Python зі стандартної бібліотеки образу
+      test: ["CMD", "python", "/srv/healthcheck.py"]
+      interval: 3s
+      timeout: 3s
+      retries: 10
+      start_period: 3s
+    deploy:
+      replicas: ${WEB_REPLICAS:-1}
+      resources:
+        limits:
+          cpus: "1"
+          memory: 512M
+    networks: [backend]          # портів назовні немає
+
+  lb:
+    image: nginx:1.27-alpine
+    ports:
+      - "${LB_PORT:-8080}:80"    # єдина точка входу ззовні
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      web:
+        condition: service_healthy
+    networks: [backend]
+
+networks:
+  backend:
+
+volumes:
+  pgdata:
