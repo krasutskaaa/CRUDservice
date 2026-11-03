@@ -40,7 +40,7 @@ def main():
               "| Рівень, req/s | X(1) | X(2) | S | e |", "|---|---|---|---|---|"]
     for r in sorted({k[1] for k in op}):
         if (1, r) in op and (2, r) in op:
-            x1, x2 = med(op[(1, r)], "achieved_rps"), med(op[(2, r)], "achieved_rps")
+            x1, x2 = med(op[(1, r)], "achieved_2xx_rps"), med(op[(2, r)], "achieved_2xx_rps")
             s = x2 / x1
             e = (1 / s - 0.5) / 0.5
             lines.append(f"| {r} | {x1:.1f} | {x2:.1f} | {s:.3f} | {e:.3f} |")
@@ -49,6 +49,7 @@ def main():
     sat = next((r for (n, r) in sorted(op) if n == 1 and med(op[(n, r)], "achieved_rps") < 0.95 * r), None)
     lines += ["", f"Перший рівень, де один інстанс не тримає задану інтенсивність (досягнута < 95% заданої): "
                   f"**{sat if sat else 'не виявлено'}**"]
+
 
     # --- 2. Літтл ---
     lines += ["", "## Розрахунок 2. Закон Літтла (1 інстанс, 100 req/s)", "",
@@ -78,7 +79,7 @@ def main():
         lines.append("Рівня насичення на одному інстансі не виявлено: порівняння робиться на найвищому рівні.")
 
     text = "\n".join(lines) + "\n"
-    (RESULTS / "summary.md").write_text(text)
+    (RESULTS / "summary.md").write_text(text, encoding="utf-8")
     print(text)
 
 

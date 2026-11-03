@@ -23,4 +23,5 @@ USER 10001:10001
 EXPOSE 8000
 # Один воркер на контейнер: контейнеру видається 1 CPU, масштабуємо репліками.
 CMD ["python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", \
-     "--workers", "1", "--loop", "uvloop", "--http", "httptools", "--no-access-log"]
+     "--workers", "1", "--loop", "uvloop", "--http", "httptools", "--no-access-log",\
+     "--timeout-keep-alive", "75"]

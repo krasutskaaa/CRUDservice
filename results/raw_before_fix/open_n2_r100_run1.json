@@ -1,0 +1,40 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8080",
+    "path": "/admissions/{id}",
+    "mode": "open",
+    "rate": 100.0,
+    "duration": 30.0,
+    "warmup": 10.0,
+    "procs": 8,
+    "threads": 64,
+    "timeout": 10,
+    "seed": 1,
+    "instances": 2,
+    "target_rps": 100.0,
+    "concurrency": null,
+    "cpu_count": 8,
+    "platform": "Windows-11-10.0.26300-SP0",
+    "started_at": "2026-11-03 23:33:10"
+  },
+  "summary": {
+    "measured_requests": 3000,
+    "achieved_rps": 99.96666666666667,
+    "achieved_2xx_rps": 99.96666666666667,
+    "non2xx_share": 0.0,
+    "p50_ms": 8.46564769744873,
+    "p95_ms": 12.122881412506107,
+    "p99_ms": 25.186684131622318,
+    "mean_ms": 8.543008724848429,
+    "ok_p50_ms": 8.46564769744873,
+    "ok_p95_ms": 12.122881412506107,
+    "ok_p99_ms": 25.186684131622318,
+    "generator_lag_p99_ms": 1.2929892539978036,
+    "little": {
+      "lambda_rps": 100.0,
+      "W_s": 0.008543008724848429,
+      "lambda_times_W": 0.8543008724848429,
+      "L_measured": 0.8542428731918335
+    }
+  }
+}
