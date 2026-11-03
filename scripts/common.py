@@ -4,6 +4,7 @@ import subprocess
 import time
 import urllib.error
 import urllib.request
+import urllib.parse
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -13,6 +14,7 @@ RAW = RESULTS / "raw"
 
 def call(method, url, body=None, timeout=10):
     """Повертає (status, headers, parsed_body). Не кидає виняток на 4xx/5xx."""
+    url = urllib.parse.quote(url,safe=":/?&=%#")
     data = None if body is None else json.dumps(body).encode()
     req = urllib.request.Request(url, data=data, method=method,
                                  headers={"Content-Type": "application/json"})

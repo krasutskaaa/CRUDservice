@@ -82,7 +82,7 @@ def main():
     crud_cycle()
     if a.persistence:
         persistence()
-    (RESULTS / "verify_log.md").write_text("# Журнал перевірки\n\n" + "\n".join(LOG))
+    (RESULTS / "verify_log.md").write_text("# Журнал перевірки\n\n" + "\n".join(LOG), encoding="utf-8")
     print(f"кроків: {len(LOG)}, збоїв: {len(FAILS)}", *FAILS, sep="\n")
     sys.exit(1 if FAILS else 0)
 
