@@ -27,7 +27,7 @@ def main():
     ls = [json.load(open(f))["summary"]["little"]["L_measured"]
           for f in glob.glob(str(RAW / f"open_n{a.instances}_r{a.level}_run*.json"))]
     assert ls, "немає відкритих прогонів для цього рівня"
-    conc = max(1, round(st.median(ls)))
+    conc = min(max(1, round(st.median(ls))), 1000)
     print(f"concurrency = {conc}")
     for k in range(1, a.repeats + 1):
         subprocess.run([sys.executable, str(ROOT / "loadgen" / "loadgen.py"), "--base-url", a.base_url,
