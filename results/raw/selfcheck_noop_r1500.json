@@ -1,0 +1,40 @@
+{
+  "config": {
+    "base_url": "http://127.0.0.1:8080",
+    "path": "/noop",
+    "mode": "open",
+    "rate": 1500.0,
+    "duration": 30.0,
+    "warmup": 10.0,
+    "procs": 8,
+    "threads": 64,
+    "timeout": 10,
+    "seed": 1,
+    "instances": 0,
+    "target_rps": 1500.0,
+    "concurrency": null,
+    "cpu_count": 8,
+    "platform": "Windows-11-10.0.26300-SP0",
+    "started_at": "2026-11-04 00:53:21"
+  },
+  "summary": {
+    "measured_requests": 45000,
+    "achieved_rps": 1499.8333333333333,
+    "achieved_2xx_rps": 1499.8333333333333,
+    "non2xx_share": 0.0,
+    "p50_ms": 0.8425712585449219,
+    "p95_ms": 1.2192726135253906,
+    "p99_ms": 1.6298604011535707,
+    "mean_ms": 0.9156038973066541,
+    "ok_p50_ms": 0.8425712585449219,
+    "ok_p95_ms": 1.2192726135253906,
+    "ok_p99_ms": 1.6298604011535707,
+    "generator_lag_p99_ms": 0.7040500640869141,
+    "little": {
+      "lambda_rps": 1500.0,
+      "W_s": 0.0009156038973066542,
+      "lambda_times_W": 1.3734058459599814,
+      "L_measured": 1.3712836027145385
+    }
+  }
+}
