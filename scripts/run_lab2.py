@@ -51,6 +51,9 @@ def main():
     ap.add_argument("--prom-url", default=f"http://127.0.0.1:{os.environ.get('PROM_PORT', '9090')}")
     ap.add_argument("--procs", type=int, default=0)
     ap.add_argument("--no-up", action="store_true")
+    ap.add_argument("--stats-interval", type=float, default=5.0,
+                    help="пауза між вимірами docker stats, с (docker stats сам навантажує машину)")
+    ap.add_argument("--no-stats", action="store_true", help="не знімати docker stats під час прогону")
     a = ap.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
     procs = ["--procs", str(a.procs)] if a.procs else []
@@ -99,15 +102,18 @@ def main():
         json.dumps({"web_containers": len(ids), "targets": instances, **docker_info}, indent=2), encoding="utf-8")
 
     stop = threading.Event()
-    th = threading.Thread(target=sample_stats, args=(stop, OUT / f"docker_stats_{label}.jsonl"), daemon=True)
-    th.start()
+    th = threading.Thread(target=sample_stats, args=(stop, OUT / f"docker_stats_{label}.jsonl",
+                                                     a.stats_interval), daemon=True)
+    if not a.no_stats:
+        th.start()
     t_start = time.time()
     try:
         subprocess.run([sys.executable, STEPLOAD, "--base-url", a.base_url, "--instances", str(n),
                         "--gen-limit", str(gen_limit), "--out-prefix", str(OUT / label), *procs], check=True)
     finally:
         stop.set()
-        th.join(timeout=30)
+        if th.is_alive():
+            th.join(timeout=30)
     time.sleep(6)  # дати Prometheus дозняти останній скрейп
     series = prom.collect(a.prom_url, t_start - 5, time.time())
     (OUT / f"prom_{label}.json").write_text(json.dumps(series, ensure_ascii=False), encoding="utf-8")

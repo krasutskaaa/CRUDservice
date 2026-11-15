@@ -110,6 +110,12 @@ class Client:
 
 
 async def run_process(idx, cfg, ids, t0, stop_after, ok_arr):
+    loop = asyncio.get_running_loop()
+    # скасований за тайм-аутом запит на Windows може пізніше кинути ConnectionResetError
+    # у «забутому» future; це шум, а не помилка вимірювання
+    loop.set_exception_handler(
+        lambda lp, ctx: None if isinstance(ctx.get("exception"), ConnectionError)
+        else lp.default_exception_handler(ctx))
     client = Client(cfg["host"], cfg["port"])
     records, cpu, tasks = [], [], set()
     rng = random.Random(cfg["seed"] + idx)
