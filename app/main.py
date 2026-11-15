@@ -1,6 +1,8 @@
 """Сервіс обліку епізодів госпіталізації: CRUD над однією таблицею PostgreSQL.
 Стану в памʼяті процесу немає, усе лежить у базі."""
 import os
+import socket
+import time
 from contextlib import asynccontextmanager
 from datetime import date
 from typing import Optional
@@ -9,6 +11,7 @@ import psycopg
 from fastapi import FastAPI, Query, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse, Response
+from prometheus_client import CONTENT_TYPE_LATEST, Counter, Gauge, Histogram, generate_latest
 from psycopg.rows import dict_row
 from psycopg_pool import AsyncConnectionPool
 from pydantic import BaseModel, ConfigDict, Field, ValidationInfo, field_validator
@@ -18,6 +21,17 @@ MAX_LIMIT = 100
 MAX_OFFSET = 1_000_000_000
 MAX_BIGINT = 2**63 - 1
 OUTCOMES = ("на лікуванні", "одужання", "покращення", "переведення", "летальний наслідок")
+# Розмір пулу: найбільша кількість відкритих зʼєднань екземпляра (за варіантом 5).
+POOL_SIZE = int(os.environ.get("DB_POOL_SIZE", "5"))
+POD_NAME = os.environ.get("POD_NAME") or socket.gethostname()
+# Набір бакетів Г3: 1, 2, 4, ..., 1024 мс, у секундах за конвенцією Prometheus.
+BUCKETS = (0.001, 0.002, 0.004, 0.008, 0.016, 0.032, 0.064, 0.128, 0.256, 0.512, 1.024)
+
+REQUESTS = Counter("http_requests_total", "Кількість запитів", ["method", "path", "code"])
+DURATION = Histogram("http_request_duration_seconds", "Тривалість обробки запиту, с",
+                     ["method", "path"], buckets=BUCKETS)
+IN_PROGRESS = Gauge("http_requests_in_progress", "Запитів в обробці")
+
 COLS = "id, patient_code, department, room, admission_date, discharge_date, outcome"
 
 
@@ -34,8 +48,8 @@ def _conninfo() -> str:
 
 pool = AsyncConnectionPool(
     conninfo=_conninfo(),
-    min_size=int(os.environ.get("POOL_MIN", "2")),
-    max_size=int(os.environ.get("POOL_MAX", "10")),
+    min_size=POOL_SIZE,   # фіксований пул: понад POOL_SIZE зʼєднань не відкривається
+    max_size=POOL_SIZE,
     open=False,
     timeout=5,
     check=AsyncConnectionPool.check_connection,
@@ -52,7 +66,45 @@ async def lifespan(_: FastAPI):
     await pool.close()
 
 
+class MetricsMiddleware:
+    """Чистий ASGI-обробник: рахує запити, міряє тривалість, веде вимірювач запитів
+    в обробці і додає до кожної відповіді заголовок X-Pod."""
+
+    def __init__(self, app):
+        self.app = app
+
+    async def __call__(self, scope, receive, send):
+        if scope["type"] != "http":
+            await self.app(scope, receive, send)
+            return
+        status = 500
+        measured = scope["path"] != "/metrics"
+
+        async def send_wrapper(message):
+            nonlocal status
+            if message["type"] == "http.response.start":
+                status = message["status"]
+                message = {**message,
+                           "headers": [*message.get("headers", []), (b"x-pod", POD_NAME.encode())]}
+            await send(message)
+
+        if measured:
+            IN_PROGRESS.inc()
+        start = time.perf_counter()
+        try:
+            await self.app(scope, receive, send_wrapper)
+        finally:
+            if measured:
+                elapsed = time.perf_counter() - start
+                route = scope.get("route")  # шаблон шляху, а не конкретний id
+                path = getattr(route, "path", None) or "unmatched"
+                IN_PROGRESS.dec()
+                REQUESTS.labels(scope["method"], path, str(status)).inc()
+                DURATION.labels(scope["method"], path).observe(elapsed)
+
+
 app = FastAPI(lifespan=lifespan, docs_url=None, redoc_url=None, openapi_url=None)
+app.add_middleware(MetricsMiddleware)
 
 
 # ---------- моделі та валідація ----------
@@ -137,6 +189,17 @@ def not_found() -> JSONResponse:
 
 
 # ---------- ендпоінти ----------
+@app.get("/livez")
+async def livez():
+    """Живість процесу: до бази не звертається."""
+    return {"status": "alive"}
+
+
+@app.get("/metrics")
+async def metrics():
+    return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)
+
+
 @app.get("/healthz")
 async def healthz():
     try:

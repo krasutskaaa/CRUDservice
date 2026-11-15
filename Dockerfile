@@ -18,10 +18,8 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 RUN python -m pip uninstall -y pip setuptools wheel || true
 COPY --from=builder /install /opt/deps
 WORKDIR /srv
-COPY app/main.py app/healthcheck.py ./
+COPY app/main.py app/serve.py app/healthcheck.py ./
 USER 10001:10001
 EXPOSE 8000
-# Один воркер на контейнер: контейнеру видається 1 CPU, масштабуємо репліками.
-CMD ["python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", \
-     "--workers", "1", "--loop", "uvloop", "--http", "httptools", "--no-access-log",\
-     "--timeout-keep-alive", "75"]
+# exec-форма: SIGTERM отримує сам процес сервісу (PID 1). Один процес на контейнер.
+CMD ["python", "/srv/serve.py"]

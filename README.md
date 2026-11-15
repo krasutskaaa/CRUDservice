@@ -6,7 +6,7 @@
 ## Запуск (одна команда)
 
 ```bash
-cp .env.example .env        # один раз; задайте POSTGRES_PASSWORD
+cp .env.example .env        # один раз; задається POSTGRES_PASSWORD
 docker compose up -d --build
 ```
 

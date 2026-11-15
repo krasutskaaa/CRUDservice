@@ -1,0 +1,18 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+scrape_configs:
+  # усі екземпляри web: DNS-запит за імʼям сервісу Compose повертає адреси всіх контейнерів
+  - job_name: web
+    metrics_path: /metrics
+    dns_sd_configs:
+      - names: ["web"]
+        type: A
+        port: 8000
+        refresh_interval: 5s
+
+  # postgres-exporter (додаткова метрика варіанта М2)
+  - job_name: postgres
+    static_configs:
+      - targets: ["postgres-exporter:9187"]
