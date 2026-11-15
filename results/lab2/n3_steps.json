@@ -1,0 +1,250 @@
+{
+  "meta": {
+    "t0": 1794759434.6205494,
+    "instances": 3,
+    "args": {
+      "base_url": "http://127.0.0.1:8080",
+      "path": "/admissions/{id}",
+      "ids_file": "results/ids.json",
+      "warmup": 10,
+      "warmup_rate": 200,
+      "start_rate": 200,
+      "step": 200,
+      "step_duration": 20,
+      "transient": 5,
+      "window": 15,
+      "max_steps": 60,
+      "gen_limit": 6808.0,
+      "timeout": 5,
+      "procs": 8,
+      "seed": 1,
+      "instances": 3,
+      "out_prefix": "C:\\Users\\User\\OneDrive\\Робочий стіл\\Високопродуктивні обчислювальні с-ми\\ЛР1_ЗК-61мп_Красуцька\\results\\lab2\\n3"
+    },
+    "cpu_count": 8,
+    "platform": "Windows-11-10.0.26300-SP0",
+    "python": "3.14.5",
+    "stop_reason": "двічі поспіль досягнута < 0.9 заданої",
+    "last_step": 10
+  },
+  "steps": [
+    {
+      "step": 1,
+      "target": 200,
+      "window_seconds": [
+        15,
+        30
+      ],
+      "window_epoch": [
+        1794759449.6205494,
+        1794759464.6205494
+      ],
+      "achieved_mean": 200.0,
+      "achieved_std": 1.2535663410560174,
+      "sent_mean": 200.0,
+      "client_p50_ms": 12.986063957214355,
+      "client_p95_ms": 22.29030132293701,
+      "client_p99_ms": 24.830682277679447,
+      "non2xx_share": 0.0,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.26969861642922377
+    },
+    {
+      "step": 2,
+      "target": 400,
+      "window_seconds": [
+        35,
+        50
+      ],
+      "window_epoch": [
+        1794759469.6205494,
+        1794759484.6205494
+      ],
+      "achieved_mean": 400.06666666666666,
+      "achieved_std": 6.0764964843081675,
+      "sent_mean": 400.0,
+      "client_p50_ms": 12.545347213745117,
+      "client_p95_ms": 23.581266403198242,
+      "client_p99_ms": 29.45685386657715,
+      "non2xx_share": 0.0,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.42655260446497717
+    },
+    {
+      "step": 3,
+      "target": 600,
+      "window_seconds": [
+        55,
+        70
+      ],
+      "window_epoch": [
+        1794759489.6205494,
+        1794759504.6205494
+      ],
+      "achieved_mean": 599.5333333333333,
+      "achieved_std": 7.890923055426828,
+      "sent_mean": 600.0,
+      "client_p50_ms": 13.532876968383789,
+      "client_p95_ms": 33.23893547058105,
+      "client_p99_ms": 55.59988975524902,
+      "non2xx_share": 0.0,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.47556811576360014
+    },
+    {
+      "step": 4,
+      "target": 800,
+      "window_seconds": [
+        75,
+        90
+      ],
+      "window_epoch": [
+        1794759509.6205494,
+        1794759524.6205494
+      ],
+      "achieved_mean": 799.8,
+      "achieved_std": 13.707140996054367,
+      "sent_mean": 799.2666666666667,
+      "client_p50_ms": 14.699220657348633,
+      "client_p95_ms": 51.40414237976075,
+      "client_p99_ms": 85.60786247253422,
+      "non2xx_share": 0.0,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.5396776261995897
+    },
+    {
+      "step": 5,
+      "target": 1000,
+      "window_seconds": [
+        95,
+        110
+      ],
+      "window_epoch": [
+        1794759529.6205494,
+        1794759544.6205494
+      ],
+      "achieved_mean": 1001.7333333333333,
+      "achieved_std": 64.59596036315348,
+      "sent_mean": 1000.1333333333333,
+      "client_p50_ms": 14.49286937713623,
+      "client_p95_ms": 116.41824245452881,
+      "client_p99_ms": 296.1552143096924,
+      "non2xx_share": 0.0,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.6683971313468082
+    },
+    {
+      "step": 6,
+      "target": 1200,
+      "window_seconds": [
+        115,
+        130
+      ],
+      "window_epoch": [
+        1794759549.6205494,
+        1794759564.6205494
+      ],
+      "achieved_mean": 1199.2,
+      "achieved_std": 214.86813231774107,
+      "sent_mean": 1200.3333333333333,
+      "client_p50_ms": 27.72223949432373,
+      "client_p95_ms": 517.4135208129891,
+      "client_p99_ms": 741.494815349579,
+      "non2xx_share": 0.0,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.7056898826915525
+    },
+    {
+      "step": 7,
+      "target": 1400,
+      "window_seconds": [
+        135,
+        150
+      ],
+      "window_epoch": [
+        1794759569.6205494,
+        1794759584.6205494
+      ],
+      "achieved_mean": 1394.7333333333333,
+      "achieved_std": 219.24300499239476,
+      "sent_mean": 1400.1333333333334,
+      "client_p50_ms": 25.913715362548828,
+      "client_p95_ms": 471.44246101379395,
+      "client_p99_ms": 688.6655807495108,
+      "non2xx_share": 0.0,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.5914229856324301
+    },
+    {
+      "step": 8,
+      "target": 1600,
+      "window_seconds": [
+        155,
+        170
+      ],
+      "window_epoch": [
+        1794759589.6205494,
+        1794759604.6205494
+      ],
+      "achieved_mean": 1585.6666666666667,
+      "achieved_std": 298.3599615676786,
+      "sent_mean": 1599.8666666666666,
+      "client_p50_ms": 23.088693618774414,
+      "client_p95_ms": 530.7400226593018,
+      "client_p99_ms": 675.2175235748291,
+      "non2xx_share": 0.0,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.6341719172879665
+    },
+    {
+      "step": 9,
+      "target": 1800,
+      "window_seconds": [
+        175,
+        190
+      ],
+      "window_epoch": [
+        1794759609.6205494,
+        1794759624.6205494
+      ],
+      "achieved_mean": 681.8,
+      "achieved_std": 339.78884199287234,
+      "sent_mean": 1800.0,
+      "client_p50_ms": 3329.7712802886963,
+      "client_p95_ms": 5003.35750579834,
+      "client_p99_ms": 5010.032768249512,
+      "non2xx_share": 0.05056637299178204,
+      "conn_errors": 15421,
+      "gen_cpu_cores": 1.7125274373494934
+    },
+    {
+      "step": 10,
+      "target": 2000,
+      "window_seconds": [
+        195,
+        210
+      ],
+      "window_epoch": [
+        1794759629.6205494,
+        1794759644.6205494
+      ],
+      "achieved_mean": 1447.0,
+      "achieved_std": 353.8391482822991,
+      "sent_mean": 1999.9333333333334,
+      "client_p50_ms": 1435.3199005126953,
+      "client_p95_ms": 2942.5869464874254,
+      "client_p99_ms": 3740.1373004913326,
+      "non2xx_share": 0.0,
+      "conn_errors": 8272,
+      "gen_cpu_cores": 1.283458682655761
+    }
+  ],
+  "X": {
+    "value": 1585.6666666666667,
+    "spread": 298.3599615676786,
+    "step": 8,
+    "target": 1600,
+    "client_p99_ms": 675.2175235748291
+  },
+  "last_step_ratio": 0.7235
+}

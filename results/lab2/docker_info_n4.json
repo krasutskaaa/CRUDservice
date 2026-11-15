@@ -1,0 +1,13 @@
+{
+  "web_containers": 4,
+  "targets": [
+    "172.18.0.5:8000",
+    "172.18.0.7:8000",
+    "172.18.0.8:8000",
+    "172.18.0.9:8000"
+  ],
+  "NCPU": 8,
+  "MemTotal": 4021968896,
+  "OperatingSystem": "Docker Desktop",
+  "ServerVersion": "29.9.2"
+}

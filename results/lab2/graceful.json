@@ -1,0 +1,9 @@
+{
+  "exit_code": 0,
+  "stop_duration_s": 0.766150951385498,
+  "stop_at_second": 25,
+  "window_ok": 6000,
+  "window_non2xx": 0,
+  "window_conn_errors": 0,
+  "passed": true
+}
