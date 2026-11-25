@@ -1,4 +1,4 @@
-# Prometheus на вузлі role=infra: збір кожні 5 с, пошук подів web, cAdvisor через kubelet
+# Prometheus на вузлі role=infra: збір кожні 5 с, пошук подів web і worker (лаб. 4), cAdvisor через kubelet
 # (проксі API-сервера), kube-state-metrics і postgres-exporter.
 apiVersion: v1
 kind: ServiceAccount
@@ -52,6 +52,26 @@ data:
             action: keep
           - source_labels: [__meta_kubernetes_pod_container_port_number]
             regex: "8000"
+            action: keep
+          - source_labels: [__meta_kubernetes_pod_name]
+            target_label: pod
+          - source_labels: [__meta_kubernetes_pod_name]
+            target_label: instance
+          - source_labels: [__meta_kubernetes_pod_node_name]
+            target_label: node
+
+      # лабораторна 4: кожен под worker окремо (порт 9100)
+      - job_name: worker
+        metrics_path: /metrics
+        kubernetes_sd_configs:
+          - role: pod
+            namespaces: {names: [lab3]}
+        relabel_configs:
+          - source_labels: [__meta_kubernetes_pod_label_app]
+            regex: worker
+            action: keep
+          - source_labels: [__meta_kubernetes_pod_container_port_number]
+            regex: "9100"
             action: keep
           - source_labels: [__meta_kubernetes_pod_name]
             target_label: pod

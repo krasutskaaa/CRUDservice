@@ -1,0 +1,2 @@
+﻿deployment "worker" successfully rolled out
+worker_config: [{'key': 'claim_mode', 'value': 'skip_locked'}, {'key': 'store_mode', 'value': 'idempotent'}, {'key': 't_poll_ms', 'value': '50'}, {'key': 'lease_s', 'value': '15'}, {'key': 'heartbeat', 'value': '1'}, {'key': 'batch', 'value': '1'}]

@@ -1,0 +1,4 @@
+﻿deployment.apps/worker scaled
+{"t0": 1795613464.1123807, "t_end": 1795613473.628, "rate": 2.0, "planned": 20, "created": 20, "codes": {"202": 20}, "non2xx": 0}
+збережено: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab4\step2.json
+t_io = 5.1 мс, t_cpu = 34.7 мс; збіг з локальним: True

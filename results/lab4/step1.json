@@ -1,0 +1,208 @@
+{
+  "post_existing": {
+    "status": 202,
+    "location": "/tasks/1",
+    "body": {
+      "id": 1,
+      "record_id": 3,
+      "status": "queued",
+      "seed": 1329015950,
+      "attempts": 0,
+      "max_attempts": 3,
+      "token": 0,
+      "lease_until": null,
+      "worker_id": null,
+      "created_at": "2026-11-25T13:30:36.775254+00:00",
+      "started_at": null,
+      "finished_at": null
+    }
+  },
+  "post_missing": {
+    "status": 404,
+    "body": {
+      "error": "not_found",
+      "message": "запис не знайдено"
+    }
+  },
+  "get_task": {
+    "status": 200,
+    "body": {
+      "id": 1,
+      "record_id": 3,
+      "status": "running",
+      "seed": 1329015950,
+      "attempts": 1,
+      "max_attempts": 3,
+      "token": 1,
+      "lease_until": "2026-11-25T13:30:51.778772+00:00",
+      "worker_id": "worker-5fb75f8c4-pk5gx",
+      "created_at": "2026-11-25T13:30:36.775254+00:00",
+      "started_at": "2026-11-25T13:30:36.778772+00:00",
+      "finished_at": null,
+      "result": null
+    }
+  },
+  "get_missing": {
+    "status": 404
+  },
+  "list_queued": {
+    "status": 200,
+    "total": 0,
+    "items": 0
+  },
+  "list_bad_status": {
+    "status": 400
+  },
+  "metrics": [
+    "tasks_queued 0.0",
+    "tasks_running 0.0"
+  ],
+  "schema": [
+    {
+      "table_name": "task_results",
+      "column_name": "task_id",
+      "data_type": "bigint",
+      "column_default": null
+    },
+    {
+      "table_name": "task_results",
+      "column_name": "token",
+      "data_type": "bigint",
+      "column_default": null
+    },
+    {
+      "table_name": "task_results",
+      "column_name": "worker_id",
+      "data_type": "character varying",
+      "column_default": null
+    },
+    {
+      "table_name": "task_results",
+      "column_name": "result",
+      "data_type": "jsonb",
+      "column_default": null
+    },
+    {
+      "table_name": "task_results",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "column_default": "clock_timestamp()"
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "id",
+      "data_type": "bigint",
+      "column_default": null
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "record_id",
+      "data_type": "bigint",
+      "column_default": null
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "status",
+      "data_type": "character varying",
+      "column_default": "'queued'::character varying"
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "seed",
+      "data_type": "bigint",
+      "column_default": null
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "attempts",
+      "data_type": "integer",
+      "column_default": "0"
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "max_attempts",
+      "data_type": "integer",
+      "column_default": "3"
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "token",
+      "data_type": "bigint",
+      "column_default": "0"
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "lease_until",
+      "data_type": "timestamp with time zone",
+      "column_default": null
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "worker_id",
+      "data_type": "character varying",
+      "column_default": null
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "column_default": "clock_timestamp()"
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "started_at",
+      "data_type": "timestamp with time zone",
+      "column_default": null
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "finished_at",
+      "data_type": "timestamp with time zone",
+      "column_default": null
+    }
+  ],
+  "indexes": [
+    {
+      "tablename": "tasks",
+      "indexname": "tasks_pkey",
+      "indexdef": "CREATE UNIQUE INDEX tasks_pkey ON public.tasks USING btree (id)"
+    },
+    {
+      "tablename": "tasks",
+      "indexname": "idx_tasks_status_created",
+      "indexdef": "CREATE INDEX idx_tasks_status_created ON public.tasks USING btree (status, created_at)"
+    },
+    {
+      "tablename": "task_results",
+      "indexname": "task_results_pkey",
+      "indexdef": "CREATE UNIQUE INDEX task_results_pkey ON public.task_results USING btree (task_id)"
+    }
+  ],
+  "worker_pods": [
+    {
+      "pod": "worker-5fb75f8c4-pk5gx",
+      "node": "k3d-lab3-agent-1",
+      "ready": true,
+      "restarts": 0,
+      "container_id": "86a35443b8d1ebd8330b2dc4b962c19aae6d6b6c390884153ed48e58c7fd2909",
+      "phase": "Running"
+    }
+  ],
+  "prom_targets": [
+    [
+      "web",
+      "web-985dfc7fc-w6f6h",
+      "up"
+    ],
+    [
+      "web",
+      "web-985dfc7fc-fxs2r",
+      "up"
+    ],
+    [
+      "web",
+      "web-985dfc7fc-82bz2",
+      "up"
+    ]
+  ]
+}

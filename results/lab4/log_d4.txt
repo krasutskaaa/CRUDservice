@@ -1,0 +1,25 @@
+﻿deployment.apps/worker scaled
+deployment.apps/worker scaled
+{"t0": 1795615012.0109026, "t_end": 1795615022.514, "rate": 200.0, "planned": 2100, "created": 2100, "codes": {"202": 2100}, "non2xx": 0}
+deployment.apps/worker scaled
+15:57:59 d4_b1 W=3 X=43.93±3.30 (вікно 30 с)
+deployment.apps/worker scaled
+{"t0": 1795615082.8446383, "t_end": 1795615093.344, "rate": 200.0, "planned": 2100, "created": 2100, "codes": {"202": 2100}, "non2xx": 0}
+deployment.apps/worker scaled
+15:58:28 rollout restart
+deployment.apps/worker restarted
+deployment "worker" successfully rolled out
+15:59:12 d4_b1_sigterm W=3 X=43.13±5.91 (вікно 30 с)
+збережено: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab4\d4.json
+deployment.apps/worker scaled
+{"t0": 1795615158.8441668, "t_end": 1795615169.342, "rate": 200.0, "planned": 2100, "created": 2100, "codes": {"202": 2100}, "non2xx": 0}
+deployment.apps/worker scaled
+16:00:31 d4_b10 W=3 X=38.23±4.82 (вікно 30 с)
+deployment.apps/worker scaled
+{"t0": 1795615234.443479, "t_end": 1795615244.939, "rate": 200.0, "planned": 2100, "created": 2100, "codes": {"202": 2100}, "non2xx": 0}
+deployment.apps/worker scaled
+16:01:00 rollout restart
+deployment.apps/worker restarted
+deployment "worker" successfully rolled out
+16:01:45 d4_b10_sigterm W=3 X=43.00±3.32 (вікно 30 с)
+збережено: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab4\d4.json

@@ -10,6 +10,7 @@ CLUSTER = "lab3"
 NS = "lab3"
 SERVER_NODE = f"k3d-{CLUSTER}-server-0"
 IMAGE = "admissions-web:lab3"
+WORKER_IMAGE = "admissions-worker:lab4"
 # контекст, який k3d додає в kubeconfig; порожнє значення = поточний контекст
 CONTEXT = os.environ.get("KUBE_CONTEXT", f"k3d-{CLUSTER}")
 OUT = RESULTS / "lab3"

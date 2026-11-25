@@ -1,0 +1,198 @@
+{
+  "rate": 28.58,
+  "t_restart": 1795614236.3016155,
+  "rollout_s": 3.1784117221832275,
+  "pods_before": [
+    {
+      "pod": "worker-5fb75f8c4-2mclv",
+      "node": "k3d-lab3-agent-1",
+      "ready": true,
+      "restarts": 0,
+      "container_id": "8c0fb0f7a49a68f63ab2f02ae54c208144bf2c8d654c7331c65078f8d820d33e",
+      "phase": "Running"
+    },
+    {
+      "pod": "worker-5fb75f8c4-g2hbv",
+      "node": "k3d-lab3-agent-0",
+      "ready": true,
+      "restarts": 0,
+      "container_id": "32f78e3841dcfb8276e6357b2d0262d9f3613aeafc8129705cea14999a469c32",
+      "phase": "Running"
+    },
+    {
+      "pod": "worker-5fb75f8c4-hx8c2",
+      "node": "k3d-lab3-agent-1",
+      "ready": true,
+      "restarts": 0,
+      "container_id": "8190054b377dc3ea695527b426cad055abe73759533fc93086af98cea9b4a487",
+      "phase": "Running"
+    }
+  ],
+  "pods_after": [
+    {
+      "pod": "worker-5c8577c86d-65fxj",
+      "node": "k3d-lab3-agent-1",
+      "ready": true,
+      "restarts": 0,
+      "container_id": "22da4dbe29ba45d36d71da486cadaad08d001112471d0ed55c416b5706be71b0",
+      "phase": "Running"
+    },
+    {
+      "pod": "worker-5c8577c86d-95zs7",
+      "node": "k3d-lab3-agent-1",
+      "ready": true,
+      "restarts": 0,
+      "container_id": "7dee3a867c6f9eee9205842a87b2b3a3894416c15b88621fe207b6470db1d5c4",
+      "phase": "Running"
+    },
+    {
+      "pod": "worker-5c8577c86d-trcks",
+      "node": "k3d-lab3-agent-0",
+      "ready": true,
+      "restarts": 0,
+      "container_id": "52a58198095a72bb7eed73d8668f01a26aaf73585cd91f6b1ed847cdf7416c63",
+      "phase": "Running"
+    }
+  ],
+  "terminated": [
+    {
+      "pod": "worker-5fb75f8c4-hx8c2",
+      "exit_code": 0,
+      "reason": "Completed",
+      "finished": "2026-11-25T13:43:57Z",
+      "seen": 1795614238.1657667,
+      "where": "state"
+    },
+    {
+      "pod": "worker-5fb75f8c4-2mclv",
+      "exit_code": 0,
+      "reason": "Completed",
+      "finished": "2026-11-25T13:43:59Z",
+      "seen": 1795614239.4631588,
+      "where": "state"
+    },
+    {
+      "pod": "worker-5fb75f8c4-g2hbv",
+      "exit_code": 0,
+      "reason": "Completed",
+      "finished": "2026-11-25T13:44:00Z",
+      "seen": 1795614240.1571898,
+      "where": "state"
+    }
+  ],
+  "returned": 0,
+  "returned_rows": [],
+  "exit_events": [
+    {
+      "worker_id": "worker-5fb75f8c4-hx8c2",
+      "info": {
+        "code": 0,
+        "reason": "sigterm",
+        "returned": 0
+      },
+      "at": 1795614237.503397
+    },
+    {
+      "worker_id": "worker-5fb75f8c4-2mclv",
+      "info": {
+        "code": 0,
+        "reason": "sigterm",
+        "returned": 0
+      },
+      "at": 1795614238.775007
+    },
+    {
+      "worker_id": "worker-5c8577c86d-65fxj",
+      "info": {
+        "batch": "1",
+        "lease_s": "15",
+        "fail_rate": "0",
+        "heartbeat": "1",
+        "t_poll_ms": "50",
+        "claim_mode": "skip_locked",
+        "store_mode": "idempotent"
+      },
+      "at": 1795614239.114779
+    },
+    {
+      "worker_id": "worker-5fb75f8c4-g2hbv",
+      "info": {
+        "code": 0,
+        "reason": "sigterm",
+        "returned": 0
+      },
+      "at": 1795614239.525782
+    },
+    {
+      "worker_id": "worker-5c8577c86d-trcks",
+      "info": {
+        "batch": "1",
+        "lease_s": "15",
+        "fail_rate": "0",
+        "heartbeat": "1",
+        "t_poll_ms": "50",
+        "claim_mode": "skip_locked",
+        "store_mode": "idempotent"
+      },
+      "at": 1795614239.94953
+    },
+    {
+      "worker_id": "worker-5c8577c86d-95zs7",
+      "info": {
+        "batch": "1",
+        "lease_s": "15",
+        "fail_rate": "0",
+        "heartbeat": "1",
+        "t_poll_ms": "50",
+        "claim_mode": "skip_locked",
+        "store_mode": "idempotent"
+      },
+      "at": 1795614240.865211
+    }
+  ],
+  "failed": 0,
+  "multi_result": 0,
+  "attempts_gt1": 0,
+  "stale": 2,
+  "n": 2572,
+  "dup_by_results": 0,
+  "extra_result_rows": 0,
+  "D_results": 0.0,
+  "dup_by_logs": 0,
+  "D_logs": 0.0,
+  "claimed_by_several_workers": 0,
+  "results_rows": 2572,
+  "done_by_worker": [
+    {
+      "worker_id": "worker-5c8577c86d-65fxj",
+      "done": 583
+    },
+    {
+      "worker_id": "worker-5c8577c86d-95zs7",
+      "done": 493
+    },
+    {
+      "worker_id": "worker-5c8577c86d-trcks",
+      "done": 596
+    },
+    {
+      "worker_id": "worker-5fb75f8c4-2mclv",
+      "done": 299
+    },
+    {
+      "worker_id": "worker-5fb75f8c4-g2hbv",
+      "done": 300
+    },
+    {
+      "worker_id": "worker-5fb75f8c4-hx8c2",
+      "done": 301
+    }
+  ],
+  "status": {
+    "queued": 0,
+    "running": 0,
+    "done": 2572,
+    "failed": 0,
+    "total": 2572
+  }
+}

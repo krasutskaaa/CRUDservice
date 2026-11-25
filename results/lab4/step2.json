@@ -1,0 +1,88 @@
+{
+  "tasks": 20,
+  "done": 20,
+  "mean_s": {
+    "claim": 0.0008742610872385822,
+    "fetch": 0.002166455499809672,
+    "process": 0.034688149049998174,
+    "store": 0.0029760440500922413
+  },
+  "count": {
+    "claim": 275.0,
+    "fetch": 20.0,
+    "process": 20.0,
+    "store": 20.0
+  },
+  "t_io": 0.005142499549901913,
+  "t_cpu": 0.034688149049998174,
+  "X1_formula": 15.424803261979722,
+  "determinism": [
+    {
+      "task": 1,
+      "seed": 410492370,
+      "worker": {
+        "std": 1181.881298,
+        "mean": 2041.656454,
+        "p_hi": 4053,
+        "p_lo": 41,
+        "removed": 1300
+      },
+      "local": {
+        "p_lo": 41,
+        "p_hi": 4053,
+        "removed": 1300,
+        "mean": 2041.656454,
+        "std": 1181.881298
+      },
+      "equal": true
+    },
+    {
+      "task": 2,
+      "seed": 679703193,
+      "worker": {
+        "std": 1184.57657,
+        "mean": 2047.012003,
+        "p_hi": 4054,
+        "p_lo": 40,
+        "removed": 1301
+      },
+      "local": {
+        "p_lo": 40,
+        "p_hi": 4054,
+        "removed": 1301,
+        "mean": 2047.012003,
+        "std": 1184.57657
+      },
+      "equal": true
+    },
+    {
+      "task": 3,
+      "seed": 2036038385,
+      "worker": {
+        "std": 1183.593748,
+        "mean": 2056.63465,
+        "p_hi": 4055,
+        "p_lo": 40,
+        "removed": 1299
+      },
+      "local": {
+        "p_lo": 40,
+        "p_hi": 4055,
+        "removed": 1299,
+        "mean": 2056.63465,
+        "std": 1183.593748
+      },
+      "equal": true
+    }
+  ],
+  "pods": [
+    {
+      "pod": "worker-5fb75f8c4-pk5gx",
+      "node": "k3d-lab3-agent-1",
+      "ready": true,
+      "restarts": 0,
+      "container_id": "86a35443b8d1ebd8330b2dc4b962c19aae6d6b6c390884153ed48e58c7fd2909",
+      "phase": "Running"
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "R": 3,
+  "pk": true,
+  "skip_locked": {
+    "label": "step4_skip",
+    "created": 300,
+    "non2xx": 0,
+    "duration_s": 10.728739261627197,
+    "n": 300,
+    "dup_by_results": 0,
+    "extra_result_rows": 0,
+    "D_results": 0.0,
+    "dup_by_logs": 0,
+    "D_logs": 0.0,
+    "claimed_by_several_workers": 0,
+    "results_rows": 300,
+    "done_by_worker": [
+      {
+        "worker_id": "worker-5fb75f8c4-9bkn4",
+        "done": 98
+      },
+      {
+        "worker_id": "worker-5fb75f8c4-jfv2h",
+        "done": 102
+      },
+      {
+        "worker_id": "worker-5fb75f8c4-pk5gx",
+        "done": 100
+      }
+    ],
+    "claims": {
+      "task": 300.0,
+      "empty": 10164.0
+    },
+    "claim_p99_s": 0.002010000000000016,
+    "claim_p50_s": 0.0005684089162182936,
+    "claim_mean_s": 0.0006953568207191004,
+    "worker_counters": {
+      "done": 300.0,
+      "failed": 0.0,
+      "lost": 0.0
+    },
+    "db_xact_per_s": 888.9873184239694,
+    "status": {
+      "queued": 0,
+      "running": 0,
+      "done": 300,
+      "failed": 0,
+      "total": 300
+    },
+    "lock_samples": [
+      {
+        "t": 1795613538.314131,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613539.344358,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613540.378669,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613541.413586,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613542.441806,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613543.473401,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613544.502392,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613545.535939,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613546.56631,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613547.59273,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613548.621051,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613549.646878,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      }
+    ],
+    "max_lock_waits": 0,
+    "max_not_granted": 0,
+    "max_lock_waits_20ms": 0,
+    "seconds_with_lock_waits_20ms": 0
+  },
+  "for_update": {
+    "label": "step4_forupdate",
+    "created": 300,
+    "non2xx": 0,
+    "duration_s": 10.745215654373169,
+    "n": 300,
+    "dup_by_results": 0,
+    "extra_result_rows": 0,
+    "D_results": 0.0,
+    "dup_by_logs": 0,
+    "D_logs": 0.0,
+    "claimed_by_several_workers": 0,
+    "results_rows": 300,
+    "done_by_worker": [
+      {
+        "worker_id": "worker-5fb75f8c4-9bkn4",
+        "done": 98
+      },
+      {
+        "worker_id": "worker-5fb75f8c4-jfv2h",
+        "done": 100
+      },
+      {
+        "worker_id": "worker-5fb75f8c4-pk5gx",
+        "done": 102
+      }
+    ],
+    "claims": {
+      "task": 125.0,
+      "empty": 9631.0
+    },
+    "claim_p99_s": 0.0023605797101449422,
+    "claim_p50_s": 0.0004514994446501296,
+    "claim_mean_s": 0.0006175875525815057,
+    "worker_counters": {
+      "done": 300.0,
+      "failed": 0.0,
+      "lost": 0.0
+    },
+    "db_xact_per_s": 863.7826355067635,
+    "status": {
+      "queued": 0,
+      "running": 0,
+      "done": 300,
+      "failed": 0,
+      "total": 300
+    },
+    "lock_samples": [
+      {
+        "t": 1795613558.955024,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613559.981987,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613561.009451,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 1,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613562.038566,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613563.071578,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613564.103339,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613565.138311,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 1
+      },
+      {
+        "t": 1795613566.175156,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613567.210176,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613568.242997,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613569.278637,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613570.322856,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      },
+      {
+        "t": 1795613571.35215,
+        "lock_waits": 0,
+        "not_granted": 0,
+        "lock_waits_max_20ms": 0,
+        "not_granted_max_20ms": 0
+      }
+    ],
+    "max_lock_waits": 0,
+    "max_not_granted": 0,
+    "max_lock_waits_20ms": 1,
+    "seconds_with_lock_waits_20ms": 1
+  }
+}

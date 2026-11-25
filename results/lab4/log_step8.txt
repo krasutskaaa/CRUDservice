@@ -1,0 +1,46 @@
+﻿deployment.apps/worker scaled
+15:43:56 kubectl rollout restart deployment/worker
+deployment.apps/worker restarted
+Waiting for deployment "worker" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "worker" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "worker" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "worker" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "worker" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "worker" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "worker" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "worker" rollout to finish: 1 old replicas are pending termination...
+deployment "worker" successfully rolled out
+{"t0": 1795614207.4068732, "t_end": 1795614297.379, "rate": 28.58, "planned": 2572, "created": 2572, "codes": {"202": 2572}, "non2xx": 0}
+збережено: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab4\step8.json
+{
+  "terminated": [
+    {
+      "pod": "worker-5fb75f8c4-hx8c2",
+      "exit_code": 0,
+      "reason": "Completed",
+      "finished": "2026-11-25T13:43:57Z",
+      "seen": 1795614238.1657667,
+      "where": "state"
+    },
+    {
+      "pod": "worker-5fb75f8c4-2mclv",
+      "exit_code": 0,
+      "reason": "Completed",
+      "finished": "2026-11-25T13:43:59Z",
+      "seen": 1795614239.4631588,
+      "where": "state"
+    },
+    {
+      "pod": "worker-5fb75f8c4-g2hbv",
+      "exit_code": 0,
+      "reason": "Completed",
+      "finished": "2026-11-25T13:44:00Z",
+      "seen": 1795614240.1571898,
+      "where": "state"
+    }
+  ],
+  "returned": 0,
+  "failed": 0,
+  "multi_result": 0,
+  "attempts_gt1": 0
+}

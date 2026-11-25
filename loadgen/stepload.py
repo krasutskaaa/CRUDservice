@@ -14,6 +14,13 @@
 
 Вихід: <prefix>_seconds.csv (посекундно), <prefix>_steps.json (сходинки, X(N), розкид).
 
+Лабораторна 4, режим створення задач (--tasks-rate):
+  --tasks-rate λ --tasks-count n | --tasks-duration D
+                               POST /admissions/{id}/tasks з інтенсивністю λ за секунду (відкритий контур,
+                               один процес, --conns постійних зʼєднань, за замовчуванням 8) для записів з
+                               --ids-file по колу; ідентифікатори створених задач і коди відповідей
+                               пишуться в <prefix>_tasks.csv, підсумок у <prefix>_tasks.json.
+
 Лабораторна 3:
   --conns K --reqs-per-conn M  модель зʼєднань: генератор тримає K постійних зʼєднань (поділених між
                                процесами) і закриває кожне після M запитів, відкриваючи замість нього нове.
@@ -338,6 +345,85 @@ def analyze(records, cpu_series, t0, a, segs, last_step):
     return rows, steps
 
 
+async def _post(slot, host, port, path, timeout):
+    """Один POST без тіла на постійному зʼєднанні slot = [reader, writer]; → (код, тіло)."""
+    for attempt in (1, 2):
+        fresh = slot[1] is None
+        if fresh:
+            slot[0], slot[1] = await asyncio.open_connection(host, port)
+        r, w = slot
+        try:
+            w.write(f"POST {path} HTTP/1.1\r\nHost: {host}:{port}\r\nContent-Length: 0\r\n\r\n".encode())
+            head = await asyncio.wait_for(r.readuntil(b"\r\n\r\n"), timeout)
+            status = int(head[9:12])
+            m = CL_RE.search(head.lower())
+            body = await r.readexactly(int(m.group(1))) if m else b""
+            if b"connection: close" in head.lower():
+                w.close()
+                slot[0] = slot[1] = None
+            return status, body
+        except (asyncio.IncompleteReadError, ConnectionError, asyncio.TimeoutError):
+            w.close()
+            slot[0] = slot[1] = None
+            if fresh or attempt == 2:
+                raise
+
+
+async def _tasks_run(a, ids):
+    u = urlparse(a.base_url)
+    host, port = u.hostname, u.port or 80
+    n = a.tasks_count or int(a.tasks_rate * a.tasks_duration)
+    free = asyncio.Queue()
+    for _ in range(a.conns or 8):
+        free.put_nowait([None, None])
+    out = []
+    t0 = time.time() + 0.5
+
+    async def one(k):
+        await asyncio.sleep(max(0.0, t0 + k / a.tasks_rate - time.time()))
+        rid = ids[k % len(ids)]
+        slot = await free.get()
+        sent = time.time()
+        try:
+            status, body = await _post(slot, host, port, f"/admissions/{rid}/tasks", a.timeout)
+            tid = json.loads(body).get("id") if status == 202 else None
+        except Exception as e:  # noqa: BLE001
+            status, tid = CONN_STATUS, None
+            if slot[1] is not None:
+                slot[1].close()
+            slot[0] = slot[1] = None
+            print("помилка POST:", type(e).__name__, e, flush=True)
+        finally:
+            free.put_nowait(slot)
+        out.append({"k": k, "record_id": rid, "task_id": tid, "status": status,
+                    "planned": round(t0 + k / a.tasks_rate, 3), "sent": round(sent, 3),
+                    "latency_ms": round((time.time() - sent) * 1000, 2)})
+
+    await asyncio.gather(*(one(k) for k in range(n)))
+    return t0, out
+
+
+def tasks_mode(a):
+    ids = json.loads(Path(a.ids_file).read_text())
+    t0, out = asyncio.run(_tasks_run(a, ids))
+    out.sort(key=lambda r: r["k"])
+    pre = Path(a.out_prefix)
+    pre.parent.mkdir(parents=True, exist_ok=True)
+    with open(str(pre) + "_tasks.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=list(out[0].keys()))
+        w.writeheader()
+        w.writerows(out)
+    codes = {}
+    for r in out:
+        codes[str(r["status"])] = codes.get(str(r["status"]), 0) + 1
+    summ = {"t0": t0, "t_end": max(r["sent"] for r in out), "rate": a.tasks_rate, "planned": len(out),
+            "created": sum(1 for r in out if r["task_id"]), "codes": codes,
+            "non2xx": sum(1 for r in out if not 200 <= r["status"] < 300),
+            "task_ids": [r["task_id"] for r in out if r["task_id"]]}
+    Path(str(pre) + "_tasks.json").write_text(json.dumps(summ, ensure_ascii=False), encoding="utf-8")
+    print(json.dumps({k: v for k, v in summ.items() if k != "task_ids"}, ensure_ascii=False), flush=True)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--base-url", default="http://127.0.0.1:8080")
@@ -360,7 +446,13 @@ def main():
     ap.add_argument("--reqs-per-conn", type=int, default=100, help="запитів на зʼєднання до його закриття")
     ap.add_argument("--profile", default="", help='відрізки "тривалість:інтенсивність,..."')
     ap.add_argument("--out-prefix", required=True)
+    ap.add_argument("--tasks-rate", type=float, default=0, help="лаб. 4: створення задач, задач/с")
+    ap.add_argument("--tasks-count", type=int, default=0, help="лаб. 4: скільки задач створити")
+    ap.add_argument("--tasks-duration", type=float, default=0, help="лаб. 4: або тривалість, с")
     a = ap.parse_args()
+    if a.tasks_rate:
+        tasks_mode(a)
+        return
     if a.conns:
         a.procs = max(1, min(a.procs, a.conns))  # кожному процесу хоча б одне зʼєднання
 

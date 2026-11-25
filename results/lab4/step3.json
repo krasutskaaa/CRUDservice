@@ -1,0 +1,100 @@
+{
+  "R": 3,
+  "pk": false,
+  "tpoll_50": {
+    "label": "step3_tpoll50",
+    "created": 300,
+    "non2xx": 0,
+    "duration_s": 10.642030000686646,
+    "n": 300,
+    "dup_by_results": 25,
+    "extra_result_rows": 50,
+    "D_results": 0.08333333333333333,
+    "dup_by_logs": 25,
+    "D_logs": 0.08333333333333333,
+    "claimed_by_several_workers": 25,
+    "results_rows": 325,
+    "done_by_worker": [
+      {
+        "worker_id": "worker-5fb75f8c4-9bkn4",
+        "done": 109
+      },
+      {
+        "worker_id": "worker-5fb75f8c4-jfv2h",
+        "done": 108
+      },
+      {
+        "worker_id": "worker-5fb75f8c4-pk5gx",
+        "done": 108
+      }
+    ],
+    "claims": {
+      "task": 325.0,
+      "empty": 307.0
+    },
+    "claim_p99_s": 0.00774399999999996,
+    "claim_p50_s": 0.0012964285714285714,
+    "claim_mean_s": 0.0016160995443013672,
+    "worker_counters": {
+      "done": 325.0,
+      "failed": 0.0,
+      "lost": 0.0
+    },
+    "db_xact_per_s": 280.3695019945678,
+    "status": {
+      "queued": 0,
+      "running": 0,
+      "done": 300,
+      "failed": 0,
+      "total": 300
+    }
+  },
+  "tpoll_1": {
+    "label": "step3_tpoll1",
+    "created": 300,
+    "non2xx": 0,
+    "duration_s": 12.025652885437012,
+    "n": 300,
+    "dup_by_results": 14,
+    "extra_result_rows": 30,
+    "D_results": 0.04666666666666667,
+    "dup_by_logs": 14,
+    "D_logs": 0.04666666666666667,
+    "claimed_by_several_workers": 14,
+    "results_rows": 316,
+    "done_by_worker": [
+      {
+        "worker_id": "worker-5fb75f8c4-9bkn4",
+        "done": 103
+      },
+      {
+        "worker_id": "worker-5fb75f8c4-jfv2h",
+        "done": 106
+      },
+      {
+        "worker_id": "worker-5fb75f8c4-pk5gx",
+        "done": 107
+      }
+    ],
+    "claims": {
+      "task": 316.0,
+      "empty": 11017.0
+    },
+    "claim_p99_s": 0.00275293103448276,
+    "claim_p50_s": 0.0003137596899224806,
+    "claim_mean_s": 0.0005126579876439868,
+    "worker_counters": {
+      "done": 316.0,
+      "failed": 0.0,
+      "lost": 0.0
+    },
+    "db_xact_per_s": 939.6847900984266,
+    "status": {
+      "queued": 0,
+      "running": 0,
+      "done": 300,
+      "failed": 0,
+      "total": 300
+    }
+  }
+}

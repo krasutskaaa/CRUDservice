@@ -8,6 +8,7 @@
 Кроки: k3d cluster create → kubectl label node role=infra → docker build → k3d image import →
 Secret з .env → ConfigMap зі схемою і запитами експортера → база (StatefulSet) → Job міграції →
 web → моніторинг (Prometheus, kube-state-metrics, postgres-exporter). metrics-server входить до k3s.
+Лабораторна 4: ще образ воркера (worker/Dockerfile), міграція db/002_tasks.sql і Deployment worker.
 """
 import argparse
 import subprocess
@@ -17,7 +18,7 @@ import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import ROOT  # noqa: E402
-from k8s_common import CLUSTER, IMAGE, NS, SERVER_NODE, apply_stdin, kubectl  # noqa: E402
+from k8s_common import CLUSTER, IMAGE, NS, SERVER_NODE, WORKER_IMAGE, apply_stdin, kubectl  # noqa: E402
 
 
 def read_env(path):
@@ -40,8 +41,10 @@ def cluster_exists():
     return any(line.split()[0] == CLUSTER for line in r.stdout.splitlines() if line.strip())
 
 
-def configmap_from_file(name, key, path):
-    yaml = kubectl("create", "configmap", name, f"--from-file={key}={path}",
+def configmap_from_file(name, key, path, *more):
+    """ConfigMap з одного або кількох файлів: more — додаткові пари (ключ, шлях)."""
+    files = [f"--from-file={key}={path}"] + [f"--from-file={k}={p}" for k, p in more]
+    yaml = kubectl("create", "configmap", name, *files,
                    "--dry-run=client", "-o", "yaml", capture=True).stdout
     apply_stdin(yaml)
 
@@ -65,7 +68,8 @@ def main():
 
     if not a.no_build:
         run("docker", "build", "-t", IMAGE, ".")
-    run("k3d", "image", "import", IMAGE, "-c", CLUSTER)
+        run("docker", "build", "-f", str(ROOT / "worker" / "Dockerfile"), "-t", WORKER_IMAGE, ".")
+    run("k3d", "image", "import", IMAGE, WORKER_IMAGE, "-c", CLUSTER)
 
     kubectl("apply", "-f", ROOT / "k8s" / "namespace.yaml", ns=False)
     # пароль лише в Secret кластера: ні в образі, ні в ConfigMap, ні в репозиторії
@@ -73,7 +77,8 @@ def main():
                      f"--from-literal=POSTGRES_PASSWORD={password}",
                      "--dry-run=client", "-o", "yaml", capture=True).stdout
     apply_stdin(secret)
-    configmap_from_file("db-schema", "init.sql", ROOT / "db" / "init.sql")
+    migrations = [(p.name, p) for p in sorted((ROOT / "db").glob("0*.sql"))]  # лаб. 4: 002_tasks.sql
+    configmap_from_file("db-schema", "init.sql", ROOT / "db" / "init.sql", *migrations)
     configmap_from_file("pg-exporter-queries", "queries.yaml", ROOT / "postgres-exporter" / "queries.yaml")
 
     kubectl("apply", "-f", ROOT / "k8s" / "db.yaml")
@@ -86,6 +91,11 @@ def main():
     if not a.no_build:
         kubectl("rollout", "restart", "deployment/web")  # той самий тег, новий образ
     kubectl("rollout", "status", "deployment/web", "--timeout=300s")
+
+    kubectl("apply", "-f", ROOT / "k8s" / "worker.yaml")  # лабораторна 4
+    if not a.no_build:
+        kubectl("rollout", "restart", "deployment/worker")
+    kubectl("rollout", "status", "deployment/worker", "--timeout=300s")
 
     kubectl("apply", "-f", ROOT / "k8s" / "monitoring")
     for d in ("prometheus", "kube-state-metrics", "postgres-exporter"):

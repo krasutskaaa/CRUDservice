@@ -1,0 +1,88 @@
+{
+  "label": "step6_w1_r1",
+  "W": 1,
+  "n": 700,
+  "scale_wait_s": 3.4390289783477783,
+  "t_first_done": 1795613652.601877,
+  "t_empty": 1795613698.844811,
+  "window_s": 30.0,
+  "per_second": [
+    2,
+    16,
+    15,
+    15,
+    16,
+    15,
+    14,
+    15,
+    15,
+    16,
+    14,
+    14,
+    15,
+    15,
+    15,
+    15,
+    15,
+    15,
+    16,
+    15,
+    14,
+    15,
+    16,
+    15,
+    16,
+    16,
+    16,
+    14,
+    15,
+    15
+  ],
+  "X": 14.666666666666666,
+  "X_std": 2.4821199689438633,
+  "run_s": 46.24293398857117,
+  "status": {
+    "queued": 0,
+    "running": 0,
+    "done": 700,
+    "failed": 0,
+    "total": 700
+  },
+  "dup_by_results": 0,
+  "extra_result_rows": 0,
+  "D_results": 0.0,
+  "dup_by_logs": 0,
+  "D_logs": 0.0,
+  "claimed_by_several_workers": 0,
+  "results_rows": 700,
+  "done_by_worker": [
+    {
+      "worker_id": "worker-5fb75f8c4-kwdtb",
+      "done": 700
+    }
+  ],
+  "db_xact_per_s": 110.9525503445189,
+  "db_cpu_cores": 0.06981502624878189,
+  "claim_p99_s": 0.014399999999999635,
+  "claim_p50_s": 0.0016020942408376964,
+  "claims": {
+    "task": 700.0,
+    "empty": 20.0
+  },
+  "means_s": {
+    "claim": 0.0018909883833202912,
+    "fetch": 0.0019355840228490707,
+    "process": 0.052182448155720394,
+    "store": 0.005619710497130654
+  },
+  "pods": [
+    {
+      "pod": "worker-5fb75f8c4-kwdtb",
+      "node": "k3d-lab3-agent-1",
+      "ready": true,
+      "restarts": 0,
+      "container_id": "afe7f5ec987f194cde653f86d118f787f88cf44ef007733ef58403b0525d430c",
+      "phase": "Running"
+    }
+  ]
+}

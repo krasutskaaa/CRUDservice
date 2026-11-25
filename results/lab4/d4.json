@@ -1,0 +1,458 @@
+{
+  "b1": {
+    "X": {
+      "label": "d4_b1",
+      "W": 3,
+      "n": 2100,
+      "scale_wait_s": 6.6286301612854,
+      "t_first_done": 1795615025.513914,
+      "t_empty": 1795615074.307122,
+      "window_s": 30.0,
+      "per_second": [
+        28,
+        44,
+        44,
+        44,
+        45,
+        46,
+        45,
+        44,
+        45,
+        45,
+        45,
+        46,
+        43,
+        46,
+        45,
+        45,
+        43,
+        43,
+        45,
+        40,
+        45,
+        44,
+        42,
+        47,
+        44,
+        45,
+        44,
+        45,
+        45,
+        46
+      ],
+      "X": 43.93333333333333,
+      "X_std": 3.3002960508094583,
+      "run_s": 48.79320788383484,
+      "status": {
+        "queued": 0,
+        "running": 0,
+        "done": 2100,
+        "failed": 0,
+        "total": 2100
+      },
+      "dup_by_results": 0,
+      "extra_result_rows": 0,
+      "D_results": 0.0,
+      "dup_by_logs": 0,
+      "D_logs": 0.0,
+      "claimed_by_several_workers": 0,
+      "results_rows": 2100,
+      "done_by_worker": [
+        {
+          "worker_id": "worker-5c8577c86d-2mhtk",
+          "done": 696
+        },
+        {
+          "worker_id": "worker-5c8577c86d-n5lkn",
+          "done": 698
+        },
+        {
+          "worker_id": "worker-5c8577c86d-xkvrh",
+          "done": 706
+        }
+      ],
+      "db_xact_per_s": 293.6174708694082,
+      "db_cpu_cores": 0.13163621519570531,
+      "claim_p99_s": 0.003912760736196318,
+      "claim_p50_s": 0.001520207536865101,
+      "claims": {
+        "task": 2006.0,
+        "empty": 105.0
+      },
+      "means_s": {
+        "claim": 0.001556890321150713,
+        "fetch": 0.001817659878384006,
+        "process": 0.056483147251599974,
+        "store": 0.004802058799292948
+      }
+    },
+    "sigterm": {
+      "label": "d4_b1_sigterm",
+      "W": 3,
+      "n": 2100,
+      "scale_wait_s": 6.633416652679443,
+      "t_first_done": 1795615096.037235,
+      "t_empty": 1795615145.637991,
+      "window_s": 30.0,
+      "per_second": [
+        17,
+        43,
+        36,
+        39,
+        41,
+        45,
+        37,
+        44,
+        47,
+        45,
+        44,
+        40,
+        46,
+        43,
+        42,
+        41,
+        45,
+        46,
+        48,
+        44,
+        47,
+        46,
+        47,
+        48,
+        46,
+        45,
+        48,
+        47,
+        47,
+        40
+      ],
+      "X": 43.13333333333333,
+      "X_std": 5.911609462471418,
+      "run_s": 49.6007559299469,
+      "status": {
+        "queued": 0,
+        "running": 0,
+        "done": 2100,
+        "failed": 0,
+        "total": 2100
+      },
+      "dup_by_results": 0,
+      "extra_result_rows": 0,
+      "D_results": 0.0,
+      "dup_by_logs": 0,
+      "D_logs": 0.0,
+      "claimed_by_several_workers": 0,
+      "results_rows": 2100,
+      "done_by_worker": [
+        {
+          "worker_id": "worker-5c8577c86d-gjjpn",
+          "done": 203
+        },
+        {
+          "worker_id": "worker-5c8577c86d-nd552",
+          "done": 185
+        },
+        {
+          "worker_id": "worker-5c8577c86d-xrt5f",
+          "done": 206
+        },
+        {
+          "worker_id": "worker-755d597cbc-gzvn7",
+          "done": 510
+        },
+        {
+          "worker_id": "worker-755d597cbc-rgttd",
+          "done": 507
+        },
+        {
+          "worker_id": "worker-755d597cbc-v8rqt",
+          "done": 489
+        }
+      ],
+      "db_xact_per_s": 295.2892089496342,
+      "db_cpu_cores": 0.1452442945167426,
+      "terminated": [
+        {
+          "pod": "worker-5c8577c86d-nd552",
+          "exit_code": 0,
+          "reason": "Completed",
+          "finished": "2026-11-25T13:58:29Z",
+          "seen": 1795615109.6320179,
+          "where": "state"
+        },
+        {
+          "pod": "worker-5c8577c86d-xrt5f",
+          "exit_code": 0,
+          "reason": "Completed",
+          "finished": "2026-11-25T13:58:30Z",
+          "seen": 1795615110.9684522,
+          "where": "state"
+        },
+        {
+          "pod": "worker-5c8577c86d-gjjpn",
+          "exit_code": 0,
+          "reason": "Completed",
+          "finished": "2026-11-25T13:58:31Z",
+          "seen": 1795615111.5173948,
+          "where": "state"
+        }
+      ],
+      "returned": 0,
+      "exit_events": [
+        {
+          "worker_id": "worker-5c8577c86d-nd552",
+          "info": {
+            "code": 0,
+            "reason": "sigterm",
+            "returned": 0
+          }
+        },
+        {
+          "worker_id": "worker-5c8577c86d-xrt5f",
+          "info": {
+            "code": 0,
+            "reason": "sigterm",
+            "returned": 0
+          }
+        },
+        {
+          "worker_id": "worker-5c8577c86d-gjjpn",
+          "info": {
+            "code": 0,
+            "reason": "sigterm",
+            "returned": 0
+          }
+        }
+      ],
+      "attempts_gt1": 0
+    }
+  },
+  "b10": {
+    "X": {
+      "label": "d4_b10",
+      "W": 3,
+      "n": 2100,
+      "scale_wait_s": 7.3725244998931885,
+      "t_first_done": 1795615172.792156,
+      "t_empty": 1795615226.357337,
+      "window_s": 30.0,
+      "per_second": [
+        24,
+        35,
+        43,
+        41,
+        30,
+        41,
+        35,
+        35,
+        42,
+        37,
+        39,
+        43,
+        37,
+        42,
+        43,
+        36,
+        39,
+        42,
+        43,
+        35,
+        38,
+        40,
+        36,
+        44,
+        41,
+        34,
+        40,
+        42,
+        28,
+        42
+      ],
+      "X": 38.233333333333334,
+      "X_std": 4.818665814298088,
+      "run_s": 53.565181016922,
+      "status": {
+        "queued": 0,
+        "running": 0,
+        "done": 2100,
+        "failed": 0,
+        "total": 2100
+      },
+      "dup_by_results": 0,
+      "extra_result_rows": 0,
+      "D_results": 0.0,
+      "dup_by_logs": 0,
+      "D_logs": 0.0,
+      "claimed_by_several_workers": 0,
+      "results_rows": 2100,
+      "done_by_worker": [
+        {
+          "worker_id": "worker-755d597cbc-bdlfx",
+          "done": 690
+        },
+        {
+          "worker_id": "worker-755d597cbc-w6t8q",
+          "done": 720
+        },
+        {
+          "worker_id": "worker-755d597cbc-wqdgl",
+          "done": 690
+        }
+      ],
+      "db_xact_per_s": 204.13605671647727,
+      "db_cpu_cores": 0.11009901247229983,
+      "claim_p99_s": 0.03402666666666664,
+      "claim_p50_s": 0.002069767441860465,
+      "claims": {
+        "task": 199.0,
+        "empty": 82.0
+      },
+      "means_s": {
+        "claim": 0.0024839098647245006,
+        "fetch": 0.002023651570966828,
+        "process": 0.06417215376701173,
+        "store": 0.005803220119917601
+      }
+    },
+    "sigterm": {
+      "label": "d4_b10_sigterm",
+      "W": 3,
+      "n": 2100,
+      "scale_wait_s": 7.005570888519287,
+      "t_first_done": 1795615247.622889,
+      "t_empty": 1795615298.225779,
+      "window_s": 30.0,
+      "per_second": [
+        37,
+        44,
+        41,
+        47,
+        44,
+        46,
+        42,
+        46,
+        42,
+        45,
+        48,
+        43,
+        45,
+        37,
+        33,
+        40,
+        39,
+        40,
+        42,
+        46,
+        44,
+        42,
+        43,
+        44,
+        45,
+        45,
+        45,
+        44,
+        45,
+        46
+      ],
+      "X": 43.0,
+      "X_std": 3.3218191941495987,
+      "run_s": 50.60289001464844,
+      "status": {
+        "queued": 0,
+        "running": 0,
+        "done": 2100,
+        "failed": 0,
+        "total": 2100
+      },
+      "dup_by_results": 0,
+      "extra_result_rows": 0,
+      "D_results": 0.0,
+      "dup_by_logs": 0,
+      "D_logs": 0.0,
+      "claimed_by_several_workers": 12,
+      "results_rows": 2100,
+      "done_by_worker": [
+        {
+          "worker_id": "worker-6f7f589c5b-g9n47",
+          "done": 490
+        },
+        {
+          "worker_id": "worker-6f7f589c5b-jh7r8",
+          "done": 490
+        },
+        {
+          "worker_id": "worker-6f7f589c5b-s4kxb",
+          "done": 522
+        },
+        {
+          "worker_id": "worker-755d597cbc-6ttds",
+          "done": 190
+        },
+        {
+          "worker_id": "worker-755d597cbc-glh2d",
+          "done": 210
+        },
+        {
+          "worker_id": "worker-755d597cbc-z24kz",
+          "done": 198
+        }
+      ],
+      "db_xact_per_s": 220.77885818729658,
+      "db_cpu_cores": 0.11226860833101275,
+      "terminated": [
+        {
+          "pod": "worker-755d597cbc-6ttds",
+          "exit_code": 0,
+          "reason": "Completed",
+          "finished": "2026-11-25T14:01:02Z",
+          "seen": 1795615262.279425,
+          "where": "state"
+        },
+        {
+          "pod": "worker-755d597cbc-z24kz",
+          "exit_code": 0,
+          "reason": "Completed",
+          "finished": "2026-11-25T14:01:02Z",
+          "seen": 1795615262.8999214,
+          "where": "state"
+        },
+        {
+          "pod": "worker-755d597cbc-glh2d",
+          "exit_code": 0,
+          "reason": "Completed",
+          "finished": "2026-11-25T14:01:03Z",
+          "seen": 1795615263.9034286,
+          "where": "state"
+        }
+      ],
+      "returned": 12,
+      "exit_events": [
+        {
+          "worker_id": "worker-755d597cbc-6ttds",
+          "info": {
+            "code": 0,
+            "reason": "sigterm",
+            "returned": 0
+          }
+        },
+        {
+          "worker_id": "worker-755d597cbc-z24kz",
+          "info": {
+            "code": 0,
+            "reason": "sigterm",
+            "returned": 2
+          }
+        },
+        {
+          "worker_id": "worker-755d597cbc-glh2d",
+          "info": {
+            "code": 0,
+            "reason": "sigterm",
+            "returned": 10
+          }
+        }
+      ],
+      "attempts_gt1": 12
+    }
+  }
+}

@@ -1,0 +1,17 @@
+﻿deployment.apps/worker scaled
+deployment.apps/worker scaled
+{"t0": 1795613645.042688, "t_end": 1795613648.538, "rate": 200.0, "planned": 700, "created": 700, "codes": {"202": 700}, "non2xx": 0}
+deployment.apps/worker scaled
+15:35:02 step6_w1_r1 W=1 X=14.67±2.48 (вікно 30 с)
+збережено: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab4\step6_w1_r1.json
+deployment.apps/worker scaled
+{"t0": 1795613705.0890982, "t_end": 1795613712.087, "rate": 200.0, "planned": 1400, "created": 1400, "codes": {"202": 1400}, "non2xx": 0}
+deployment.apps/worker scaled
+15:36:06 step6_w2_r1 W=2 X=30.00±1.76 (вікно 30 с)
+збережено: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab4\step6_w2_r1.json
+deployment.apps/worker scaled
+{"t0": 1795613769.7035205, "t_end": 1795613780.2, "rate": 200.0, "planned": 2100, "created": 2100, "codes": {"202": 2100}, "non2xx": 0}
+deployment.apps/worker scaled
+15:37:19 step6_w3_r1 W=3 X=40.83±4.23 (вікно 30 с)
+збережено: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab4\step6_w3_r1.json
+deployment.apps/worker scaled

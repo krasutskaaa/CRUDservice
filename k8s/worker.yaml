@@ -1,0 +1,63 @@
+# Воркер черги задач (лабораторна 4, варіант 12). Поля replicas немає: кількість задає kubectl scale.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: worker-config
+  namespace: lab3
+data:
+  DB_HOST: db
+  DB_PORT: "5432"
+  DB_NAME: admissions
+  DB_USER: admissions
+  WEB_URL: http://web:8000
+  T_POLL_MS: "50"              # варіант 12
+  LEASE_S: "15"                # варіант 12, L
+  HEARTBEAT: "1"
+  CLAIM_MODE: skip_locked
+  STORE_MODE: idempotent
+  BATCH: "1"
+  GRACE_S: "30"                # = terminationGracePeriodSeconds
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker
+  namespace: lab3
+spec:
+  selector:
+    matchLabels:
+      app: worker
+  template:
+    metadata:
+      labels:
+        app: worker
+    spec:
+      terminationGracePeriodSeconds: 30
+      containers:
+        - name: worker
+          image: admissions-worker:lab4
+          imagePullPolicy: IfNotPresent   # образ імпортується в кластер командою k3d image import
+          ports:
+            - name: metrics
+              containerPort: 9100
+          envFrom:
+            - configMapRef:
+                name: worker-config
+          env:
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: POSTGRES_PASSWORD
+            - name: WORKER_ID          # Downward API: імʼя пода
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: FAIL_RATE          # у кроках 2-8 дорівнює 0; крок 9: "0.15"
+              value: "0"
+          resources:
+            requests:
+              cpu: 250m
+            limits:
+              cpu: 500m
+              memory: 512Mi

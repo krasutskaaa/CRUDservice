@@ -1,0 +1,133 @@
+{
+  "victim": "worker-5fb75f8c4-9bkn4",
+  "other": "worker-5fb75f8c4-pk5gx",
+  "lease_s": 15,
+  "stop_tries": [
+    {
+      "how": "kubectl exec worker-5fb75f8c4-9bkn4 -- kill -STOP 1",
+      "rc": 0,
+      "state_after": "State:\tS (sleeping)"
+    },
+    {
+      "how": "docker exec k3d-lab3-agent-0 kill -STOP 6239",
+      "rc": 0,
+      "stderr": "",
+      "state_after": "State:\tT (stopped)"
+    }
+  ],
+  "cont_tries": [
+    {
+      "how": "kubectl exec worker-5fb75f8c4-9bkn4 -- kill -CONT 1",
+      "rc": 0,
+      "state_after": "State:\tS (sleeping)"
+    }
+  ],
+  "stopped_s": 30.89967370033264,
+  "task_before": {
+    "id": 65,
+    "attempts": 1,
+    "token": 1,
+    "lease_until": "2026-11-25T13:33:25.859506+00:00",
+    "worker_id": "worker-5fb75f8c4-9bkn4"
+  },
+  "task_while_stopped": {
+    "id": 65,
+    "status": "done",
+    "attempts": 2,
+    "token": 2,
+    "worker_id": "worker-5fb75f8c4-pk5gx"
+  },
+  "task_after": {
+    "id": 65,
+    "status": "done",
+    "attempts": 2,
+    "token": 2,
+    "worker_id": "worker-5fb75f8c4-pk5gx"
+  },
+  "finished_by": [
+    "worker-5fb75f8c4-pk5gx"
+  ],
+  "results_rows": 1,
+  "events": [
+    {
+      "event": "claim",
+      "worker_id": "worker-5fb75f8c4-9bkn4",
+      "token": 1,
+      "info": {
+        "batch": 1,
+        "attempts": 1
+      },
+      "at": 1795613590.861159
+    },
+    {
+      "event": "reaped",
+      "worker_id": "worker-5fb75f8c4-pk5gx",
+      "token": 1,
+      "info": {
+        "to": "queued",
+        "attempts": 1
+      },
+      "at": 1795613605.911771
+    },
+    {
+      "event": "claim",
+      "worker_id": "worker-5fb75f8c4-pk5gx",
+      "token": 2,
+      "info": {
+        "batch": 1,
+        "attempts": 2
+      },
+      "at": 1795613605.914285
+    },
+    {
+      "event": "done",
+      "worker_id": "worker-5fb75f8c4-pk5gx",
+      "token": 2,
+      "info": {
+        "attempts": 2
+      },
+      "at": 1795613605.948305
+    },
+    {
+      "event": "stale",
+      "worker_id": "worker-5fb75f8c4-9bkn4",
+      "token": 1,
+      "info": {
+        "rows": 0,
+        "stage": "store"
+      },
+      "at": 1795613622.130755
+    }
+  ],
+  "victim_log_lines": [
+    "{\"t\": 1795613590.861, \"worker\": \"worker-5fb75f8c4-9bkn4\", \"event\": \"claim\", \"task\": 65, \"token\": 1, \"attempts\": 1, \"batch\": 1}",
+    "{\"t\": 1795613622.13, \"worker\": \"worker-5fb75f8c4-9bkn4\", \"event\": \"stale\", \"task\": 65, \"token\": 1, \"stage\": \"store\", \"rows\": 0}"
+  ],
+  "all": {
+    "n": 100,
+    "dup_by_results": 0,
+    "extra_result_rows": 0,
+    "D_results": 0.0,
+    "dup_by_logs": 0,
+    "D_logs": 0.0,
+    "claimed_by_several_workers": 1,
+    "results_rows": 100,
+    "done_by_worker": [
+      {
+        "worker_id": "worker-5fb75f8c4-9bkn4",
+        "done": 23
+      },
+      {
+        "worker_id": "worker-5fb75f8c4-pk5gx",
+        "done": 77
+      }
+    ]
+  },
+  "status": {
+    "queued": 0,
+    "running": 0,
+    "done": 100,
+    "failed": 0,
+    "total": 100
+  }
+}

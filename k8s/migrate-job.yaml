@@ -1,4 +1,5 @@
-# Міграція схеми: db/init.sql із ConfigMap db-schema (команда розгортання створює його з файла).
+# Міграція схеми: db/init.sql, далі db/0*.sql за порядком імен (лабораторна 4: 002_tasks.sql)
+# із ConfigMap db-schema (команда розгортання створює його з файлів).
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -21,7 +22,8 @@ spec:
           command: ["sh", "-c"]
           args:
             - until pg_isready -h db -U "$PGUSER" -d "$PGDATABASE"; do sleep 1; done;
-              psql -h db -v ON_ERROR_STOP=1 -f /migrations/init.sql
+              psql -h db -v ON_ERROR_STOP=1 -f /migrations/init.sql &&
+              for f in $(ls /migrations/0*.sql 2>/dev/null | sort); do psql -h db -v ON_ERROR_STOP=1 -f "$f" || exit 1; done
           env:
             - name: PGUSER
               valueFrom:

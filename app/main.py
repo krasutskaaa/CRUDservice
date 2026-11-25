@@ -1,6 +1,9 @@
 """Сервіс обліку епізодів госпіталізації: CRUD над однією таблицею PostgreSQL.
-Стану в памʼяті процесу немає, усе лежить у базі."""
+Стану в памʼяті процесу немає, усе лежить у базі.
+Лабораторна 4: створення задач обробки запису (черга tasks у тій самій базі) і їхній стан."""
+import asyncio
 import os
+import random
 import socket
 import time
 from contextlib import asynccontextmanager
@@ -31,6 +34,9 @@ REQUESTS = Counter("http_requests_total", "Кількість запитів", [
 DURATION = Histogram("http_request_duration_seconds", "Тривалість обробки запиту, с",
                      ["method", "path"], buckets=BUCKETS)
 IN_PROGRESS = Gauge("http_requests_in_progress", "Запитів в обробці")
+TASKS_QUEUED = Gauge("tasks_queued", "Задач у статусі queued (запит до бази кожні 5 с)")
+TASKS_RUNNING = Gauge("tasks_running", "Задач у статусі running (запит до бази кожні 5 с)")
+TASK_GAUGE_PERIOD = float(os.environ.get("TASK_GAUGE_PERIOD", "5"))
 
 COLS = "id, patient_code, department, room, admission_date, discharge_date, outcome"
 
@@ -62,8 +68,27 @@ async def lifespan(_: FastAPI):
     # wait=False: сервіс стартує навіть якщо база ще недоступна,
     # /healthz у цей час чесно віддає 503.
     await pool.open(wait=False)
+    refresher = asyncio.create_task(refresh_task_gauges())
     yield
+    refresher.cancel()
     await pool.close()
+
+
+async def refresh_task_gauges():
+    """Кожні TASK_GAUGE_PERIOD с оновлює tasks_queued і tasks_running запитом до бази."""
+    while True:
+        try:
+            async with pool.connection(timeout=2) as conn:
+                cur = await conn.execute(
+                    "SELECT count(*) FILTER (WHERE status = 'queued') AS q, "
+                    "count(*) FILTER (WHERE status = 'running') AS r "
+                    "FROM tasks WHERE status IN ('queued', 'running')")
+                row = await cur.fetchone()
+            TASKS_QUEUED.set(row["q"])
+            TASKS_RUNNING.set(row["r"])
+        except Exception:  # база недоступна або таблиці ще немає: лишаємо попередні значення
+            pass
+        await asyncio.sleep(TASK_GAUGE_PERIOD)
 
 
 class MetricsMiddleware:
@@ -282,3 +307,69 @@ async def delete_admission(admission_id: str):
         cur = await conn.execute("DELETE FROM admissions WHERE id = %s", (i,))
         deleted = cur.rowcount
     return Response(status_code=204) if deleted else not_found()
+
+
+# ---------- лабораторна 4: задачі обробки ----------
+TASK_COLS = ("id, record_id, status, seed, attempts, max_attempts, token, lease_until, worker_id, "
+             "created_at, started_at, finished_at")
+TASK_STATUSES = ("queued", "running", "done", "failed")
+
+
+def task_out(r: dict) -> dict:
+    return {k: (v.isoformat() if hasattr(v, "isoformat") else v) for k, v in r.items()}
+
+
+@app.post("/admissions/{admission_id}/tasks")
+async def create_task(admission_id: str):
+    i = parse_id(admission_id)
+    if i is None:
+        return not_found()
+    seed = random.randint(1, 2**31 - 1)  # seed генерує сервіс; 0 не видається
+    async with pool.connection() as conn:
+        cur = await conn.execute(
+            f"INSERT INTO tasks (record_id, seed) SELECT id, %s FROM admissions WHERE id = %s "
+            f"RETURNING {TASK_COLS}", (seed, i))
+        row = await cur.fetchone()
+    if row is None:
+        return not_found()
+    return JSONResponse(task_out(row), status_code=202, headers={"Location": f"/tasks/{row['id']}"})
+
+
+@app.get("/tasks/{task_id}")
+async def get_task(task_id: str):
+    i = parse_id(task_id)
+    if i is None:
+        return JSONResponse({"error": "not_found", "message": "задачу не знайдено"}, status_code=404)
+    async with pool.connection() as conn:
+        cur = await conn.execute(f"SELECT {TASK_COLS} FROM tasks WHERE id = %s", (i,))
+        row = await cur.fetchone()
+        if row is None:
+            return JSONResponse({"error": "not_found", "message": "задачу не знайдено"}, status_code=404)
+        cur = await conn.execute(
+            "SELECT token, worker_id, result, created_at FROM task_results WHERE task_id = %s "
+            "ORDER BY created_at LIMIT 1", (i,))
+        res = await cur.fetchone()
+    out = task_out(row)
+    out["result"] = task_out(res) if res else None
+    return out
+
+
+@app.get("/tasks")
+async def list_tasks(
+    status: Optional[str] = Query(None),
+    limit: int = Query(DEFAULT_LIMIT, ge=1, le=MAX_LIMIT),
+    offset: int = Query(0, ge=0, le=MAX_OFFSET),
+):
+    if status is not None and status not in TASK_STATUSES:
+        return JSONResponse({"error": "validation_error", "details": [
+            {"field": "status", "message": "допустимі значення: " + ", ".join(TASK_STATUSES)}]}, status_code=400)
+    where, params = "", []
+    if status is not None:
+        where, params = "WHERE status = %s", [status]
+    async with pool.connection() as conn:
+        cur = await conn.execute(f"SELECT count(*) AS n FROM tasks {where}", params)
+        total = (await cur.fetchone())["n"]
+        cur = await conn.execute(f"SELECT {TASK_COLS} FROM tasks {where} ORDER BY id LIMIT %s OFFSET %s",
+                                 params + [limit, offset])
+        rows = await cur.fetchall()
+    return {"items": [task_out(r) for r in rows], "total": total, "limit": limit, "offset": offset}

@@ -1,0 +1,113 @@
+﻿deployment.apps/worker env updated
+Waiting for deployment "worker" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "worker" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "worker" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "worker" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "worker" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "worker" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "worker" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "worker" rollout to finish: 1 old replicas are pending termination...
+deployment "worker" successfully rolled out
+deployment.apps/worker scaled
+15:47:50 Ф5: L = 0.0173 с без heartbeat
+15:49:05 Ф5: heartbeat увімкнено
+{"t0": 1795614317.3788273, "t_end": 1795614617.356, "rate": 28.58, "planned": 8574, "created": 8574, "codes": {"202": 8574}, "non2xx": 0}
+збережено: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab4\step9.json
+deployment.apps/worker env updated
+Waiting for deployment "worker" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "worker" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "worker" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "worker" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "worker" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "worker" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "worker" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "worker" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "worker" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "worker" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "worker" rollout to finish: 1 old replicas are pending termination...
+deployment "worker" successfully rolled out
+{
+  "phases": {
+    "base": {
+      "window": [
+        1795614317.384458,
+        1795614467.8159573
+      ],
+      "created": 4300,
+      "n": 81,
+      "att_gt1": 16,
+      "failed": 0,
+      "done": 81,
+      "stale": 0,
+      "stale_hb": 0,
+      "stale_store": 0,
+      "claims": 78,
+      "reclaims": 12,
+      "reaped": 12,
+      "done_events": 63,
+      "X": 0.42,
+      "share_att_gt1": 0.19753086419753085
+    },
+    "f5_no_heartbeat": {
+      "window": [
+        1795614467.8159573,
+        1795614542.7536843
+      ],
+      "created": 2141,
+      "n": 0,
+      "att_gt1": 0,
+      "failed": 0,
+      "done": 0,
+      "stale": 0,
+      "stale_hb": 0,
+      "stale_store": 0,
+      "claims": 21,
+      "reclaims": 5,
+      "reaped": 5,
+      "done_events": 18,
+      "X": 0.24,
+      "share_att_gt1": null
+    },
+    "f5_heartbeat": {
+      "window": [
+        1795614542.7536843,
+        1795614617.384458
+      ],
+      "created": 2133,
+      "n": 0,
+      "att_gt1": 0,
+      "failed": 0,
+      "done": 0,
+      "stale": 0,
+      "stale_hb": 0,
+      "stale_store": 0,
+      "claims": 0,
+      "reclaims": 0,
+      "reaped": 0,
+      "done_events": 0,
+      "X": 0.0,
+      "share_att_gt1": null
+    }
+  },
+  "restarts_end": {
+    "worker-6fb6496996-fpnng": 5,
+    "worker-6fb6496996-t976v": 5,
+    "worker-6fb6496996-v8lgd": 5
+  },
+  "multi_result": 0,
+  "X_run": 0.27,
+  "status_end": {
+    "queued": 8492,
+    "running": 1,
+    "done": 81,
+    "failed": 0,
+    "total": 8574
+  }
+}
+збережено: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab4\step9.json
+{"t0": 1795614831.0214238, "t_end": 1795614890.969, "rate": 28.58, "planned": 1714, "created": 1714, "codes": {"202": 1714}, "non2xx": 0}
+15:55:21 step9_f5_hb0 {"lease_s": 0.0173, "heartbeat": false, "rate": 28.58, "duration": 60, "created": 1714, "n": 1714, "att_gt1": 1240, "failed": 857, "done": 857, "mean_attempts": 2.3290548424737456, "stale": 3135, "stale_hb": 0, "stale_store": 3135, "claims": 3992, "reaped": 3135, "multi_result": 0, "drain_s": 31.434605836868286, "share_att_gt1": 0.7234539089848308, "fail_rate": 0.0}
+збережено: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab4\step9.json
+{"t0": 1795614925.7071383, "t_end": 1795614985.65, "rate": 28.58, "planned": 1714, "created": 1714, "codes": {"202": 1714}, "non2xx": 0}
+15:56:38 step9_f5_hb1 {"lease_s": 0.0173, "heartbeat": true, "rate": 28.58, "duration": 60, "created": 1714, "n": 1714, "att_gt1": 804, "failed": 226, "done": 1488, "mean_attempts": 1.7152858809801634, "stale": 2970, "stale_hb": 1521, "stale_store": 1449, "claims": 2940, "reaped": 1452, "multi_result": 0, "drain_s": 13.4477059841156, "share_att_gt1": 0.4690781796966161, "fail_rate": 0.0}
+збережено: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab4\step9.json

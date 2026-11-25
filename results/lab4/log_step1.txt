@@ -1,0 +1,89 @@
+﻿seed: 100 id збережено у C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab4\ids.json
+збережено: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab4\step1.json
+{
+  "post_existing": {
+    "status": 202,
+    "location": "/tasks/1",
+    "body": {
+      "id": 1,
+      "record_id": 3,
+      "status": "queued",
+      "seed": 1329015950,
+      "attempts": 0,
+      "max_attempts": 3,
+      "token": 0,
+      "lease_until": null,
+      "worker_id": null,
+      "created_at": "2026-11-25T13:30:36.775254+00:00",
+      "started_at": null,
+      "finished_at": null
+    }
+  },
+  "post_missing": {
+    "status": 404,
+    "body": {
+      "error": "not_found",
+      "message": "запис не знайдено"
+    }
+  },
+  "get_task": {
+    "status": 200,
+    "body": {
+      "id": 1,
+      "record_id": 3,
+      "status": "running",
+      "seed": 1329015950,
+      "attempts": 1,
+      "max_attempts": 3,
+      "token": 1,
+      "lease_until": "2026-11-25T13:30:51.778772+00:00",
+      "worker_id": "worker-5fb75f8c4-pk5gx",
+      "created_at": "2026-11-25T13:30:36.775254+00:00",
+      "started_at": "2026-11-25T13:30:36.778772+00:00",
+      "finished_at": null,
+      "result": null
+    }
+  },
+  "get_missing": {
+    "status": 404
+  },
+  "list_queued": {
+    "status": 200,
+    "total": 0,
+    "items": 0
+  },
+  "list_bad_status": {
+    "status": 400
+  },
+  "metrics": [
+    "tasks_queued 0.0",
+    "tasks_running 0.0"
+  ],
+  "worker_pods": [
+    {
+      "pod": "worker-5fb75f8c4-pk5gx",
+      "node": "k3d-lab3-agent-1",
+      "ready": true,
+      "restarts": 0,
+      "container_id": "86a35443b8d1ebd8330b2dc4b962c19aae6d6b6c390884153ed48e58c7fd2909",
+      "phase": "Running"
+    }
+  ],
+  "prom_targets": [
+    [
+      "web",
+      "web-985dfc7fc-w6f6h",
+      "up"
+    ],
+    [
+      "web",
+      "web-985dfc7fc-fxs2r",
+      "up"
+    ],
+    [
+      "web",
+      "web-985dfc7fc-82bz2",
+      "up"
+    ]
+  ]
+}

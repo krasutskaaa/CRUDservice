@@ -1,0 +1,28 @@
+﻿deployment.apps/worker scaled
+15:33:11 зупинено worker-5fb75f8c4-9bkn4 на задачі 65 (attempts 1, token 1)
+{"t0": 1795613584.4407449, "t_end": 1795613594.356, "rate": 10.0, "planned": 100, "created": 100, "codes": {"202": 100}, "non2xx": 0}
+збережено: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab4\step5.json
+{
+  "task_before": {
+    "id": 65,
+    "attempts": 1,
+    "token": 1,
+    "lease_until": "2026-11-25T13:33:25.859506+00:00",
+    "worker_id": "worker-5fb75f8c4-9bkn4"
+  },
+  "task_after": {
+    "id": 65,
+    "status": "done",
+    "attempts": 2,
+    "token": 2,
+    "worker_id": "worker-5fb75f8c4-pk5gx"
+  },
+  "finished_by": [
+    "worker-5fb75f8c4-pk5gx"
+  ],
+  "results_rows": 1,
+  "victim_log_lines": [
+    "{\"t\": 1795613590.861, \"worker\": \"worker-5fb75f8c4-9bkn4\", \"event\": \"claim\", \"task\": 65, \"token\": 1, \"attempts\": 1, \"batch\": 1}",
+    "{\"t\": 1795613622.13, \"worker\": \"worker-5fb75f8c4-9bkn4\", \"event\": \"stale\", \"task\": 65, \"token\": 1, \"stage\": \"store\", \"rows\": 0}"
+  ]
+}

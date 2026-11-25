@@ -1,0 +1,112 @@
+{
+  "label": "step6_w3_r1",
+  "W": 3,
+  "n": 2100,
+  "scale_wait_s": 7.78528094291687,
+  "t_first_done": 1795613784.022995,
+  "t_empty": 1795613834.451314,
+  "window_s": 30.0,
+  "per_second": [
+    22,
+    43,
+    42,
+    45,
+    43,
+    43,
+    40,
+    36,
+    45,
+    41,
+    43,
+    42,
+    44,
+    42,
+    43,
+    38,
+    43,
+    41,
+    44,
+    41,
+    42,
+    45,
+    41,
+    40,
+    38,
+    39,
+    39,
+    42,
+    38,
+    40
+  ],
+  "X": 40.833333333333336,
+  "X_std": 4.227033959167352,
+  "run_s": 50.42831897735596,
+  "status": {
+    "queued": 0,
+    "running": 0,
+    "done": 2100,
+    "failed": 0,
+    "total": 2100
+  },
+  "dup_by_results": 0,
+  "extra_result_rows": 0,
+  "D_results": 0.0,
+  "dup_by_logs": 0,
+  "D_logs": 0.0,
+  "claimed_by_several_workers": 0,
+  "results_rows": 2100,
+  "done_by_worker": [
+    {
+      "worker_id": "worker-5fb75f8c4-2mclv",
+      "done": 710
+    },
+    {
+      "worker_id": "worker-5fb75f8c4-g2hbv",
+      "done": 694
+    },
+    {
+      "worker_id": "worker-5fb75f8c4-hx8c2",
+      "done": 696
+    }
+  ],
+  "db_xact_per_s": 279.9263771635178,
+  "db_cpu_cores": 0.14758569815547176,
+  "claim_p99_s": 0.0075094736842105415,
+  "claim_p50_s": 0.0016467245989304812,
+  "claims": {
+    "task": 2013.0,
+    "empty": 120.0
+  },
+  "means_s": {
+    "claim": 0.0019652151223636056,
+    "fetch": 0.0020214971003558106,
+    "process": 0.056933171057625596,
+    "store": 0.005226535224208433
+  },
+  "pods": [
+    {
+      "pod": "worker-5fb75f8c4-2mclv",
+      "node": "k3d-lab3-agent-1",
+      "ready": true,
+      "restarts": 0,
+      "container_id": "8c0fb0f7a49a68f63ab2f02ae54c208144bf2c8d654c7331c65078f8d820d33e",
+      "phase": "Running"
+    },
+    {
+      "pod": "worker-5fb75f8c4-g2hbv",
+      "node": "k3d-lab3-agent-0",
+      "ready": true,
+      "restarts": 0,
+      "container_id": "32f78e3841dcfb8276e6357b2d0262d9f3613aeafc8129705cea14999a469c32",
+      "phase": "Running"
+    },
+    {
+      "pod": "worker-5fb75f8c4-hx8c2",
+      "node": "k3d-lab3-agent-1",
+      "ready": true,
+      "restarts": 0,
+      "container_id": "8190054b377dc3ea695527b426cad055abe73759533fc93086af98cea9b4a487",
+      "phase": "Running"
+    }
+  ]
+}

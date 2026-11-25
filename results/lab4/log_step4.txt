@@ -1,0 +1,7 @@
+﻿deployment.apps/worker scaled
+{"t0": 1795613539.7880979, "t_end": 1795613542.778, "rate": 100.0, "planned": 300, "created": 300, "codes": {"202": 300}, "non2xx": 0}
+15:32:33 step4_skip {"D_results": 0.0, "D_logs": 0.0, "claims": {"task": 300.0, "empty": 10164.0}, "claim_p99_s": 0.002010000000000016}
+збережено: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab4\step4.json
+{"t0": 1795613560.937452, "t_end": 1795613563.939, "rate": 100.0, "planned": 300, "created": 300, "codes": {"202": 300}, "non2xx": 0}
+15:32:54 step4_forupdate {"D_results": 0.0, "D_logs": 0.0, "claims": {"task": 125.0, "empty": 9631.0}, "claim_p99_s": 0.0023605797101449422}
+збережено: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab4\step4.json
