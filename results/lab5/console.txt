@@ -1,0 +1,47 @@
+﻿[18:56:18] tcs_r1: --mode tcs
+  t_cs,w = 0.941 мкс, t_cs,r = 0.633 мкс
+[18:56:40] tcs_r2: --mode tcs
+  t_cs,w = 0.715 мкс, t_cs,r = 0.555 мкс
+[18:57:03] tcs_r3: --mode tcs
+  t_cs,w = 0.809 мкс, t_cs,r = 0.576 мкс
+[18:57:25] x1_global_r1: --mode x1 --lock global
+  X_1 = 816744 оп/с
+[18:57:37] x1_rw_r1: --mode x1 --lock rw --policy readers
+  X_1 = 443082 оп/с
+[18:57:48] x1_global_r2: --mode x1 --lock global
+  X_1 = 821191 оп/с
+[18:58:00] x1_rw_r2: --mode x1 --lock rw --policy readers
+  X_1 = 401478 оп/с
+[18:58:11] x1_global_r3: --mode x1 --lock global
+  X_1 = 827133 оп/с
+[18:58:23] x1_rw_r3: --mode x1 --lock rw --policy readers
+  X_1 = 460554 оп/с
+[18:58:35] run_global_r1: --lock global
+  X_w = 106424, X_r = 97778, X = 204202 оп/с, інваріанти: ok
+[18:58:47] run_rw-readers_r1: --lock rw --policy readers
+  X_w = 36060, X_r = 128715, X = 164775 оп/с, інваріанти: ok
+[18:58:59] run_rw-writers_r1: --lock rw --policy writers
+  X_w = 124891, X_r = 1641, X = 126532 оп/с, інваріанти: ok
+[18:59:11] run_rw-fair_r1: --lock rw --policy fair
+  X_w = 11992, X_r = 47969, X = 59962 оп/с, інваріанти: ok
+[18:59:23] run_global_r2: --lock global
+  X_w = 130926, X_r = 112572, X = 243498 оп/с, інваріанти: ok
+[18:59:36] run_rw-readers_r2: --lock rw --policy readers
+  X_w = 19488, X_r = 120285, X = 139773 оп/с, інваріанти: ok
+[18:59:48] run_rw-writers_r2: --lock rw --policy writers
+  X_w = 152844, X_r = 1415, X = 154258 оп/с, інваріанти: ok
+[19:00:00] run_rw-fair_r2: --lock rw --policy fair
+  X_w = 11680, X_r = 46721, X = 58401 оп/с, інваріанти: ok
+[19:00:12] run_global_r3: --lock global
+  X_w = 112314, X_r = 92902, X = 205216 оп/с, інваріанти: ok
+[19:00:24] run_rw-readers_r3: --lock rw --policy readers
+  X_w = 32698, X_r = 110934, X = 143631 оп/с, інваріанти: ok
+[19:00:36] run_rw-writers_r3: --lock rw --policy writers
+  X_w = 126876, X_r = 0, X = 126876 оп/с, інваріанти: ok
+[19:00:48] run_rw-fair_r3: --lock rw --policy fair
+  X_w = 11716, X_r = 46862, X = 58578 оп/с, інваріанти: ok
+[19:01:00] readonly_rw-readers: --mode readonly --lock rw --policy readers
+  читань 2140286, поля таблиці не змінились: True
+[19:01:12] readonly_global: --mode readonly --lock global
+  читань 3119178, поля таблиці не змінились: True
+готово за 5.1 хв; далі: python scripts/analyze_lab5.py

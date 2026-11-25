@@ -1,0 +1,28 @@
+{
+ "mode": "x1",
+ "lock": "rw-readers",
+ "pattern": "wrwrwrwrw",
+ "D": 10.0,
+ "N_w": 2230435,
+ "N_r": 1784348,
+ "X_1": 401478.3,
+ "X_1w": 223043.5,
+ "X_1r": 178434.8,
+ "invariants": {
+  "structure": "ok",
+  "size": 10000,
+  "distinct_written": 10000,
+  "ok": true
+ },
+ "env": {
+  "python": "3.14.5",
+  "implementation": "CPython",
+  "gil_enabled": true,
+  "switchinterval_s": 0.005,
+  "logical_cpus": 8,
+  "platform": "Windows-11-10.0.26300-SP0",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 165 Stepping 2, GenuineIntel"
+ },
+ "started": "2026-11-25 18:58:00"
+}

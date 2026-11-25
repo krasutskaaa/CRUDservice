@@ -1,0 +1,28 @@
+{
+ "mode": "x1",
+ "lock": "global",
+ "pattern": "wrwrwrwrw",
+ "D": 10.0,
+ "N_w": 4595186,
+ "N_r": 3676148,
+ "X_1": 827133.4,
+ "X_1w": 459518.6,
+ "X_1r": 367614.8,
+ "invariants": {
+  "structure": "ok",
+  "size": 10000,
+  "distinct_written": 10000,
+  "ok": true
+ },
+ "env": {
+  "python": "3.14.5",
+  "implementation": "CPython",
+  "gil_enabled": true,
+  "switchinterval_s": 0.005,
+  "logical_cpus": 8,
+  "platform": "Windows-11-10.0.26300-SP0",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 165 Stepping 2, GenuineIntel"
+ },
+ "started": "2026-11-25 18:58:12"
+}

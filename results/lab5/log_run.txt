@@ -1,0 +1,1144 @@
+[18:56:18] tcs_r1: --mode tcs
+{
+ "mode": "tcs",
+ "lock": "global",
+ "D_each": 10.0,
+ "t_cs_w_us": 0.9410032715162469,
+ "N_w": 5101610,
+ "t_cs_r_us": 0.6334315901754838,
+ "N_r": 6963722,
+ "timer_overhead_us": 0.1,
+ "started": "2026-11-25 18:56:18"
+}
+код 0, 22.5 с
+
+[18:56:40] tcs_r2: --mode tcs
+{
+ "mode": "tcs",
+ "lock": "global",
+ "D_each": 10.0,
+ "t_cs_w_us": 0.714648024207988,
+ "N_w": 6297095,
+ "t_cs_r_us": 0.5551921591940275,
+ "N_r": 7630236,
+ "timer_overhead_us": 0.1,
+ "started": "2026-11-25 18:56:41"
+}
+код 0, 22.6 с
+
+[18:57:03] tcs_r3: --mode tcs
+{
+ "mode": "tcs",
+ "lock": "global",
+ "D_each": 10.0,
+ "t_cs_w_us": 0.8085225454436858,
+ "N_w": 5659037,
+ "t_cs_r_us": 0.5755496805451871,
+ "N_r": 7412942,
+ "timer_overhead_us": 0.1,
+ "started": "2026-11-25 18:57:03"
+}
+код 0, 22.4 с
+
+[18:57:25] x1_global_r1: --mode x1 --lock global
+{
+ "mode": "x1",
+ "lock": "global",
+ "pattern": "wrwrwrwrw",
+ "D": 10.0,
+ "N_w": 4537467,
+ "N_r": 3629973,
+ "X_1": 816744.0,
+ "X_1w": 453746.7,
+ "X_1r": 362997.3,
+ "invariants": {
+  "structure": "ok",
+  "size": 10000,
+  "distinct_written": 10000,
+  "ok": true
+ },
+ "started": "2026-11-25 18:57:26"
+}
+код 0, 11.6 с
+
+[18:57:37] x1_rw_r1: --mode x1 --lock rw --policy readers
+{
+ "mode": "x1",
+ "lock": "rw-readers",
+ "pattern": "wrwrwrwrw",
+ "D": 10.0,
+ "N_w": 2461566,
+ "N_r": 1969253,
+ "X_1": 443081.9,
+ "X_1w": 246156.6,
+ "X_1r": 196925.3,
+ "invariants": {
+  "structure": "ok",
+  "size": 10000,
+  "distinct_written": 10000,
+  "ok": true
+ },
+ "started": "2026-11-25 18:57:37"
+}
+код 0, 11.5 с
+
+[18:57:48] x1_global_r2: --mode x1 --lock global
+{
+ "mode": "x1",
+ "lock": "global",
+ "pattern": "wrwrwrwrw",
+ "D": 10.0,
+ "N_w": 4562170,
+ "N_r": 3649737,
+ "X_1": 821190.7,
+ "X_1w": 456217.0,
+ "X_1r": 364973.7,
+ "invariants": {
+  "structure": "ok",
+  "size": 10000,
+  "distinct_written": 10000,
+  "ok": true
+ },
+ "started": "2026-11-25 18:57:49"
+}
+код 0, 11.6 с
+
+[18:58:00] x1_rw_r2: --mode x1 --lock rw --policy readers
+{
+ "mode": "x1",
+ "lock": "rw-readers",
+ "pattern": "wrwrwrwrw",
+ "D": 10.0,
+ "N_w": 2230435,
+ "N_r": 1784348,
+ "X_1": 401478.3,
+ "X_1w": 223043.5,
+ "X_1r": 178434.8,
+ "invariants": {
+  "structure": "ok",
+  "size": 10000,
+  "distinct_written": 10000,
+  "ok": true
+ },
+ "started": "2026-11-25 18:58:00"
+}
+код 0, 11.5 с
+
+[18:58:11] x1_global_r3: --mode x1 --lock global
+{
+ "mode": "x1",
+ "lock": "global",
+ "pattern": "wrwrwrwrw",
+ "D": 10.0,
+ "N_w": 4595186,
+ "N_r": 3676148,
+ "X_1": 827133.4,
+ "X_1w": 459518.6,
+ "X_1r": 367614.8,
+ "invariants": {
+  "structure": "ok",
+  "size": 10000,
+  "distinct_written": 10000,
+  "ok": true
+ },
+ "started": "2026-11-25 18:58:12"
+}
+код 0, 11.5 с
+
+[18:58:23] x1_rw_r3: --mode x1 --lock rw --policy readers
+{
+ "mode": "x1",
+ "lock": "rw-readers",
+ "pattern": "wrwrwrwrw",
+ "D": 10.0,
+ "N_w": 2558632,
+ "N_r": 2046905,
+ "X_1": 460553.7,
+ "X_1w": 255863.2,
+ "X_1r": 204690.5,
+ "invariants": {
+  "structure": "ok",
+  "size": 10000,
+  "distinct_written": 10000,
+  "ok": true
+ },
+ "started": "2026-11-25 18:58:23"
+}
+код 0, 11.5 с
+
+[18:58:35] run_global_r1: --lock global
+{
+ "mode": "run",
+ "lock": "global",
+ "n": 9,
+ "n_w": 5,
+ "n_r": 4,
+ "D": 10.0,
+ "warmup": 1.0,
+ "keys": 10000,
+ "seed": 12,
+ "write": {
+  "threads": 5,
+  "N": 1064237,
+  "X": 106423.7,
+  "x": 21284.74,
+  "p50_us": 2.5,
+  "p99_us": 5.1,
+  "p999_us": 29.6,
+  "max_us": 327761.7,
+  "wait_sum_s": 32.177,
+  "w": 0.644,
+  "wait_max_ms": 327.734,
+  "mu": 212847.4,
+  "sigma": 17246.001,
+  "cv": 0.081
+ },
+ "read": {
+  "threads": 4,
+  "N": 977781,
+  "X": 97778.1,
+  "x": 24444.525,
+  "p50_us": 2.2,
+  "p99_us": 4.2,
+  "p999_us": 23.5,
+  "max_us": 323872.9,
+  "wait_sum_s": 23.732,
+  "w": 0.593,
+  "wait_max_ms": 323.866,
+  "mu": 244445.25,
+  "sigma": 17918.362,
+  "cv": 0.073
+ },
+ "all": {
+  "threads": 9,
+  "N": 2042018,
+  "X": 204201.8,
+  "x": 22689.089,
+  "p50_us": 2.3,
+  "p99_us": 4.8,
+  "p999_us": 26.7,
+  "max_us": 327761.7,
+  "wait_sum_s": 55.91,
+  "w": 0.621,
+  "wait_max_ms": 327.734,
+  "mu": 226890.889,
+  "sigma": 23546.913,
+  "cv": 0.104
+ },
+ "X": 204201.8,
+ "phi_w": 0.5211692551192008,
+ "phi_r": 0.47883074488079935,
+ "read_misses": 605,
+ "invariants": {
+  "structure": "ok",
+  "values_in_table_not_written": 0,
+  "get_wrong_key": 0,
+  "get_sampled": 17557,
+  "get_sampled_not_written": 0,
+  "size": 10000,
+  "distinct_written": 10000,
+  "resizes": 10,
+  "ok": true
+ },
+ "started": "2026-11-25 18:58:35"
+}
+операцій потоків: 1w=200320 2r=265463 3w=245132 4r=256540 5w=216017 6r=219286 7w=198643 8r=236492 9w=204125
+код 0, 12.4 с
+
+[18:58:47] run_rw-readers_r1: --lock rw --policy readers
+{
+ "mode": "run",
+ "lock": "rw-readers",
+ "n": 9,
+ "n_w": 5,
+ "n_r": 4,
+ "D": 10.0,
+ "warmup": 1.0,
+ "keys": 10000,
+ "seed": 12,
+ "write": {
+  "threads": 5,
+  "N": 360602,
+  "X": 36060.2,
+  "x": 7212.04,
+  "p50_us": 5.1,
+  "p99_us": 11.3,
+  "p999_us": 37.5,
+  "max_us": 3395833.8,
+  "wait_sum_s": 45.057,
+  "w": 0.901,
+  "wait_max_ms": 3395.806,
+  "mu": 72120.4,
+  "sigma": 19411.385,
+  "cv": 0.269
+ },
+ "read": {
+  "threads": 4,
+  "N": 1287150,
+  "X": 128715.0,
+  "x": 32178.75,
+  "p50_us": 3.8,
+  "p99_us": 8.4,
+  "p999_us": 26.1,
+  "max_us": 391414.4,
+  "wait_sum_s": 17.476,
+  "w": 0.437,
+  "wait_max_ms": 367.845,
+  "mu": 321787.5,
+  "sigma": 31960.265,
+  "cv": 0.099
+ },
+ "all": {
+  "threads": 9,
+  "N": 1647752,
+  "X": 164775.2,
+  "x": 18308.356,
+  "p50_us": 4.0,
+  "p99_us": 9.7,
+  "p999_us": 28.8,
+  "max_us": 3395833.8,
+  "wait_sum_s": 62.533,
+  "w": 0.695,
+  "wait_max_ms": 3395.806,
+  "mu": 183083.556,
+  "sigma": 126705.735,
+  "cv": 0.692
+ },
+ "X": 164775.2,
+ "phi_w": 0.21884482616316045,
+ "phi_r": 0.7811551738368395,
+ "read_misses": 2092,
+ "invariants": {
+  "structure": "ok",
+  "values_in_table_not_written": 0,
+  "get_wrong_key": 0,
+  "get_sampled": 24251,
+  "get_sampled_not_written": 0,
+  "size": 10000,
+  "distinct_written": 10000,
+  "resizes": 10,
+  "ok": true
+ },
+ "started": "2026-11-25 18:58:47"
+}
+операцій потоків: 1w=39286 2r=370281 3w=92031 4r=322833 5w=71920 6r=281111 7w=91397 8r=312925 9w=65968
+код 0, 12.3 с
+
+[18:58:59] run_rw-writers_r1: --lock rw --policy writers
+{
+ "mode": "run",
+ "lock": "rw-writers",
+ "n": 9,
+ "n_w": 5,
+ "n_r": 4,
+ "D": 10.0,
+ "warmup": 1.0,
+ "keys": 10000,
+ "seed": 12,
+ "write": {
+  "threads": 5,
+  "N": 1248906,
+  "X": 124890.6,
+  "x": 24978.12,
+  "p50_us": 5.3,
+  "p99_us": 11.3,
+  "p999_us": 40.4,
+  "max_us": 468798.0,
+  "wait_sum_s": 33.465,
+  "w": 0.669,
+  "wait_max_ms": 468.487,
+  "mu": 249781.2,
+  "sigma": 31242.262,
+  "cv": 0.125
+ },
+ "read": {
+  "threads": 4,
+  "N": 16414,
+  "X": 1641.4,
+  "x": 410.35,
+  "p50_us": 4.4,
+  "p99_us": 8.0,
+  "p999_us": 36.3,
+  "max_us": 7266141.2,
+  "wait_sum_s": 39.763,
+  "w": 0.994,
+  "wait_max_ms": 7264.27,
+  "mu": 4103.5,
+  "sigma": 2642.598,
+  "cv": 0.644
+ },
+ "all": {
+  "threads": 9,
+  "N": 1265320,
+  "X": 126532.0,
+  "x": 14059.111,
+  "p50_us": 5.3,
+  "p99_us": 11.3,
+  "p999_us": 40.3,
+  "max_us": 7266141.2,
+  "wait_sum_s": 73.228,
+  "w": 0.814,
+  "wait_max_ms": 7264.27,
+  "mu": 140591.111,
+  "sigma": 124291.851,
+  "cv": 0.884
+ },
+ "X": 126532.0,
+ "phi_w": 0.9870277874371701,
+ "phi_r": 0.012972212562829957,
+ "read_misses": 3280,
+ "invariants": {
+  "structure": "ok",
+  "values_in_table_not_written": 0,
+  "get_wrong_key": 0,
+  "get_sampled": 311,
+  "get_sampled_not_written": 0,
+  "size": 10000,
+  "distinct_written": 10000,
+  "resizes": 10,
+  "ok": true
+ },
+ "started": "2026-11-25 18:59:00"
+}
+операцій потоків: 1w=254372 2r=8325 3w=266955 4r=2541 5w=217635 6r=1336 7w=296668 8r=4212 9w=213276
+код 0, 12.2 с
+
+[18:59:11] run_rw-fair_r1: --lock rw --policy fair
+{
+ "mode": "run",
+ "lock": "rw-fair",
+ "n": 9,
+ "n_w": 5,
+ "n_r": 4,
+ "D": 10.0,
+ "warmup": 1.0,
+ "keys": 10000,
+ "seed": 12,
+ "write": {
+  "threads": 5,
+  "N": 119924,
+  "X": 11992.4,
+  "x": 2398.48,
+  "p50_us": 266.9,
+  "p99_us": 1602.9,
+  "p999_us": 2837.4,
+  "max_us": 13461.9,
+  "wait_sum_s": 48.464,
+  "w": 0.969,
+  "wait_max_ms": 13.454,
+  "mu": 23984.8,
+  "sigma": 286.565,
+  "cv": 0.012
+ },
+ "read": {
+  "threads": 4,
+  "N": 479692,
+  "X": 47969.2,
+  "x": 11992.3,
+  "p50_us": 3.8,
+  "p99_us": 1599.5,
+  "p999_us": 3329.7,
+  "max_us": 8287.4,
+  "wait_sum_s": 36.481,
+  "w": 0.912,
+  "wait_max_ms": 8.277,
+  "mu": 119923.0,
+  "sigma": 3143.786,
+  "cv": 0.026
+ },
+ "all": {
+  "threads": 9,
+  "N": 599616,
+  "X": 59961.6,
+  "x": 6662.4,
+  "p50_us": 4.4,
+  "p99_us": 1600.7,
+  "p999_us": 3206.9,
+  "max_us": 13461.9,
+  "wait_sum_s": 84.944,
+  "w": 0.944,
+  "wait_max_ms": 13.454,
+  "mu": 66624.0,
+  "sigma": 47718.602,
+  "cv": 0.716
+ },
+ "X": 59961.6,
+ "phi_w": 0.20000133418721314,
+ "phi_r": 0.7999986658127868,
+ "read_misses": 9058,
+ "invariants": {
+  "structure": "ok",
+  "values_in_table_not_written": 0,
+  "get_wrong_key": 0,
+  "get_sampled": 8191,
+  "get_sampled_not_written": 0,
+  "size": 10000,
+  "distinct_written": 10000,
+  "resizes": 10,
+  "ok": true
+ },
+ "started": "2026-11-25 18:59:12"
+}
+операцій потоків: 1w=23826 2r=118918 3w=23701 4r=122193 5w=24345 6r=123326 7w=24319 8r=115255 9w=23733
+код 0, 11.7 с
+
+[18:59:23] run_global_r2: --lock global
+{
+ "mode": "run",
+ "lock": "global",
+ "n": 9,
+ "n_w": 5,
+ "n_r": 4,
+ "D": 10.0,
+ "warmup": 1.0,
+ "keys": 10000,
+ "seed": 12,
+ "write": {
+  "threads": 5,
+  "N": 1309261,
+  "X": 130926.1,
+  "x": 26185.22,
+  "p50_us": 1.9,
+  "p99_us": 5.1,
+  "p999_us": 21.9,
+  "max_us": 329004.0,
+  "wait_sum_s": 30.108,
+  "w": 0.602,
+  "wait_max_ms": 328.99,
+  "mu": 261852.2,
+  "sigma": 39331.362,
+  "cv": 0.15
+ },
+ "read": {
+  "threads": 4,
+  "N": 1125722,
+  "X": 112572.2,
+  "x": 28143.05,
+  "p50_us": 1.6,
+  "p99_us": 4.6,
+  "p999_us": 19.3,
+  "max_us": 385618.7,
+  "wait_sum_s": 23.152,
+  "w": 0.579,
+  "wait_max_ms": 333.713,
+  "mu": 281430.5,
+  "sigma": 33114.016,
+  "cv": 0.118
+ },
+ "all": {
+  "threads": 9,
+  "N": 2434983,
+  "X": 243498.3,
+  "x": 27055.367,
+  "p50_us": 1.7,
+  "p99_us": 4.9,
+  "p999_us": 21.3,
+  "max_us": 385618.7,
+  "wait_sum_s": 53.26,
+  "w": 0.592,
+  "wait_max_ms": 333.713,
+  "mu": 270553.667,
+  "sigma": 37965.968,
+  "cv": 0.14
+ },
+ "X": 243498.3,
+ "phi_w": 0.5376879427905658,
+ "phi_r": 0.4623120572094343,
+ "read_misses": 17629,
+ "invariants": {
+  "structure": "ok",
+  "values_in_table_not_written": 0,
+  "get_wrong_key": 0,
+  "get_sampled": 20654,
+  "get_sampled_not_written": 0,
+  "size": 10000,
+  "distinct_written": 10000,
+  "resizes": 10,
+  "ok": true
+ },
+ "started": "2026-11-25 18:59:23"
+}
+операцій потоків: 1w=229237 2r=261597 3w=325935 4r=253138 5w=226143 6r=337386 7w=289274 8r=273601 9w=238672
+код 0, 12.5 с
+
+[18:59:36] run_rw-readers_r2: --lock rw --policy readers
+{
+ "mode": "run",
+ "lock": "rw-readers",
+ "n": 9,
+ "n_w": 5,
+ "n_r": 4,
+ "D": 10.0,
+ "warmup": 1.0,
+ "keys": 10000,
+ "seed": 12,
+ "write": {
+  "threads": 5,
+  "N": 194884,
+  "X": 19488.4,
+  "x": 3897.68,
+  "p50_us": 5.6,
+  "p99_us": 11.1,
+  "p999_us": 44.3,
+  "max_us": 4545469.7,
+  "wait_sum_s": 46.571,
+  "w": 0.931,
+  "wait_max_ms": 4545.449,
+  "mu": 38976.8,
+  "sigma": 15020.945,
+  "cv": 0.385
+ },
+ "read": {
+  "threads": 4,
+  "N": 1202847,
+  "X": 120284.7,
+  "x": 30071.175,
+  "p50_us": 4.2,
+  "p99_us": 9.0,
+  "p999_us": 29.6,
+  "max_us": 591900.4,
+  "wait_sum_s": 14.428,
+  "w": 0.361,
+  "wait_max_ms": 591.884,
+  "mu": 300711.75,
+  "sigma": 24638.238,
+  "cv": 0.082
+ },
+ "all": {
+  "threads": 9,
+  "N": 1397731,
+  "X": 139773.1,
+  "x": 15530.344,
+  "p50_us": 4.3,
+  "p99_us": 9.4,
+  "p999_us": 30.7,
+  "max_us": 4545469.7,
+  "wait_sum_s": 60.998,
+  "w": 0.678,
+  "wait_max_ms": 4545.449,
+  "mu": 155303.444,
+  "sigma": 131567.497,
+  "cv": 0.847
+ },
+ "X": 139773.1,
+ "phi_w": 0.13942883144181534,
+ "phi_r": 0.8605711685581846,
+ "read_misses": 3875,
+ "invariants": {
+  "structure": "ok",
+  "values_in_table_not_written": 0,
+  "get_wrong_key": 0,
+  "get_sampled": 20627,
+  "get_sampled_not_written": 0,
+  "size": 10000,
+  "distinct_written": 10000,
+  "resizes": 10,
+  "ok": true
+ },
+ "started": "2026-11-25 18:59:36"
+}
+операцій потоків: 1w=57351 2r=331757 3w=35346 4r=313219 5w=25417 6r=292343 7w=55601 8r=265528 9w=21169
+код 0, 12.1 с
+
+[18:59:48] run_rw-writers_r2: --lock rw --policy writers
+{
+ "mode": "run",
+ "lock": "rw-writers",
+ "n": 9,
+ "n_w": 5,
+ "n_r": 4,
+ "D": 10.0,
+ "warmup": 1.0,
+ "keys": 10000,
+ "seed": 12,
+ "write": {
+  "threads": 5,
+  "N": 1528437,
+  "X": 152843.7,
+  "x": 30568.74,
+  "p50_us": 4.3,
+  "p99_us": 10.1,
+  "p999_us": 30.2,
+  "max_us": 795895.8,
+  "wait_sum_s": 33.429,
+  "w": 0.669,
+  "wait_max_ms": 795.87,
+  "mu": 305687.4,
+  "sigma": 83460.8,
+  "cv": 0.273
+ },
+ "read": {
+  "threads": 4,
+  "N": 14147,
+  "X": 1414.7,
+  "x": 353.675,
+  "p50_us": 4.2,
+  "p99_us": 8.1,
+  "p999_us": 68.3,
+  "max_us": 4303217.3,
+  "wait_sum_s": 39.865,
+  "w": 0.997,
+  "wait_max_ms": 5696.914,
+  "mu": 3536.75,
+  "sigma": 2661.771,
+  "cv": 0.753
+ },
+ "all": {
+  "threads": 9,
+  "N": 1542584,
+  "X": 154258.4,
+  "x": 17139.822,
+  "p50_us": 4.3,
+  "p99_us": 10.1,
+  "p999_us": 30.3,
+  "max_us": 4303217.3,
+  "wait_sum_s": 73.293,
+  "w": 0.814,
+  "wait_max_ms": 5696.914,
+  "mu": 171398.222,
+  "sigma": 162526.811,
+  "cv": 0.948
+ },
+ "X": 154258.40000000002,
+ "phi_w": 0.9908290245458269,
+ "phi_r": 0.009170975454172997,
+ "read_misses": 4450,
+ "invariants": {
+  "structure": "ok",
+  "values_in_table_not_written": 0,
+  "get_wrong_key": 0,
+  "get_sampled": 322,
+  "get_sampled_not_written": 0,
+  "size": 10000,
+  "distinct_written": 10000,
+  "resizes": 10,
+  "ok": true
+ },
+ "started": "2026-11-25 18:59:48"
+}
+операцій потоків: 1w=285492 2r=5258 3w=411957 4r=2 5w=281187 6r=2073 7w=376467 8r=6814 9w=173334
+код 0, 12.4 с
+
+[19:00:00] run_rw-fair_r2: --lock rw --policy fair
+{
+ "mode": "run",
+ "lock": "rw-fair",
+ "n": 9,
+ "n_w": 5,
+ "n_r": 4,
+ "D": 10.0,
+ "warmup": 1.0,
+ "keys": 10000,
+ "seed": 12,
+ "write": {
+  "threads": 5,
+  "N": 116803,
+  "X": 11680.3,
+  "x": 2336.06,
+  "p50_us": 269.1,
+  "p99_us": 1797.3,
+  "p999_us": 3220.2,
+  "max_us": 12761.7,
+  "wait_sum_s": 48.453,
+  "w": 0.969,
+  "wait_max_ms": 12.754,
+  "mu": 23360.6,
+  "sigma": 290.978,
+  "cv": 0.012
+ },
+ "read": {
+  "threads": 4,
+  "N": 467210,
+  "X": 46721.0,
+  "x": 11680.25,
+  "p50_us": 3.8,
+  "p99_us": 1642.6,
+  "p999_us": 3382.9,
+  "max_us": 13090.6,
+  "wait_sum_s": 36.513,
+  "w": 0.913,
+  "wait_max_ms": 13.075,
+  "mu": 116802.5,
+  "sigma": 2198.476,
+  "cv": 0.019
+ },
+ "all": {
+  "threads": 9,
+  "N": 584013,
+  "X": 58401.3,
+  "x": 6489.033,
+  "p50_us": 4.6,
+  "p99_us": 1684.9,
+  "p999_us": 3348.2,
+  "max_us": 13090.6,
+  "wait_sum_s": 84.965,
+  "w": 0.944,
+  "wait_max_ms": 13.075,
+  "mu": 64890.333,
+  "sigma": 46455.286,
+  "cv": 0.716
+ },
+ "X": 58401.3,
+ "phi_w": 0.2000006849162604,
+ "phi_r": 0.7999993150837396,
+ "read_misses": 13513,
+ "invariants": {
+  "structure": "ok",
+  "values_in_table_not_written": 0,
+  "get_wrong_key": 0,
+  "get_sampled": 7814,
+  "get_sampled_not_written": 0,
+  "size": 10000,
+  "distinct_written": 10000,
+  "resizes": 10,
+  "ok": true
+ },
+ "started": "2026-11-25 19:00:00"
+}
+операцій потоків: 1w=23160 2r=116554 3w=23241 4r=114599 5w=23801 6r=120417 7w=23590 8r=115640 9w=23011
+код 0, 11.8 с
+
+[19:00:12] run_global_r3: --lock global
+{
+ "mode": "run",
+ "lock": "global",
+ "n": 9,
+ "n_w": 5,
+ "n_r": 4,
+ "D": 10.0,
+ "warmup": 1.0,
+ "keys": 10000,
+ "seed": 12,
+ "write": {
+  "threads": 5,
+  "N": 1123140,
+  "X": 112314.0,
+  "x": 22462.8,
+  "p50_us": 2.5,
+  "p99_us": 4.7,
+  "p999_us": 24.7,
+  "max_us": 385505.7,
+  "wait_sum_s": 29.659,
+  "w": 0.593,
+  "wait_max_ms": 385.481,
+  "mu": 224628.0,
+  "sigma": 19634.044,
+  "cv": 0.087
+ },
+ "read": {
+  "threads": 4,
+  "N": 929023,
+  "X": 92902.3,
+  "x": 23225.575,
+  "p50_us": 2.1,
+  "p99_us": 4.1,
+  "p999_us": 21.5,
+  "max_us": 396488.6,
+  "wait_sum_s": 24.006,
+  "w": 0.6,
+  "wait_max_ms": 396.477,
+  "mu": 232255.75,
+  "sigma": 48261.92,
+  "cv": 0.208
+ },
+ "all": {
+  "threads": 9,
+  "N": 2052163,
+  "X": 205216.3,
+  "x": 22801.811,
+  "p50_us": 2.3,
+  "p99_us": 4.5,
+  "p999_us": 23.1,
+  "max_us": 396488.6,
+  "wait_sum_s": 53.666,
+  "w": 0.596,
+  "wait_max_ms": 396.477,
+  "mu": 228018.111,
+  "sigma": 35549.066,
+  "cv": 0.156
+ },
+ "X": 205216.3,
+ "phi_w": 0.547295707017425,
+ "phi_r": 0.45270429298257503,
+ "read_misses": 5098,
+ "invariants": {
+  "structure": "ok",
+  "values_in_table_not_written": 0,
+  "get_wrong_key": 0,
+  "get_sampled": 16636,
+  "get_sampled_not_written": 0,
+  "size": 10000,
+  "distinct_written": 10000,
+  "resizes": 10,
+  "ok": true
+ },
+ "started": "2026-11-25 19:00:12"
+}
+операцій потоків: 1w=199972 2r=312958 3w=259682 4r=196261 5w=227199 6r=225855 7w=218330 8r=193949 9w=217957
+код 0, 12.2 с
+
+[19:00:24] run_rw-readers_r3: --lock rw --policy readers
+{
+ "mode": "run",
+ "lock": "rw-readers",
+ "n": 9,
+ "n_w": 5,
+ "n_r": 4,
+ "D": 10.0,
+ "warmup": 1.0,
+ "keys": 10000,
+ "seed": 12,
+ "write": {
+  "threads": 5,
+  "N": 326977,
+  "X": 32697.7,
+  "x": 6539.54,
+  "p50_us": 5.2,
+  "p99_us": 10.6,
+  "p999_us": 33.6,
+  "max_us": 2558622.8,
+  "wait_sum_s": 46.7,
+  "w": 0.934,
+  "wait_max_ms": 2558.591,
+  "mu": 65395.4,
+  "sigma": 25805.673,
+  "cv": 0.395
+ },
+ "read": {
+  "threads": 4,
+  "N": 1109335,
+  "X": 110933.5,
+  "x": 27733.375,
+  "p50_us": 4.3,
+  "p99_us": 8.7,
+  "p999_us": 30.3,
+  "max_us": 451308.0,
+  "wait_sum_s": 16.58,
+  "w": 0.414,
+  "wait_max_ms": 451.289,
+  "mu": 277333.75,
+  "sigma": 14185.068,
+  "cv": 0.051
+ },
+ "all": {
+  "threads": 9,
+  "N": 1436312,
+  "X": 143631.2,
+  "x": 15959.022,
+  "p50_us": 4.3,
+  "p99_us": 9.3,
+  "p999_us": 31.0,
+  "max_us": 2558622.8,
+  "wait_sum_s": 63.28,
+  "w": 0.703,
+  "wait_max_ms": 2558.591,
+  "mu": 159590.222,
+  "sigma": 107471.962,
+  "cv": 0.673
+ },
+ "X": 143631.2,
+ "phi_w": 0.2276503990776377,
+ "phi_r": 0.7723496009223622,
+ "read_misses": 6470,
+ "invariants": {
+  "structure": "ok",
+  "values_in_table_not_written": 0,
+  "get_wrong_key": 0,
+  "get_sampled": 20421,
+  "get_sampled_not_written": 0,
+  "size": 10000,
+  "distinct_written": 10000,
+  "resizes": 10,
+  "ok": true
+ },
+ "started": "2026-11-25 19:00:24"
+}
+операцій потоків: 1w=87298 2r=269453 3w=101331 4r=301852 5w=56387 6r=270282 7w=29038 8r=267748 9w=52923
+код 0, 12.1 с
+
+[19:00:36] run_rw-writers_r3: --lock rw --policy writers
+{
+ "mode": "run",
+ "lock": "rw-writers",
+ "n": 9,
+ "n_w": 5,
+ "n_r": 4,
+ "D": 10.0,
+ "warmup": 1.0,
+ "keys": 10000,
+ "seed": 12,
+ "write": {
+  "threads": 5,
+  "N": 1268760,
+  "X": 126876.0,
+  "x": 25375.2,
+  "p50_us": 5.4,
+  "p99_us": 10.5,
+  "p999_us": 36.1,
+  "max_us": 837256.8,
+  "wait_sum_s": 34.846,
+  "w": 0.697,
+  "wait_max_ms": 837.195,
+  "mu": 253752.0,
+  "sigma": 65634.519,
+  "cv": 0.259
+ },
+ "read": {
+  "threads": 4,
+  "N": 0,
+  "X": 0.0,
+  "x": 0.0,
+  "p50_us": null,
+  "p99_us": null,
+  "p999_us": null,
+  "max_us": null,
+  "wait_sum_s": 40.0,
+  "w": 1.0,
+  "wait_max_ms": 10000.0,
+  "mu": 0.0,
+  "sigma": 0.0,
+  "cv": null
+ },
+ "all": {
+  "threads": 9,
+  "N": 1268760,
+  "X": 126876.0,
+  "x": 14097.333,
+  "p50_us": 5.4,
+  "p99_us": 10.5,
+  "p999_us": 36.1,
+  "max_us": 837256.8,
+  "wait_sum_s": 74.846,
+  "w": 0.832,
+  "wait_max_ms": 10000.0,
+  "mu": 140973.333,
+  "sigma": 135248.131,
+  "cv": 0.959
+ },
+ "X": 126876.0,
+ "phi_w": 1.0,
+ "phi_r": 0.0,
+ "read_misses": 0,
+ "invariants": {
+  "structure": "ok",
+  "values_in_table_not_written": 0,
+  "get_wrong_key": 0,
+  "get_sampled": 0,
+  "get_sampled_not_written": 0,
+  "size": 10000,
+  "distinct_written": 10000,
+  "resizes": 10,
+  "ok": true
+ },
+ "started": "2026-11-25 19:00:37"
+}
+операцій потоків: 1w=182980 2r=0 3w=222038 4r=0 5w=213687 6r=0 7w=281672 8r=0 9w=368383
+код 0, 12.0 с
+
+[19:00:48] run_rw-fair_r3: --lock rw --policy fair
+{
+ "mode": "run",
+ "lock": "rw-fair",
+ "n": 9,
+ "n_w": 5,
+ "n_r": 4,
+ "D": 10.0,
+ "warmup": 1.0,
+ "keys": 10000,
+ "seed": 12,
+ "write": {
+  "threads": 5,
+  "N": 117156,
+  "X": 11715.6,
+  "x": 2343.12,
+  "p50_us": 272.4,
+  "p99_us": 1775.1,
+  "p999_us": 3331.4,
+  "max_us": 8948.5,
+  "wait_sum_s": 48.453,
+  "w": 0.969,
+  "wait_max_ms": 8.938,
+  "mu": 23431.2,
+  "sigma": 203.702,
+  "cv": 0.009
+ },
+ "read": {
+  "threads": 4,
+  "N": 468620,
+  "X": 46862.0,
+  "x": 11715.5,
+  "p50_us": 3.8,
+  "p99_us": 1591.3,
+  "p999_us": 3183.1,
+  "max_us": 10017.2,
+  "wait_sum_s": 36.466,
+  "w": 0.912,
+  "wait_max_ms": 10.006,
+  "mu": 117155.0,
+  "sigma": 1583.211,
+  "cv": 0.014
+ },
+ "all": {
+  "threads": 9,
+  "N": 585776,
+  "X": 58577.6,
+  "x": 6508.622,
+  "p50_us": 4.7,
+  "p99_us": 1649.6,
+  "p999_us": 3198.9,
+  "max_us": 10017.2,
+  "wait_sum_s": 84.919,
+  "w": 0.944,
+  "wait_max_ms": 10.006,
+  "mu": 65086.222,
+  "sigma": 46583.937,
+  "cv": 0.716
+ },
+ "X": 58577.6,
+ "phi_w": 0.20000136570975938,
+ "phi_r": 0.7999986342902407,
+ "read_misses": 11342,
+ "invariants": {
+  "structure": "ok",
+  "values_in_table_not_written": 0,
+  "get_wrong_key": 0,
+  "get_sampled": 8077,
+  "get_sampled_not_written": 0,
+  "size": 10000,
+  "distinct_written": 10000,
+  "resizes": 10,
+  "ok": true
+ },
+ "started": "2026-11-25 19:00:49"
+}
+операцій потоків: 1w=23309 2r=118271 3w=23189 4r=118009 5w=23736 6r=117918 7w=23601 8r=114422 9w=23321
+код 0, 11.7 с
+
+[19:01:00] readonly_rw-readers: --mode readonly --lock rw --policy readers
+{
+ "mode": "readonly",
+ "lock": "rw-readers",
+ "readers": 4,
+ "reads": 2140286,
+ "D": 10.0,
+ "unchanged": true,
+ "fields_compared": 5004,
+ "wrong_values": 0,
+ "started": "2026-11-25 19:01:00"
+}
+код 0, 11.6 с
+
+[19:01:12] readonly_global: --mode readonly --lock global
+{
+ "mode": "readonly",
+ "lock": "global",
+ "readers": 4,
+ "reads": 3119178,
+ "D": 10.0,
+ "unchanged": true,
+ "fields_compared": 5004,
+ "wrong_values": 0,
+ "started": "2026-11-25 19:01:12"
+}
+код 0, 11.5 с
+

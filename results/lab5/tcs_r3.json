@@ -1,0 +1,21 @@
+{
+ "mode": "tcs",
+ "lock": "global",
+ "D_each": 10.0,
+ "t_cs_w_us": 0.8085225454436858,
+ "N_w": 5659037,
+ "t_cs_r_us": 0.5755496805451871,
+ "N_r": 7412942,
+ "timer_overhead_us": 0.1,
+ "env": {
+  "python": "3.14.5",
+  "implementation": "CPython",
+  "gil_enabled": true,
+  "switchinterval_s": 0.005,
+  "logical_cpus": 8,
+  "platform": "Windows-11-10.0.26300-SP0",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 165 Stepping 2, GenuineIntel"
+ },
+ "started": "2026-11-25 18:57:03"
+}
