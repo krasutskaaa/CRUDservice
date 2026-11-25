@@ -18,6 +18,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--base-url", default="http://127.0.0.1:8080")
     ap.add_argument("--count", type=int, default=100)
+    ap.add_argument("--ids-file", default=str(RESULTS / "ids.json"))
     a = ap.parse_args()
     rnd = random.Random(12)
     _, _, lst = call("GET", f"{a.base_url}/admissions?limit=1")
@@ -36,9 +37,10 @@ def main():
         assert st == 201, (st, resp)
     _, _, page = call("GET", f"{a.base_url}/admissions?limit=100")
     ids = [x["id"] for x in page["items"]]
-    RESULTS.mkdir(exist_ok=True)
-    (RESULTS / "ids.json").write_text(json.dumps(ids))
-    print(f"seed: {len(ids)} id збережено у results/ids.json")
+    out = Path(a.ids_file)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(ids))
+    print(f"seed: {len(ids)} id збережено у {out}")
 
 
 if __name__ == "__main__":

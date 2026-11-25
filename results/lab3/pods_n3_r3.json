@@ -1,0 +1,20 @@
+{
+  "pods": [
+    {
+      "pod": "web-7658cb9f7b-kx5xg",
+      "node": "k3d-lab3-agent-1",
+      "phase": "Running"
+    },
+    {
+      "pod": "web-7658cb9f7b-r7wtt",
+      "node": "k3d-lab3-agent-0",
+      "phase": "Running"
+    },
+    {
+      "pod": "web-7658cb9f7b-s4kgv",
+      "node": "k3d-lab3-agent-0",
+      "phase": "Running"
+    }
+  ],
+  "scale_wait_s": 0.1096806526184082
+}

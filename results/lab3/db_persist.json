@@ -1,0 +1,30 @@
+{
+  "create_status": 201,
+  "record": {
+    "id": 1,
+    "patient_code": "P-PERSIST",
+    "department": "терапія",
+    "room": "3",
+    "admission_date": "2025-05-01",
+    "discharge_date": null,
+    "outcome": "на лікуванні"
+  },
+  "old_pod_uid": "4d661fa8-4436-4d5b-89ac-8d50db8bde4e",
+  "new_pod_uid": "7c712c35-ab29-4411-902b-1c2be9b73ae5",
+  "pod_recreated": true,
+  "db_ready_after_s": 2.0,
+  "web_healthz_ok_after_s": 4.8,
+  "read_status": 200,
+  "read_back": {
+    "id": 1,
+    "patient_code": "P-PERSIST",
+    "department": "терапія",
+    "room": "3",
+    "admission_date": "2025-05-01",
+    "discharge_date": null,
+    "outcome": "на лікуванні"
+  },
+  "same_record": true,
+  "pvc": "data-db-0",
+  "pv": "pvc-e5d1629c-5bcc-4c73-bcf8-b0f07c1fa745"
+}

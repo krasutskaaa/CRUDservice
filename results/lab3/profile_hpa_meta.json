@@ -1,0 +1,27 @@
+{
+  "mode": "hpa",
+  "profile": "30:120,60:1001,90:120",
+  "low": 120,
+  "jump": 1001,
+  "X": {
+    "1": 400.45,
+    "2": 724.35,
+    "3": 1207.25
+  },
+  "t0": 1795601025.6280577,
+  "t_start": 1795601022.5419965,
+  "hpa_wait_s": 122.9771192073822,
+  "pods_after": [
+    {
+      "pod": "web-7658cb9f7b-kx5xg",
+      "node": "k3d-lab3-agent-1",
+      "phase": "Running"
+    },
+    {
+      "pod": "web-7658cb9f7b-pwj6m",
+      "node": "k3d-lab3-agent-0",
+      "phase": "Running"
+    }
+  ],
+  "hpa_describe": "Name:                                                  web\nNamespace:                                             lab3\nLabels:                                                <none>\nAnnotations:                                           <none>\nCreationTimestamp:                                     Wed, 25 Nov 2026 12:01:38 +0200\nReference:                                             Deployment/web\nMetrics:                                               ( current / target )\n  resource cpu on pods  (as a percentage of request):  39% (98m) / 70%\nMin replicas:                                          1\nMax replicas:                                          3\nBehavior:\n  Scale Up:\n    Stabilization Window: 0 seconds\n    Select Policy: Max\n    Policies:\n      - Type: Pods     Value: 4    Period: 15 seconds\n      - Type: Percent  Value: 100  Period: 15 seconds\n  Scale Down:\n    Stabilization Window: 30 seconds\n    Select Policy: Max\n    Policies:\n      - Type: Percent  Value: 100  Period: 15 seconds\nDeployment pods:       2 current / 2 desired\nConditions:\n  Type            Status  Reason              Message\n  ----            ------  ------              -------\n  AbleToScale     True    ReadyForNewScale    recommended size matches current size\n  ScalingActive   True    ValidMetricFound    the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)\n  ScalingLimited  False   DesiredWithinRange  the desired count is within the acceptable range\nEvents:\n  Type    Reason             Age    From                       Message\n  ----    ------             ----   ----                       -------\n  Normal  SuccessfulRescale  4m36s  horizontal-pod-autoscaler  New size: 1; reason: All metrics below target\n  Normal  SuccessfulRescale  2m21s  horizontal-pod-autoscaler  New size: 2; reason: cpu resource utilization (percentage of request) above target\n  Normal  SuccessfulRescale  2m6s   horizontal-pod-autoscaler  New size: 3; reason: cpu resource utilization (percentage of request) above target\n  Normal  SuccessfulRescale  35s    horizontal-pod-autoscaler  New size: 2; reason: All metrics below target\n"
+}

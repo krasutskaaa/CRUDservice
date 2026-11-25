@@ -1,0 +1,126 @@
+{
+  "max_connections": 15,
+  "pool_before": 5,
+  "pool_after": 3,
+  "scan": [
+    {
+      "N": 1,
+      "rate": 280,
+      "achieved": 279.875,
+      "non2xx_share": 0.0,
+      "non2xx_total": 0,
+      "conn_errors": 0,
+      "client_p99_ms": 341.43038749694813,
+      "db_clients": {
+        "postgres-exporter-57cbbd8876-vvxqh": 1,
+        "web-7658cb9f7b-kx5xg": 5
+      },
+      "db_clients_total": 6,
+      "pg_exporter_connections": 6,
+      "db_log_errors": 0,
+      "db_log_sample": [],
+      "ready_pods": 1
+    },
+    {
+      "N": 2,
+      "rate": 507,
+      "achieved": 506.65,
+      "non2xx_share": 0.0,
+      "non2xx_total": 0,
+      "conn_errors": 0,
+      "client_p99_ms": 244.14799213409268,
+      "db_clients": {
+        "web-7658cb9f7b-57fgs": 5,
+        "postgres-exporter-57cbbd8876-vvxqh": 1,
+        "web-7658cb9f7b-kx5xg": 5
+      },
+      "db_clients_total": 11,
+      "pg_exporter_connections": 10,
+      "db_log_errors": 0,
+      "db_log_sample": [],
+      "ready_pods": 2
+    },
+    {
+      "N": 3,
+      "rate": 845,
+      "achieved": 840.525,
+      "non2xx_share": 2.9742430551424663e-05,
+      "non2xx_total": 1,
+      "conn_errors": 0,
+      "client_p99_ms": 3949.224379062653,
+      "db_clients": {
+        "psql_error": "psql: error: connection to server on socket \"/run/postgresql/.s.PGSQL.5432\" failed: FATAL:  sorry, too many clients already"
+      },
+      "db_clients_total": 0,
+      "pg_exporter_connections": 14,
+      "db_log_errors": 47,
+      "db_log_sample": [
+        "2026-11-25 10:09:20.105 UTC [533] FATAL:  sorry, too many clients already",
+        "2026-11-25 10:09:20.992 UTC [540] FATAL:  sorry, too many clients already",
+        "2026-11-25 10:09:21.179 UTC [541] FATAL:  sorry, too many clients already",
+        "2026-11-25 10:09:22.994 UTC [548] FATAL:  sorry, too many clients already",
+        "2026-11-25 10:09:23.321 UTC [549] FATAL:  sorry, too many clients already"
+      ],
+      "ready_pods": 3
+    }
+  ],
+  "max_connections_shown": 15,
+  "before": {
+    "pool": 5,
+    "X": {
+      "value": 784.95,
+      "spread": 164.45555310590282,
+      "step": 4,
+      "target": 800,
+      "client_p99_ms": 2389.381933212281
+    },
+    "db_clients": {
+      "psql_error": "psql: error: connection to server on socket \"/run/postgresql/.s.PGSQL.5432\" failed: FATAL:  sorry, too many clients already"
+    },
+    "db_clients_total": 0,
+    "pg_exporter_connections": 14,
+    "db_log_errors": 159,
+    "db_log_sample": [
+      "2026-11-25 10:10:18.984 UTC [775] FATAL:  sorry, too many clients already",
+      "2026-11-25 10:10:19.121 UTC [776] FATAL:  sorry, too many clients already",
+      "2026-11-25 10:10:21.025 UTC [784] FATAL:  sorry, too many clients already",
+      "2026-11-25 10:10:22.997 UTC [791] FATAL:  sorry, too many clients already",
+      "2026-11-25 10:10:24.117 UTC [792] FATAL:  sorry, too many clients already"
+    ],
+    "non2xx_total": 28298,
+    "conn_errors_total": 0,
+    "non2xx_to_X": 0,
+    "conn_errors_to_X": 0
+  },
+  "pool_change": {
+    "rollout_ok": false,
+    "rollout_status": [
+      "error: timed out waiting for the condition"
+    ],
+    "fallback": "scale 0 → 3"
+  },
+  "after": {
+    "pool": 3,
+    "X": {
+      "value": 1182.5,
+      "spread": 214.62513219197106,
+      "step": 7,
+      "target": 1400,
+      "client_p99_ms": 5010.2497363090515
+    },
+    "db_clients": {
+      "web-74fd676f45-948p8": 3,
+      "web-74fd676f45-fdtw8": 3,
+      "postgres-exporter-57cbbd8876-vvxqh": 1,
+      "web-74fd676f45-rs9xs": 3
+    },
+    "db_clients_total": 10,
+    "pg_exporter_connections": 10,
+    "db_log_errors": 0,
+    "db_log_sample": [],
+    "non2xx_total": 36455,
+    "conn_errors_total": 0,
+    "non2xx_to_X": 2650,
+    "conn_errors_to_X": 0
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "t0": 1795601254.5985487,
+    "instances": 1,
+    "args": {
+      "base_url": "http://127.0.0.1:8080",
+      "path": "/admissions/{id}",
+      "ids_file": "C:\\Users\\User\\OneDrive\\Робочий стіл\\Високопродуктивні обчислювальні с-ми\\ЛР1_ЗК-61мп_Красуцька\\results\\lab3\\ids.json",
+      "warmup": 0.0,
+      "warmup_rate": 200,
+      "start_rate": 280.0,
+      "step": 0.0,
+      "step_duration": 40.0,
+      "transient": 0.0,
+      "window": 40.0,
+      "max_steps": 1,
+      "gen_limit": 0,
+      "timeout": 5,
+      "procs": 8,
+      "seed": 1,
+      "instances": 1,
+      "conns": 24,
+      "reqs_per_conn": 100,
+      "profile": "",
+      "out_prefix": "C:\\Users\\User\\OneDrive\\Робочий стіл\\Високопродуктивні обчислювальні с-ми\\ЛР1_ЗК-61мп_Красуцька\\results\\lab3\\d2_scan_n1"
+    },
+    "cpu_count": 8,
+    "platform": "Windows-11-10.0.26300-SP0",
+    "python": "3.14.5",
+    "stop_reason": "max-steps",
+    "last_step": 1,
+    "connections_opened": 120
+  },
+  "steps": [
+    {
+      "step": 1,
+      "target": 280.0,
+      "window_seconds": [
+        0,
+        40
+      ],
+      "window_epoch": [
+        1795601254.5985487,
+        1795601294.5985487
+      ],
+      "achieved_mean": 279.875,
+      "achieved_std": 21.59675604795479,
+      "sent_mean": 279.975,
+      "client_p50_ms": 13.87166976928711,
+      "client_p95_ms": 117.46242046356198,
+      "client_p99_ms": 341.43038749694813,
+      "non2xx_share": 0.0,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.23972104876631972
+    }
+  ],
+  "X": {
+    "value": 279.875,
+    "spread": 21.59675604795479,
+    "step": 1,
+    "target": 280.0,
+    "client_p99_ms": 341.43038749694813
+  },
+  "last_step_ratio": 0.9995535714285714
+}

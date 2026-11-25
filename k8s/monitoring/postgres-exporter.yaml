@@ -1,0 +1,54 @@
+# postgres-exporter із запитом pg_connections з лабораторної 2
+# (ConfigMap pg-exporter-queries створює команда розгортання з postgres-exporter/queries.yaml).
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-exporter
+  namespace: lab3
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: postgres-exporter}
+  template:
+    metadata:
+      labels: {app: postgres-exporter}
+    spec:
+      nodeSelector:
+        role: infra
+      tolerations:
+        - key: node-role.kubernetes.io/control-plane
+          operator: Exists
+          effect: NoSchedule
+      containers:
+        - name: postgres-exporter
+          image: quay.io/prometheuscommunity/postgres-exporter:v0.15.0
+          args: ["--extend.query-path=/etc/postgres_exporter/queries.yaml"]
+          env:
+            - name: DATA_SOURCE_URI
+              value: db:5432/admissions?sslmode=disable
+            - name: DATA_SOURCE_USER
+              valueFrom:
+                configMapKeyRef: {name: db-config, key: POSTGRES_USER}
+            - name: DATA_SOURCE_PASS
+              valueFrom:
+                secretKeyRef: {name: db-secret, key: POSTGRES_PASSWORD}
+          ports:
+            - containerPort: 9187
+          volumeMounts:
+            - name: queries
+              mountPath: /etc/postgres_exporter
+      volumes:
+        - name: queries
+          configMap:
+            name: pg-exporter-queries
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-exporter
+  namespace: lab3
+spec:
+  selector: {app: postgres-exporter}
+  ports:
+    - port: 9187
+      targetPort: 9187

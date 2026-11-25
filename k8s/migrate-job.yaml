@@ -1,0 +1,41 @@
+# Міграція схеми: db/init.sql із ConfigMap db-schema (команда розгортання створює його з файла).
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: migrate
+  namespace: lab3
+spec:
+  backoffLimit: 6
+  template:
+    spec:
+      restartPolicy: OnFailure
+      nodeSelector:
+        role: infra
+      tolerations:
+        - key: node-role.kubernetes.io/control-plane
+          operator: Exists
+          effect: NoSchedule
+      containers:
+        - name: migrate
+          image: postgres:16-alpine
+          command: ["sh", "-c"]
+          args:
+            - until pg_isready -h db -U "$PGUSER" -d "$PGDATABASE"; do sleep 1; done;
+              psql -h db -v ON_ERROR_STOP=1 -f /migrations/init.sql
+          env:
+            - name: PGUSER
+              valueFrom:
+                configMapKeyRef: {name: db-config, key: POSTGRES_USER}
+            - name: PGDATABASE
+              valueFrom:
+                configMapKeyRef: {name: db-config, key: POSTGRES_DB}
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef: {name: db-secret, key: POSTGRES_PASSWORD}
+          volumeMounts:
+            - name: schema
+              mountPath: /migrations
+      volumes:
+        - name: schema
+          configMap:
+            name: db-schema

@@ -1,0 +1,30 @@
+# Кластер лабораторної 3 (варіант 12, k3d): один server і два agent.
+# На server заборонено розміщення робочих подів (taint); база і моніторинг ставляться туди
+# через nodeSelector role=infra і tolerations. Порти NodePort відкрито на server:0.
+apiVersion: k3d.io/v1alpha5
+kind: Simple
+metadata:
+  name: lab3
+servers: 1
+agents: 2
+image: rancher/k3s:v1.31.2-k3s1
+ports:
+  - port: 8080:30080          # Service web (NodePort)
+    nodeFilters: [server:0:direct]
+  - port: 9090:30090          # Prometheus (NodePort)
+    nodeFilters: [server:0:direct]
+options:
+  k3d:
+    wait: true
+    disableLoadbalancer: true  # без проміжного nginx k3d: хост → Docker → kube-proxy → под
+  k3s:
+    extraArgs:
+      - arg: --node-taint=node-role.kubernetes.io/control-plane=true:NoSchedule
+        nodeFilters: [server:0]
+      - arg: --disable=traefik   # Ingress у варіанті 12 не потрібен
+        nodeFilters: [server:0]
+      - arg: --disable=servicelb
+        nodeFilters: [server:0]
+      # квота CFS увімкнена явно, щоб діяв limits.cpu
+      - arg: --kubelet-arg=cpu-cfs-quota=true
+        nodeFilters: [server:*, agent:*]

@@ -1,0 +1,72 @@
+{
+  "replicas": 3,
+  "pods": [
+    {
+      "pod": "web-7658cb9f7b-b29sl",
+      "node": "k3d-lab3-agent-0",
+      "phase": "Running"
+    },
+    {
+      "pod": "web-7658cb9f7b-kx5xg",
+      "node": "k3d-lab3-agent-1",
+      "phase": "Running"
+    },
+    {
+      "pod": "web-7658cb9f7b-vq8lj",
+      "node": "k3d-lab3-agent-0",
+      "phase": "Running"
+    }
+  ],
+  "log": [
+    {
+      "title": "Створення",
+      "method": "POST",
+      "path": "/admissions",
+      "status": 201,
+      "x_pod": "web-7658cb9f7b-kx5xg"
+    },
+    {
+      "title": "Читання",
+      "method": "GET",
+      "path": "/admissions/2",
+      "status": 200,
+      "x_pod": "web-7658cb9f7b-vq8lj"
+    },
+    {
+      "title": "Заміна",
+      "method": "PUT",
+      "path": "/admissions/2",
+      "status": 200,
+      "x_pod": "web-7658cb9f7b-kx5xg"
+    },
+    {
+      "title": "Читання після заміни",
+      "method": "GET",
+      "path": "/admissions/2",
+      "status": 200,
+      "x_pod": "web-7658cb9f7b-b29sl"
+    },
+    {
+      "title": "Видалення",
+      "method": "DELETE",
+      "path": "/admissions/2",
+      "status": 204,
+      "x_pod": "web-7658cb9f7b-b29sl"
+    },
+    {
+      "title": "Читання видаленого",
+      "method": "GET",
+      "path": "/admissions/2",
+      "status": 404,
+      "x_pod": "web-7658cb9f7b-kx5xg"
+    }
+  ],
+  "password": {
+    "in_configmaps": false,
+    "in_image_inspect": false,
+    "in_image_history": false,
+    "in_git_tracked_files": false,
+    "in_deployment_spec": false,
+    "deployment_uses_secretKeyRef": true
+  }
+}

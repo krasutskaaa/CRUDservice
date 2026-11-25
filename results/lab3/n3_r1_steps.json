@@ -1,0 +1,212 @@
+{
+  "meta": {
+    "t0": 1795594717.763591,
+    "instances": 3,
+    "args": {
+      "base_url": "http://127.0.0.1:8080",
+      "path": "/admissions/{id}",
+      "ids_file": "C:\\Users\\User\\OneDrive\\Робочий стіл\\Високопродуктивні обчислювальні с-ми\\ЛР1_ЗК-61мп_Красуцька\\results\\lab3\\ids.json",
+      "warmup": 10,
+      "warmup_rate": 200,
+      "start_rate": 200,
+      "step": 200,
+      "step_duration": 30.0,
+      "transient": 10.0,
+      "window": 20.0,
+      "max_steps": 60,
+      "gen_limit": 6808.0,
+      "timeout": 5,
+      "procs": 8,
+      "seed": 1,
+      "instances": 3,
+      "conns": 24,
+      "reqs_per_conn": 100,
+      "profile": "",
+      "out_prefix": "C:\\Users\\User\\OneDrive\\Робочий стіл\\Високопродуктивні обчислювальні с-ми\\ЛР1_ЗК-61мп_Красуцька\\results\\lab3\\n3_r1"
+    },
+    "cpu_count": 8,
+    "platform": "Windows-11-10.0.26300-SP0",
+    "python": "3.14.5",
+    "stop_reason": "двічі поспіль досягнута < 0.9 заданої",
+    "last_step": 8,
+    "connections_opened": 19264
+  },
+  "steps": [
+    {
+      "step": 1,
+      "target": 200,
+      "window_seconds": [
+        20,
+        40
+      ],
+      "window_epoch": [
+        1795594737.763591,
+        1795594757.763591
+      ],
+      "achieved_mean": 200.0,
+      "achieved_std": 1.5894388284780525,
+      "sent_mean": 200.0,
+      "client_p50_ms": 11.912822723388672,
+      "client_p95_ms": 21.138882637023926,
+      "client_p99_ms": 25.93837261199952,
+      "non2xx_share": 0.0,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.16706531812473974
+    },
+    {
+      "step": 2,
+      "target": 400,
+      "window_seconds": [
+        50,
+        70
+      ],
+      "window_epoch": [
+        1795594767.763591,
+        1795594787.763591
+      ],
+      "achieved_mean": 400.05,
+      "achieved_std": 4.045465297550359,
+      "sent_mean": 400.0,
+      "client_p50_ms": 11.786222457885742,
+      "client_p95_ms": 24.846792221069336,
+      "client_p99_ms": 38.10763359069824,
+      "non2xx_share": 0.0,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.37793904311783433
+    },
+    {
+      "step": 3,
+      "target": 600,
+      "window_seconds": [
+        80,
+        100
+      ],
+      "window_epoch": [
+        1795594797.763591,
+        1795594817.763591
+      ],
+      "achieved_mean": 600.25,
+      "achieved_std": 8.533987776439632,
+      "sent_mean": 599.9,
+      "client_p50_ms": 11.832237243652344,
+      "client_p95_ms": 58.578920364379876,
+      "client_p99_ms": 92.84543991088866,
+      "non2xx_share": 0.0,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.483050508695923
+    },
+    {
+      "step": 4,
+      "target": 800,
+      "window_seconds": [
+        110,
+        130
+      ],
+      "window_epoch": [
+        1795594827.763591,
+        1795594847.763591
+      ],
+      "achieved_mean": 800.35,
+      "achieved_std": 18.902171972108334,
+      "sent_mean": 800.0,
+      "client_p50_ms": 13.953924179077148,
+      "client_p95_ms": 110.83099842071545,
+      "client_p99_ms": 222.12629795074466,
+      "non2xx_share": 0.0,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.46324458644107364
+    },
+    {
+      "step": 5,
+      "target": 1000,
+      "window_seconds": [
+        140,
+        160
+      ],
+      "window_epoch": [
+        1795594857.763591,
+        1795594877.763591
+      ],
+      "achieved_mean": 991.55,
+      "achieved_std": 127.61515955155336,
+      "sent_mean": 999.8,
+      "client_p50_ms": 55.930137634277344,
+      "client_p95_ms": 866.3560152053833,
+      "client_p99_ms": 1672.2922086715703,
+      "non2xx_share": 0.0,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.5034256092402221
+    },
+    {
+      "step": 6,
+      "target": 1200,
+      "window_seconds": [
+        170,
+        190
+      ],
+      "window_epoch": [
+        1795594887.763591,
+        1795594907.763591
+      ],
+      "achieved_mean": 1223.55,
+      "achieved_std": 119.15203688874497,
+      "sent_mean": 1200.1,
+      "client_p50_ms": 1936.9921684265137,
+      "client_p95_ms": 3870.0751304626465,
+      "client_p99_ms": 4607.8282070159885,
+      "non2xx_share": 0.000735023888276369,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.48085662308980825
+    },
+    {
+      "step": 7,
+      "target": 1400,
+      "window_seconds": [
+        200,
+        220
+      ],
+      "window_epoch": [
+        1795594917.763591,
+        1795594937.763591
+      ],
+      "achieved_mean": 1074.3,
+      "achieved_std": 183.9167717946583,
+      "sent_mean": 1400.5,
+      "client_p50_ms": 3648.0075120925903,
+      "client_p95_ms": 5002.84161567688,
+      "client_p99_ms": 5010.413203239441,
+      "non2xx_share": 0.08328355661745883,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.5813327607259628
+    },
+    {
+      "step": 8,
+      "target": 1600,
+      "window_seconds": [
+        230,
+        250
+      ],
+      "window_epoch": [
+        1795594947.763591,
+        1795594967.763591
+      ],
+      "achieved_mean": 420.45,
+      "achieved_std": 146.094949298483,
+      "sent_mean": 1600.3,
+      "client_p50_ms": 5002.53963470459,
+      "client_p95_ms": 5012.778043746948,
+      "client_p99_ms": 5015.221476554871,
+      "non2xx_share": 0.7371217804451112,
+      "conn_errors": 1,
+      "gen_cpu_cores": 0.9895090273207753
+    }
+  ],
+  "X": {
+    "value": 1223.55,
+    "spread": 119.15203688874497,
+    "step": 6,
+    "target": 1200,
+    "client_p99_ms": 4607.8282070159885
+  },
+  "last_step_ratio": 0.26278124999999997
+}

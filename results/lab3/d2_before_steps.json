@@ -1,0 +1,170 @@
+{
+  "meta": {
+    "t0": 1795601430.7729611,
+    "instances": 3,
+    "args": {
+      "base_url": "http://127.0.0.1:8080",
+      "path": "/admissions/{id}",
+      "ids_file": "C:\\Users\\User\\OneDrive\\Робочий стіл\\Високопродуктивні обчислювальні с-ми\\ЛР1_ЗК-61мп_Красуцька\\results\\lab3\\ids.json",
+      "warmup": 10,
+      "warmup_rate": 200,
+      "start_rate": 200,
+      "step": 200,
+      "step_duration": 30.0,
+      "transient": 10.0,
+      "window": 20.0,
+      "max_steps": 60,
+      "gen_limit": 6808.0,
+      "timeout": 5,
+      "procs": 8,
+      "seed": 1,
+      "instances": 3,
+      "conns": 24,
+      "reqs_per_conn": 100,
+      "profile": "",
+      "out_prefix": "C:\\Users\\User\\OneDrive\\Робочий стіл\\Високопродуктивні обчислювальні с-ми\\ЛР1_ЗК-61мп_Красуцька\\results\\lab3\\d2_before"
+    },
+    "cpu_count": 8,
+    "platform": "Windows-11-10.0.26300-SP0",
+    "python": "3.14.5",
+    "stop_reason": "двічі поспіль досягнута < 0.9 заданої",
+    "last_step": 6,
+    "connections_opened": 14740
+  },
+  "steps": [
+    {
+      "step": 1,
+      "target": 200,
+      "window_seconds": [
+        20,
+        40
+      ],
+      "window_epoch": [
+        1795601450.7729611,
+        1795601470.7729611
+      ],
+      "achieved_mean": 200.0,
+      "achieved_std": 1.2565617248750864,
+      "sent_mean": 200.0,
+      "client_p50_ms": 12.348413467407227,
+      "client_p95_ms": 21.555447578430176,
+      "client_p99_ms": 25.743548870086677,
+      "non2xx_share": 0.0,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.2712976666497886
+    },
+    {
+      "step": 2,
+      "target": 400,
+      "window_seconds": [
+        50,
+        70
+      ],
+      "window_epoch": [
+        1795601480.7729611,
+        1795601500.7729611
+      ],
+      "achieved_mean": 399.95,
+      "achieved_std": 2.8372521918222215,
+      "sent_mean": 400.0,
+      "client_p50_ms": 12.089967727661133,
+      "client_p95_ms": 26.287961006164554,
+      "client_p99_ms": 39.885716438293485,
+      "non2xx_share": 0.0,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.3468701666843967
+    },
+    {
+      "step": 3,
+      "target": 600,
+      "window_seconds": [
+        80,
+        100
+      ],
+      "window_epoch": [
+        1795601510.7729611,
+        1795601530.7729611
+      ],
+      "achieved_mean": 600.3,
+      "achieved_std": 38.69190041720278,
+      "sent_mean": 600.4,
+      "client_p50_ms": 17.53056049346924,
+      "client_p95_ms": 218.0023193359375,
+      "client_p99_ms": 492.69044399261486,
+      "non2xx_share": 0.0,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.47751027310561883
+    },
+    {
+      "step": 4,
+      "target": 800,
+      "window_seconds": [
+        110,
+        130
+      ],
+      "window_epoch": [
+        1795601540.7729611,
+        1795601560.7729611
+      ],
+      "achieved_mean": 784.95,
+      "achieved_std": 164.45555310590282,
+      "sent_mean": 799.95,
+      "client_p50_ms": 297.11270332336426,
+      "client_p95_ms": 2068.807578086853,
+      "client_p99_ms": 2389.381933212281,
+      "non2xx_share": 0.0,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.44948771416949385
+    },
+    {
+      "step": 5,
+      "target": 1000,
+      "window_seconds": [
+        140,
+        160
+      ],
+      "window_epoch": [
+        1795601570.7729611,
+        1795601590.7729611
+      ],
+      "achieved_mean": 691.45,
+      "achieved_std": 193.20931518351856,
+      "sent_mean": 1000.05,
+      "client_p50_ms": 4716.14408493042,
+      "client_p95_ms": 5008.914756774902,
+      "client_p99_ms": 5014.201002120972,
+      "non2xx_share": 0.22208471620633402,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.6439848136119782
+    },
+    {
+      "step": 6,
+      "target": 1200,
+      "window_seconds": [
+        170,
+        190
+      ],
+      "window_epoch": [
+        1795601600.7729611,
+        1795601620.7729611
+      ],
+      "achieved_mean": 366.65,
+      "achieved_std": 58.61585469011462,
+      "sent_mean": 1200.1,
+      "client_p50_ms": 5002.068996429443,
+      "client_p95_ms": 5012.548637390137,
+      "client_p99_ms": 5015.335397720337,
+      "non2xx_share": 0.6956377371020629,
+      "conn_errors": 0,
+      "gen_cpu_cores": 0.9899384851792149
+    }
+  ],
+  "X": {
+    "value": 784.95,
+    "spread": 164.45555310590282,
+    "step": 4,
+    "target": 800,
+    "client_p99_ms": 2389.381933212281
+  },
+  "last_step_ratio": 0.30554166666666666
+}

@@ -1,0 +1,3464 @@
+{
+  "1": {
+    "rps_by_pod": {
+      "query": "sum by (pod) (increase(http_requests_total{job=\"web\",method=\"GET\",path=\"/admissions/{admission_id}\"}[20s])) / 20",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594757.764,
+            "63.27088472564837"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594757.764,
+            "58.662755816278924"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594757.764,
+            "81.59999999999998"
+          ]
+        }
+      ]
+    },
+    "bucket_by_pod": {
+      "query": "sum by (pod, le) (increase(http_request_duration_seconds_bucket{method=\"GET\",path=\"/admissions/{admission_id}\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594757.764,
+            "4.00026668444563"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594757.764,
+            "726.7151143409561"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594757.764,
+            "1050.736715781052"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594757.764,
+            "1252.0834722314821"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594757.764,
+            "1265.4176945129675"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594757.764,
+            "1265.4176945129675"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594757.764,
+            "1265.4176945129675"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594757.764,
+            "1265.4176945129675"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594757.764,
+            "1265.4176945129675"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594757.764,
+            "1265.4176945129675"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594757.764,
+            "1265.4176945129675"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594757.764,
+            "1265.4176945129675"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594757.764,
+            "1.3332444503699754"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594757.764,
+            "698.6200919938672"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594757.764,
+            "1010.5992933804414"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594757.764,
+            "1167.9221385240985"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594757.764,
+            "1173.2551163255785"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594757.764,
+            "1173.2551163255785"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594757.764,
+            "1173.2551163255785"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594757.764,
+            "1173.2551163255785"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594757.764,
+            "1173.2551163255785"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594757.764,
+            "1173.2551163255785"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594757.764,
+            "1173.2551163255785"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594757.764,
+            "1173.2551163255785"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594757.764,
+            "7.999999999999998"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594757.764,
+            "1015.9999999999998"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594757.764,
+            "1390.6666666666663"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594757.764,
+            "1623.9999999999995"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594757.764,
+            "1631.9999999999995"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594757.764,
+            "1631.9999999999995"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594757.764,
+            "1631.9999999999995"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594757.764,
+            "1631.9999999999995"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594757.764,
+            "1631.9999999999995"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594757.764,
+            "1631.9999999999995"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594757.764,
+            "1631.9999999999995"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594757.764,
+            "1631.9999999999995"
+          ]
+        }
+      ]
+    },
+    "throttled_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_throttled_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    },
+    "periods_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    },
+    "cpu_by_pod": {
+      "query": "sum by (pod) (rate(container_cpu_usage_seconds_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    }
+  },
+  "2": {
+    "rps_by_pod": {
+      "query": "sum by (pod) (increase(http_requests_total{job=\"web\",method=\"GET\",path=\"/admissions/{admission_id}\"}[20s])) / 20",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594787.764,
+            "109.87399159943996"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594787.764,
+            "134.99100059996"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594787.764,
+            "154.81032068804592"
+          ]
+        }
+      ]
+    },
+    "bucket_by_pod": {
+      "query": "sum by (pod, le) (increase(http_request_duration_seconds_bucket{method=\"GET\",path=\"/admissions/{admission_id}\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594787.764,
+            "8.00053336889126"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594787.764,
+            "970.7313820921395"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594787.764,
+            "1862.790852723515"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594787.764,
+            "2088.1392092806186"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594787.764,
+            "2177.478498566571"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594787.764,
+            "2197.479831988799"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594787.764,
+            "2197.479831988799"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594787.764,
+            "2197.479831988799"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594787.764,
+            "2197.479831988799"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594787.764,
+            "2197.479831988799"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594787.764,
+            "2197.479831988799"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594787.764,
+            "2197.479831988799"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594787.764,
+            "15.998933404439702"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594787.764,
+            "1117.2588494100391"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594787.764,
+            "2234.5176988200783"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594787.764,
+            "2491.833877741484"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594787.764,
+            "2614.4923671755214"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594787.764,
+            "2679.8213452436503"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594787.764,
+            "2699.8200119992"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594787.764,
+            "2699.8200119992"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594787.764,
+            "2699.8200119992"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594787.764,
+            "2699.8200119992"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594787.764,
+            "2699.8200119992"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594787.764,
+            "2699.8200119992"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594787.764,
+            "32.002133475565046"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594787.764,
+            "1262.7508500566707"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594787.764,
+            "2573.504900326689"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594787.764,
+            "2873.524901660111"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594787.764,
+            "3060.2040136009073"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594787.764,
+            "3088.2058803920268"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594787.764,
+            "3096.206413760918"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594787.764,
+            "3096.206413760918"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594787.764,
+            "3096.206413760918"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594787.764,
+            "3096.206413760918"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594787.764,
+            "3096.206413760918"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594787.764,
+            "3096.206413760918"
+          ]
+        }
+      ]
+    },
+    "throttled_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_throttled_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    },
+    "periods_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    },
+    "cpu_by_pod": {
+      "query": "sum by (pod) (rate(container_cpu_usage_seconds_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    }
+  },
+  "3": {
+    "rps_by_pod": {
+      "query": "sum by (pod) (increase(http_requests_total{job=\"web\",method=\"GET\",path=\"/admissions/{admission_id}\"}[20s])) / 20",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594817.764,
+            "170.06666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594817.764,
+            "220.26666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594817.764,
+            "206.26666666666665"
+          ]
+        }
+      ]
+    },
+    "bucket_by_pod": {
+      "query": "sum by (pod, le) (increase(http_request_duration_seconds_bucket{method=\"GET\",path=\"/admissions/{admission_id}\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594817.764,
+            "65.33333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594817.764,
+            "1324"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594817.764,
+            "2470.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594817.764,
+            "2886.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594817.764,
+            "3174.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594817.764,
+            "3324"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594817.764,
+            "3396"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594817.764,
+            "3401.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594817.764,
+            "3401.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594817.764,
+            "3401.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594817.764,
+            "3401.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594817.764,
+            "3401.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594817.764,
+            "89.33333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594817.764,
+            "1261.3333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594817.764,
+            "2948"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594817.764,
+            "3316"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594817.764,
+            "3673.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594817.764,
+            "3969.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594817.764,
+            "4338.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594817.764,
+            "4405.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594817.764,
+            "4405.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594817.764,
+            "4405.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594817.764,
+            "4405.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594817.764,
+            "4405.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594817.764,
+            "85.33333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594817.764,
+            "1484"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594817.764,
+            "3030.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594817.764,
+            "3488"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594817.764,
+            "3898.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594817.764,
+            "4058.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594817.764,
+            "4124"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594817.764,
+            "4125.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594817.764,
+            "4125.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594817.764,
+            "4125.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594817.764,
+            "4125.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594817.764,
+            "4125.333333333333"
+          ]
+        }
+      ]
+    },
+    "throttled_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_throttled_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594817.764,
+            "29.140359397765906"
+          ]
+        }
+      ]
+    },
+    "periods_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594817.764,
+            "200.09713453132588"
+          ]
+        }
+      ]
+    },
+    "cpu_by_pod": {
+      "query": "sum by (pod) (rate(container_cpu_usage_seconds_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594817.764,
+            "0.30617425934919823"
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "rps_by_pod": {
+      "query": "sum by (pod) (increase(http_requests_total{job=\"web\",method=\"GET\",path=\"/admissions/{admission_id}\"}[20s])) / 20",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594847.764,
+            "295.78028131457904"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594847.764,
+            "250.66666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594847.764,
+            "251.44990333977734"
+          ]
+        }
+      ]
+    },
+    "bucket_by_pod": {
+      "query": "sum by (pod, le) (increase(http_request_duration_seconds_bucket{method=\"GET\",path=\"/admissions/{admission_id}\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594847.764,
+            "81.3279114725685"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594847.764,
+            "1145.2569828678088"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594847.764,
+            "3162.4558362775815"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594847.764,
+            "4471.701886540897"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594847.764,
+            "5135.657622825145"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594847.764,
+            "5588.960735950937"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594847.764,
+            "5876.941537230851"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594847.764,
+            "5906.272915138991"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594847.764,
+            "5906.272915138991"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594847.764,
+            "5906.272915138991"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594847.764,
+            "5915.605626291581"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594847.764,
+            "5915.605626291581"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594847.764,
+            "97.33333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594847.764,
+            "1516"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594847.764,
+            "3104"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594847.764,
+            "3826.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594847.764,
+            "4341.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594847.764,
+            "4657.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594847.764,
+            "4985.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594847.764,
+            "5013.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594847.764,
+            "5013.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594847.764,
+            "5013.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594847.764,
+            "5013.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594847.764,
+            "5013.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594847.764,
+            "98.66008932737817"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594847.764,
+            "1579.8946736884209"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594847.764,
+            "3206.452903139791"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594847.764,
+            "4045.0636624225053"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594847.764,
+            "4677.0215318978735"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594847.764,
+            "4855.67628824745"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594847.764,
+            "4995.666955536298"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594847.764,
+            "5028.998066795547"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594847.764,
+            "5028.998066795547"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594847.764,
+            "5028.998066795547"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594847.764,
+            "5028.998066795547"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594847.764,
+            "5028.998066795547"
+          ]
+        }
+      ]
+    },
+    "throttled_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_throttled_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    },
+    "periods_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    },
+    "cpu_by_pod": {
+      "query": "sum by (pod) (rate(container_cpu_usage_seconds_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    }
+  },
+  "5": {
+    "rps_by_pod": {
+      "query": "sum by (pod) (increase(http_requests_total{job=\"web\",method=\"GET\",path=\"/admissions/{admission_id}\"}[20s])) / 20",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594877.764,
+            "331.4220948063204"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594877.764,
+            "362.4908327221815"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594877.764,
+            "322.4"
+          ]
+        }
+      ]
+    },
+    "bucket_by_pod": {
+      "query": "sum by (pod, le) (increase(http_request_duration_seconds_bucket{method=\"GET\",path=\"/admissions/{admission_id}\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594877.764,
+            "457.3638242549503"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594877.764,
+            "1872.1248083205548"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594877.764,
+            "3613.5742382825524"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594877.764,
+            "5041.669444629642"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594877.764,
+            "5984.398959930662"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594877.764,
+            "6293.7529168611245"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594877.764,
+            "6597.773184878992"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594877.764,
+            "6628.441896126408"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594877.764,
+            "6628.441896126408"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594877.764,
+            "6628.441896126408"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594877.764,
+            "6628.441896126408"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594877.764,
+            "6628.441896126408"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594877.764,
+            "60.00400026668445"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594877.764,
+            "256.0170678045203"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594877.764,
+            "716.0477365157677"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594877.764,
+            "2332.155477031802"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594877.764,
+            "4392.292819521302"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594877.764,
+            "5311.020734715647"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594877.764,
+            "7035.135675711715"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594877.764,
+            "7249.81665444363"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594877.764,
+            "7249.81665444363"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594877.764,
+            "7249.81665444363"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594877.764,
+            "7249.81665444363"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594877.764,
+            "7249.81665444363"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594877.764,
+            "325.3333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594877.764,
+            "1826.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594877.764,
+            "3585.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594877.764,
+            "5052"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594877.764,
+            "5785.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594877.764,
+            "6000"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594877.764,
+            "6356"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594877.764,
+            "6448"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594877.764,
+            "6448"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594877.764,
+            "6448"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594877.764,
+            "6448"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594877.764,
+            "6448"
+          ]
+        }
+      ]
+    },
+    "throttled_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_throttled_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    },
+    "periods_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    },
+    "cpu_by_pod": {
+      "query": "sum by (pod) (rate(container_cpu_usage_seconds_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    }
+  },
+  "6": {
+    "rps_by_pod": {
+      "query": "sum by (pod) (increase(http_requests_total{job=\"web\",method=\"GET\",path=\"/admissions/{admission_id}\"}[20s])) / 20",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594907.764,
+            "396.29308620574704"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594907.764,
+            "414.3333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594907.764,
+            "421.4"
+          ]
+        }
+      ]
+    },
+    "bucket_by_pod": {
+      "query": "sum by (pod, le) (increase(http_request_duration_seconds_bucket{method=\"GET\",path=\"/admissions/{admission_id}\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594907.764,
+            "1065.404360290686"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594907.764,
+            "4106.940462697513"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594907.764,
+            "6639.109273951597"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594907.764,
+            "7380.492032802187"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594907.764,
+            "7619.174611640777"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594907.764,
+            "7677.845189679312"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594907.764,
+            "7921.861457430496"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594907.764,
+            "7925.861724114941"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594907.764,
+            "7925.861724114941"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594907.764,
+            "7925.861724114941"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594907.764,
+            "7925.861724114941"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594907.764,
+            "7925.861724114941"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594907.764,
+            "0"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594907.764,
+            "4"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594907.764,
+            "220"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594907.764,
+            "1057.3333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594907.764,
+            "3326.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594907.764,
+            "4562.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594907.764,
+            "8060"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594907.764,
+            "8284"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594907.764,
+            "8286.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594907.764,
+            "8286.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594907.764,
+            "8286.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594907.764,
+            "8286.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594907.764,
+            "148"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594907.764,
+            "1026.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594907.764,
+            "3422.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594907.764,
+            "6141.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594907.764,
+            "7450.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594907.764,
+            "7558.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594907.764,
+            "8314.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594907.764,
+            "8428"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594907.764,
+            "8428"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594907.764,
+            "8428"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594907.764,
+            "8428"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594907.764,
+            "8428"
+          ]
+        }
+      ]
+    },
+    "throttled_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_throttled_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594907.764,
+            "199.73009446693655"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594907.764,
+            "170.19538430117777"
+          ]
+        }
+      ]
+    },
+    "periods_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594907.764,
+            "199.73009446693655"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594907.764,
+            "197.4266457893662"
+          ]
+        }
+      ]
+    },
+    "cpu_by_pod": {
+      "query": "sum by (pod) (rate(container_cpu_usage_seconds_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594907.764,
+            "0.5000843004948266"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594907.764,
+            "0.4836566818707882"
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "rps_by_pod": {
+      "query": "sum by (pod) (increase(http_requests_total{job=\"web\",method=\"GET\",path=\"/admissions/{admission_id}\"}[20s])) / 20",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594937.764,
+            "427"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594937.764,
+            "345.04366375574966"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594937.764,
+            "340.1106592893807"
+          ]
+        }
+      ]
+    },
+    "bucket_by_pod": {
+      "query": "sum by (pod, le) (increase(http_request_duration_seconds_bucket{method=\"GET\",path=\"/admissions/{admission_id}\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594937.764,
+            "36"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594937.764,
+            "418.66666666666663"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594937.764,
+            "2702.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594937.764,
+            "5780"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594937.764,
+            "7174.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594937.764,
+            "7550.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594937.764,
+            "8414.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594937.764,
+            "8536"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594937.764,
+            "8540"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594937.764,
+            "8540"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594937.764,
+            "8540"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594937.764,
+            "8540"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594937.764,
+            "0"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594937.764,
+            "45.33031131257916"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594937.764,
+            "778.6147590160656"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594937.764,
+            "2786.4809012732485"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594937.764,
+            "4286.3809079394705"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594937.764,
+            "5371.641890540631"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594937.764,
+            "6792.880474635024"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594937.764,
+            "6900.873275114993"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594937.764,
+            "6900.873275114993"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594937.764,
+            "6900.873275114993"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594937.764,
+            "6900.873275114993"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594937.764,
+            "6900.873275114993"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594937.764,
+            "5.332977801479901"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594937.764,
+            "654.6230251316579"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594937.764,
+            "2025.1983201119924"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594937.764,
+            "3883.7410839277377"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594937.764,
+            "5490.300646623557"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594937.764,
+            "5783.614425704953"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594937.764,
+            "6395.573628424771"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594937.764,
+            "6800.8799413372435"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594937.764,
+            "6802.213185787614"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594937.764,
+            "6802.213185787614"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594937.764,
+            "6802.213185787614"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594937.764,
+            "6802.213185787614"
+          ]
+        }
+      ]
+    },
+    "throttled_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_throttled_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594937.764,
+            "199.1054681864089"
+          ]
+        }
+      ]
+    },
+    "periods_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594937.764,
+            "199.1054681864089"
+          ]
+        }
+      ]
+    },
+    "cpu_by_pod": {
+      "query": "sum by (pod) (rate(container_cpu_usage_seconds_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594937.764,
+            "0.49938024816043775"
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "rps_by_pod": {
+      "query": "sum by (pod) (increase(http_requests_total{job=\"web\",method=\"GET\",path=\"/admissions/{admission_id}\"}[20s])) / 20",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594967.764,
+            "284.5333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594967.764,
+            "271.7333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594967.764,
+            "274.75165011000735"
+          ]
+        }
+      ]
+    },
+    "bucket_by_pod": {
+      "query": "sum by (pod, le) (increase(http_request_duration_seconds_bucket{method=\"GET\",path=\"/admissions/{admission_id}\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594967.764,
+            "13.333333333333332"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594967.764,
+            "224"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594967.764,
+            "853.3333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594967.764,
+            "2578.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594967.764,
+            "4338.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594967.764,
+            "4780"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594967.764,
+            "5540"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594967.764,
+            "5690.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594967.764,
+            "5690.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594967.764,
+            "5690.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594967.764,
+            "5690.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594967.764,
+            "5690.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594967.764,
+            "8"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594967.764,
+            "292"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594967.764,
+            "1106.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594967.764,
+            "2784"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594967.764,
+            "3869.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594967.764,
+            "4688"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594967.764,
+            "5433.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594967.764,
+            "5434.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594967.764,
+            "5434.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594967.764,
+            "5434.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594967.764,
+            "5434.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594967.764,
+            "5434.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594967.764,
+            "1.3334222281485433"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594967.764,
+            "262.684178945263"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594967.764,
+            "1170.7447163144209"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594967.764,
+            "2746.849789985999"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594967.764,
+            "4465.631042069472"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594967.764,
+            "4729.648643242883"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594967.764,
+            "5272.3514900993405"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594967.764,
+            "5495.033002200147"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594967.764,
+            "5495.033002200147"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594967.764,
+            "5495.033002200147"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594967.764,
+            "5495.033002200147"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594967.764,
+            "5495.033002200147"
+          ]
+        }
+      ]
+    },
+    "throttled_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_throttled_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594967.764,
+            "199.35095039406582"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594967.764,
+            "163.45990124297634"
+          ]
+        }
+      ]
+    },
+    "periods_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594967.764,
+            "199.35095039406582"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594967.764,
+            "199.21675463987742"
+          ]
+        }
+      ]
+    },
+    "cpu_by_pod": {
+      "query": "sum by (pod) (rate(container_cpu_usage_seconds_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-r7wtt"
+          },
+          "value": [
+            1795594967.764,
+            "0.5002691237830313"
+          ]
+        },
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-s4kgv"
+          },
+          "value": [
+            1795594967.764,
+            "0.5012566831261717"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,80 @@
+# PostgreSQL: StatefulSet з PersistentVolumeClaim і headless Service, на вузлі role=infra.
+# Пароль бере з Secret db-secret, який команда розгортання створює з файла .env.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-config
+  namespace: lab3
+data:
+  POSTGRES_DB: admissions
+  POSTGRES_USER: admissions
+  MAX_CONNECTIONS: "100"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: db
+  namespace: lab3
+spec:
+  clusterIP: None              # headless: под отримує стале імʼя db-0.db
+  selector:
+    app: db
+  ports:
+    - name: pg
+      port: 5432
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: db
+  namespace: lab3
+spec:
+  serviceName: db
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      nodeSelector:
+        role: infra
+      tolerations:
+        - key: node-role.kubernetes.io/control-plane
+          operator: Exists
+          effect: NoSchedule
+      containers:
+        - name: postgres
+          image: postgres:16-alpine
+          args: ["-c", "max_connections=$(MAX_CONNECTIONS)"]
+          envFrom:
+            - configMapRef:
+                name: db-config
+          env:
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: POSTGRES_PASSWORD
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
+          ports:
+            - containerPort: 5432
+          readinessProbe:
+            exec:
+              command: ["sh", "-c", "pg_isready -h 127.0.0.1 -U \"$POSTGRES_USER\" -d \"$POSTGRES_DB\""]
+            periodSeconds: 2
+            timeoutSeconds: 3
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/postgresql/data
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 1Gi

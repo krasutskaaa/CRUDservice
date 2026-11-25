@@ -13,6 +13,14 @@
 помилки зʼєднання рахуються окремо.
 
 Вихід: <prefix>_seconds.csv (посекундно), <prefix>_steps.json (сходинки, X(N), розкид).
+
+Лабораторна 3:
+  --conns K --reqs-per-conn M  модель зʼєднань: генератор тримає K постійних зʼєднань (поділених між
+                               процесами) і закриває кожне після M запитів, відкриваючи замість нього нове.
+                               Запит чекає вільного зʼєднання; затримка, як і раніше, від запланованого моменту.
+                               K = 0: поведінка лабораторної 2 (нове зʼєднання, коли вільного немає).
+  --profile "30:120,60:1000,90:120"  профіль як список відрізків «тривалість:інтенсивність»
+                               замість ступінчастого; правила зупинки не діють, статистика за весь відрізок.
 """
 import argparse
 import asyncio
@@ -42,7 +50,22 @@ def percentile(sorted_vals, p):
     return sorted_vals[f] + (sorted_vals[c] - sorted_vals[f]) * (k - f)
 
 
+def parse_profile(text):
+    out = []
+    for part in text.split(","):
+        dur, rate = part.split(":")
+        out.append((float(dur), float(rate)))
+    return out
+
+
 def make_segments(a):
+    if a.profile:
+        segs = [("warmup", 0, 0.0, 0.0, 0.0)]  # прогріву немає: відрізки профілю йдуть від нуля
+        off = 0.0
+        for i, (dur, rate) in enumerate(parse_profile(a.profile), 1):
+            segs.append(("segment", i, off, dur, rate))
+            off += dur
+        return segs
     segs = [("warmup", 0, 0.0, a.warmup, a.warmup_rate)]
     off = float(a.warmup)
     for i in range(1, a.max_steps + 1):
@@ -109,6 +132,66 @@ class Client:
             return await self._once(path, False)
 
 
+class _Slot:
+    __slots__ = ("r", "w", "used")
+
+    def __init__(self):
+        self.r = self.w = None
+        self.used = 0
+
+    def close(self):
+        if self.w is not None:
+            self.w.close()
+        self.r = self.w = None
+        self.used = 0
+
+
+class PooledClient(Client):
+    """Модель зʼєднань лабораторної 3: n постійних зʼєднань, кожне закривається після max_reqs запитів."""
+
+    def __init__(self, host, port, n, max_reqs):
+        super().__init__(host, port)
+        self.max_reqs = max_reqs
+        self.free = asyncio.Queue()
+        for _ in range(n):
+            self.free.put_nowait(_Slot())
+        self.opened = 0
+
+    async def _on(self, slot, path):
+        if slot.w is None:
+            slot.r, slot.w = await asyncio.open_connection(self.host, self.port)
+            self.opened += 1
+        self.idle = [(slot.r, slot.w)]
+        status = await self._once(path, True)  # _once поверне зʼєднання в self.idle, якщо воно придатне
+        if not self.idle:  # сервер закрив зʼєднання (Connection: close)
+            slot.r = slot.w = None
+            slot.used = 0
+        self.idle = []
+        return status
+
+    async def get(self, path):
+        slot = await self.free.get()
+        ok = False
+        try:
+            fresh = slot.w is None
+            try:
+                status = await self._on(slot, path)
+            except (_Stale, ConnectionError, asyncio.IncompleteReadError):
+                if fresh:
+                    raise
+                slot.r = slot.w = None  # старе зʼєднання сервер уже закрив: одна спроба на новому
+                status = await self._on(slot, path)
+            slot.used += 1
+            if slot.used >= self.max_reqs:
+                slot.close()  # нове зʼєднання відкриється під наступний запит
+            ok = True
+            return status
+        finally:
+            if not ok:  # тайм-аут або помилка посеред запиту: стан зʼєднання невідомий
+                slot.close()
+            self.free.put_nowait(slot)
+
+
 async def run_process(idx, cfg, ids, t0, stop_after, ok_arr):
     loop = asyncio.get_running_loop()
     # скасований за тайм-аутом запит на Windows може пізніше кинути ConnectionResetError
@@ -116,7 +199,12 @@ async def run_process(idx, cfg, ids, t0, stop_after, ok_arr):
     loop.set_exception_handler(
         lambda lp, ctx: None if isinstance(ctx.get("exception"), ConnectionError)
         else lp.default_exception_handler(ctx))
-    client = Client(cfg["host"], cfg["port"])
+    procs = cfg["procs"]
+    if cfg["conns"]:
+        mine = cfg["conns"] // procs + (1 if idx < cfg["conns"] % procs else 0)
+        client = PooledClient(cfg["host"], cfg["port"], mine, cfg["reqs_per_conn"])
+    else:
+        client = Client(cfg["host"], cfg["port"])
     records, cpu, tasks = [], [], set()
     rng = random.Random(cfg["seed"] + idx)
     timeout = cfg["timeout"]
@@ -150,11 +238,13 @@ async def run_process(idx, cfg, ids, t0, stop_after, ok_arr):
             await asyncio.sleep(1.0)
 
     sampler = asyncio.create_task(cpu_sampler())
-    procs, tmpl = cfg["procs"], cfg["path"]
+    tmpl = cfg["path"]
     try:
         for phase, step_i, off, dur, rate in cfg["segments"]:
             if step_i > stop_after.value:
                 break
+            if dur <= 0 or rate <= 0:
+                continue
             per = rate / procs
             interval = 1.0 / per
             n = int(dur * per)
@@ -175,14 +265,14 @@ async def run_process(idx, cfg, ids, t0, stop_after, ok_arr):
             await asyncio.gather(*list(tasks))
     finally:
         sampler.cancel()
-    return records, cpu
+    return records, cpu, getattr(client, "opened", 0)
 
 
 def worker(idx, cfg, ids, ready, go, t0v, stop_after, ok_arr, q):
     ready.wait(timeout=120)
     go.wait(timeout=120)
     res = asyncio.run(run_process(idx, cfg, ids, t0v.value, stop_after, ok_arr))
-    q.put((idx, res[0], res[1]))
+    q.put((idx, res[0], res[1], res[2]))
 
 
 def analyze(records, cpu_series, t0, a, segs, last_step):
@@ -228,6 +318,8 @@ def analyze(records, cpu_series, t0, a, segs, last_step):
     for phase, i, off, dur, rate in segs[1:last_step + 1]:
         lo = int(off + a.transient)
         hi = min(int(off + a.transient + a.window), int(off + dur))
+        if a.profile:  # для профілю статистика за весь відрізок
+            lo, hi = int(off), int(off + dur)
         win = range(lo, hi)
         ach = [ok[s] for s in win]
         allat = sorted(x for s in win for x in lat[s])
@@ -264,15 +356,20 @@ def main():
     ap.add_argument("--procs", type=int, default=os.cpu_count() or 1)
     ap.add_argument("--seed", type=int, default=1)
     ap.add_argument("--instances", type=int, default=0, help="метадані")
+    ap.add_argument("--conns", type=int, default=0, help="кількість постійних зʼєднань (0 = як у лаб. 2)")
+    ap.add_argument("--reqs-per-conn", type=int, default=100, help="запитів на зʼєднання до його закриття")
+    ap.add_argument("--profile", default="", help='відрізки "тривалість:інтенсивність,..."')
     ap.add_argument("--out-prefix", required=True)
     a = ap.parse_args()
+    if a.conns:
+        a.procs = max(1, min(a.procs, a.conns))  # кожному процесу хоча б одне зʼєднання
 
     ids = json.loads(Path(a.ids_file).read_text()) if "{id}" in a.path else [0]
     u = urlparse(a.base_url)
     segs = make_segments(a)
-    total_sec = int(a.warmup + a.max_steps * a.step_duration + 15)
+    total_sec = int(segs[-1][2] + segs[-1][3] + 15)
     cfg = dict(host=u.hostname, port=u.port or 80, path=a.path, timeout=a.timeout, procs=a.procs,
-               seed=a.seed, segments=segs)
+               seed=a.seed, segments=segs, conns=a.conns, reqs_per_conn=a.reqs_per_conn)
     ctx = mp.get_context("spawn")
     ready, go, q = ctx.Barrier(a.procs + 1), ctx.Event(), ctx.Queue()
     t0v = ctx.Value("d", 0.0)
@@ -288,8 +385,11 @@ def main():
     go.set()
     print(f"T0 {t0:.3f}", flush=True)
 
-    below, stop_reason, last_step = 0, "max-steps", a.max_steps
-    for phase, i, off, dur, rate in segs[1:]:
+    below, stop_reason, last_step = 0, "max-steps", len(segs) - 1
+    if a.profile:
+        stop_reason = "кінець профілю"
+        time.sleep(max(0.0, t0 + segs[-1][2] + segs[-1][3] + 0.5 - time.time()))
+    for phase, i, off, dur, rate in ([] if a.profile else segs[1:]):
         delay = t0 + off + dur + 0.5 - time.time()
         if delay > 0:
             time.sleep(delay)
@@ -309,13 +409,14 @@ def main():
     results = [q.get(timeout=a.timeout + 60) for _ in ps]
     for p in ps:
         p.join()
-    records = [r for _, rec, _ in results for r in rec]
-    rows, steps = analyze(records, [c for _, _, c in results], t0, a, segs, last_step)
+    records = [r for _, rec, _, _ in results for r in rec]
+    rows, steps = analyze(records, [c for _, _, c, _ in results], t0, a, segs, last_step)
     best = max(steps, key=lambda s: s["achieved_mean"])
     last = steps[-1]
     meta = {"t0": t0, "instances": a.instances, "args": vars(a), "cpu_count": os.cpu_count(),
             "platform": platform.platform(), "python": platform.python_version(),
-            "stop_reason": stop_reason, "last_step": last_step}
+            "stop_reason": stop_reason, "last_step": last_step,
+            "connections_opened": sum(o for *_, o in results)}
     out = {"meta": meta, "steps": steps,
            "X": {"value": best["achieved_mean"], "spread": best["achieved_std"], "step": best["step"],
                  "target": best["target"], "client_p99_ms": best["client_p99_ms"]},

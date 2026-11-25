@@ -1,0 +1,189 @@
+{
+  "pods": [
+    {
+      "pod": "web-7658cb9f7b-b29sl",
+      "node": "k3d-lab3-agent-0",
+      "phase": "Running"
+    },
+    {
+      "pod": "web-7658cb9f7b-kx5xg",
+      "node": "k3d-lab3-agent-1",
+      "phase": "Running"
+    },
+    {
+      "pod": "web-7658cb9f7b-vq8lj",
+      "node": "k3d-lab3-agent-0",
+      "phase": "Running"
+    }
+  ],
+  "queries": {
+    "http_requests_total by pod": {
+      "query": "sum by (pod) (http_requests_total{job=\"web\",method=\"GET\",path=\"/admissions/{admission_id}\"})",
+      "result": [
+        [
+          {
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "976"
+        ],
+        [
+          {
+            "pod": "web-7658cb9f7b-vq8lj"
+          },
+          "852"
+        ],
+        [
+          {
+            "pod": "web-7658cb9f7b-b29sl"
+          },
+          "1176"
+        ]
+      ]
+    },
+    "container_cpu_cfs_periods_total web": {
+      "query": "sum by (pod) (container_cpu_cfs_periods_total{namespace=\"lab3\",container=\"web\"})",
+      "result": [
+        [
+          {
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "600"
+        ],
+        [
+          {
+            "pod": "web-7658cb9f7b-vq8lj"
+          },
+          "421"
+        ],
+        [
+          {
+            "pod": "web-7658cb9f7b-b29sl"
+          },
+          "414"
+        ]
+      ]
+    },
+    "container_cpu_cfs_throttled_periods_total web": {
+      "query": "sum by (pod) (container_cpu_cfs_throttled_periods_total{namespace=\"lab3\",container=\"web\"})",
+      "result": [
+        [
+          {
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "32"
+        ],
+        [
+          {
+            "pod": "web-7658cb9f7b-vq8lj"
+          },
+          "34"
+        ],
+        [
+          {
+            "pod": "web-7658cb9f7b-b29sl"
+          },
+          "34"
+        ]
+      ]
+    },
+    "container_cpu_usage_seconds_total web": {
+      "query": "sum by (pod) (container_cpu_usage_seconds_total{namespace=\"lab3\",container=\"web\"})",
+      "result": [
+        [
+          {
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "4.226462"
+        ],
+        [
+          {
+            "pod": "web-7658cb9f7b-vq8lj"
+          },
+          "3.731632"
+        ],
+        [
+          {
+            "pod": "web-7658cb9f7b-b29sl"
+          },
+          "4.458138"
+        ]
+      ]
+    },
+    "kube_deployment_status_replicas_ready": {
+      "query": "kube_deployment_status_replicas_ready{namespace=\"lab3\",deployment=\"web\"}",
+      "result": [
+        [
+          {
+            "__name__": "kube_deployment_status_replicas_ready",
+            "deployment": "web",
+            "instance": "kube-state-metrics:8080",
+            "job": "kube-state-metrics",
+            "namespace": "lab3"
+          },
+          "3"
+        ]
+      ]
+    },
+    "pg_connections_count": {
+      "query": "sum by (state) (pg_connections_count)",
+      "result": [
+        [
+          {
+            "state": "idle"
+          },
+          "15"
+        ],
+        [
+          {
+            "state": "active"
+          },
+          "1"
+        ]
+      ]
+    }
+  },
+  "clock_skew_s": 0.0,
+  "kubectl_top_pods": "NAME                                 CPU(cores)   MEMORY(bytes)   \ndb-0                                 65m          51Mi            \nkube-state-metrics-d886d8796-9sbt7   1m           9Mi             \npostgres-exporter-57cbbd8876-vvxqh   3m           9Mi             \nprometheus-6d4986f7dc-x829t          6m           29Mi            \nweb-7658cb9f7b-b29sl                 44m          50Mi            \nweb-7658cb9f7b-kx5xg                 77m          49Mi            \nweb-7658cb9f7b-vq8lj                 30m          50Mi            \n",
+  "targets": [
+    [
+      "cadvisor",
+      "k3d-lab3-agent-0",
+      "up"
+    ],
+    [
+      "cadvisor",
+      "k3d-lab3-agent-1",
+      "up"
+    ],
+    [
+      "cadvisor",
+      "k3d-lab3-server-0",
+      "up"
+    ],
+    [
+      "kube-state-metrics",
+      "kube-state-metrics:8080",
+      "up"
+    ],
+    [
+      "postgres",
+      "postgres-exporter:9187",
+      "up"
+    ],
+    [
+      "web",
+      "web-7658cb9f7b-kx5xg",
+      "up"
+    ],
+    [
+      "web",
+      "web-7658cb9f7b-vq8lj",
+      "up"
+    ],
+    [
+      "web",
+      "web-7658cb9f7b-b29sl",
+      "up"
+    ]
+  ]
+}

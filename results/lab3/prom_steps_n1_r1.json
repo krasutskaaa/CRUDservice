@@ -1,0 +1,614 @@
+{
+  "1": {
+    "rps_by_pod": {
+      "query": "sum by (pod) (increase(http_requests_total{job=\"web\",method=\"GET\",path=\"/admissions/{admission_id}\"}[20s])) / 20",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594345.49,
+            "199.93333333333334"
+          ]
+        }
+      ]
+    },
+    "bucket_by_pod": {
+      "query": "sum by (pod, le) (increase(http_request_duration_seconds_bucket{method=\"GET\",path=\"/admissions/{admission_id}\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594345.49,
+            "30.666666666666664"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594345.49,
+            "2265.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594345.49,
+            "3518.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594345.49,
+            "3864"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594345.49,
+            "3982.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594345.49,
+            "3990.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594345.49,
+            "3998.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594345.49,
+            "3998.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594345.49,
+            "3998.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594345.49,
+            "3998.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594345.49,
+            "3998.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594345.49,
+            "3998.6666666666665"
+          ]
+        }
+      ]
+    },
+    "throttled_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_throttled_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    },
+    "periods_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    },
+    "cpu_by_pod": {
+      "query": "sum by (pod) (rate(container_cpu_usage_seconds_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    }
+  },
+  "2": {
+    "rps_by_pod": {
+      "query": "sum by (pod) (increase(http_requests_total{job=\"web\",method=\"GET\",path=\"/admissions/{admission_id}\"}[20s])) / 20",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594375.49,
+            "403.7333333333333"
+          ]
+        }
+      ]
+    },
+    "bucket_by_pod": {
+      "query": "sum by (pod, le) (increase(http_request_duration_seconds_bucket{method=\"GET\",path=\"/admissions/{admission_id}\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594375.49,
+            "56"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594375.49,
+            "272"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594375.49,
+            "1649.3333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594375.49,
+            "1765.3333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594375.49,
+            "2510.6666666666665"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594375.49,
+            "5068"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594375.49,
+            "5500"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594375.49,
+            "7908"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594375.49,
+            "8048"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594375.49,
+            "8048"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594375.49,
+            "8074.666666666666"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594375.49,
+            "8074.666666666666"
+          ]
+        }
+      ]
+    },
+    "throttled_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_throttled_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    },
+    "periods_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    },
+    "cpu_by_pod": {
+      "query": "sum by (pod) (rate(container_cpu_usage_seconds_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    }
+  },
+  "3": {
+    "rps_by_pod": {
+      "query": "sum by (pod) (increase(http_requests_total{job=\"web\",method=\"GET\",path=\"/admissions/{admission_id}\"}[20s])) / 20",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594405.49,
+            "400.3066462235851"
+          ]
+        }
+      ]
+    },
+    "bucket_by_pod": {
+      "query": "sum by (pod, le) (increase(http_request_duration_seconds_bucket{method=\"GET\",path=\"/admissions/{admission_id}\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594405.49,
+            "0"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594405.49,
+            "0"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594405.49,
+            "0"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594405.49,
+            "0"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594405.49,
+            "481.3012465835611"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594405.49,
+            "3550.4299713352443"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594405.49,
+            "3854.409706019599"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594405.49,
+            "7507.499500033332"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594405.49,
+            "7995.466968868743"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594405.49,
+            "8006.132924471703"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594405.49,
+            "8006.132924471703"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594405.49,
+            "8006.132924471703"
+          ]
+        }
+      ]
+    },
+    "throttled_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_throttled_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    },
+    "periods_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    },
+    "cpu_by_pod": {
+      "query": "sum by (pod) (rate(container_cpu_usage_seconds_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    }
+  },
+  "4": {
+    "rps_by_pod": {
+      "query": "sum by (pod) (increase(http_requests_total{job=\"web\",method=\"GET\",path=\"/admissions/{admission_id}\"}[20s])) / 20",
+      "result": [
+        {
+          "metric": {
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594435.49,
+            "329"
+          ]
+        }
+      ]
+    },
+    "bucket_by_pod": {
+      "query": "sum by (pod, le) (increase(http_request_duration_seconds_bucket{method=\"GET\",path=\"/admissions/{admission_id}\"}[20s]))",
+      "result": [
+        {
+          "metric": {
+            "le": "0.001",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594435.49,
+            "0"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.002",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594435.49,
+            "0"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.004",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594435.49,
+            "0"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.008",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594435.49,
+            "0"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.016",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594435.49,
+            "18.666666666666664"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.032",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594435.49,
+            "1705.3333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.064",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594435.49,
+            "2272"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.128",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594435.49,
+            "5993.333333333333"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.256",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594435.49,
+            "6580"
+          ]
+        },
+        {
+          "metric": {
+            "le": "0.512",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594435.49,
+            "6580"
+          ]
+        },
+        {
+          "metric": {
+            "le": "1.024",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594435.49,
+            "6580"
+          ]
+        },
+        {
+          "metric": {
+            "le": "+Inf",
+            "pod": "web-7658cb9f7b-kx5xg"
+          },
+          "value": [
+            1795594435.49,
+            "6580"
+          ]
+        }
+      ]
+    },
+    "throttled_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_throttled_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    },
+    "periods_by_pod": {
+      "query": "sum by (pod) (increase(container_cpu_cfs_periods_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    },
+    "cpu_by_pod": {
+      "query": "sum by (pod) (rate(container_cpu_usage_seconds_total{namespace=\"lab3\",container=\"web\"}[20s]))",
+      "result": []
+    }
+  }
+}
