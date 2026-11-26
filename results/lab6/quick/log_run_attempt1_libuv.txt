@@ -1,0 +1,178 @@
+[22:26:27] q_single_B: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task quality --sync none --batch 384 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\q_single_B.json
+{"task": "quality", "sync": "none", "P": 1, "B": 384, "b": 384, "acc": 0.25, "auc": 0.6090266666666667, "steps": 54}
+код 0, 26.4 с
+
+[22:26:53] equiv: -m torch.distributed.run --standalone --nproc_per_node=4 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task equiv --sync manual --batch 384 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\equiv.json
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\rendezvous\c10d_rendezvous_backend.py", line 156, in _create_tcp_store
+    store = TCPStore(
+        host,
+    ...<3 lines>...
+        timeout=timedelta(seconds=read_timeout),
+    )
+torch.distributed.DistStoreError: use_libuv was requested but PyTorch was built without libuv support, run with USE_LIBUV=0 to disable it.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\run.py", line 1142, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\errors\__init__.py", line 380, in wrapper
+    return f(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\run.py", line 1138, in main
+    run(args)
+    ~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\run.py", line 1129, in run
+    elastic_launch(
+    ~~~~~~~~~~~~~~~
+        config=config,
+        ~~~~~~~~~~~~~~
+        entrypoint=cmd,
+        ~~~~~~~~~~~~~~~
+    )(*cmd_args)
+    ~^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\launcher\api.py", line 197, in __call__
+    return launch_agent(
+        self._config,
+    ...<2 lines>...
+        health_check_server=self._health_check_server,
+    )
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\launcher\api.py", line 346, in launch_agent
+    rdzv_handler=rdzv_registry.get_rendezvous_handler(rdzv_parameters),
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\rendezvous\registry.py", line 96, in get_rendezvous_handler
+    return handler_registry.create_handler(params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\rendezvous\api.py", line 377, in create_handler
+    handler = creator(params)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\rendezvous\registry.py", line 46, in _create_c10d_handler
+    backend, store = create_backend(params)
+                     ~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\rendezvous\c10d_rendezvous_backend.py", line 254, in create_backend
+    store = _create_tcp_store(params)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\rendezvous\c10d_rendezvous_backend.py", line 180, in _create_tcp_store
+    raise RendezvousConnectionError(
+        "The connection to the C10d store has failed. See inner exception for details."
+    ) from exc
+torch.distributed.elastic.rendezvous.api.RendezvousConnectionError: The connection to the C10d store has failed. See inner exception for details.
+код 1, 5.1 с
+
+[22:26:58] q_ddp_B_lr0: -m torch.distributed.run --standalone --nproc_per_node=4 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task quality --sync ddp --batch 384 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\q_ddp_B_lr0.json
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\rendezvous\c10d_rendezvous_backend.py", line 156, in _create_tcp_store
+    store = TCPStore(
+        host,
+    ...<3 lines>...
+        timeout=timedelta(seconds=read_timeout),
+    )
+torch.distributed.DistStoreError: use_libuv was requested but PyTorch was built without libuv support, run with USE_LIBUV=0 to disable it.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\run.py", line 1142, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\errors\__init__.py", line 380, in wrapper
+    return f(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\run.py", line 1138, in main
+    run(args)
+    ~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\run.py", line 1129, in run
+    elastic_launch(
+    ~~~~~~~~~~~~~~~
+        config=config,
+        ~~~~~~~~~~~~~~
+        entrypoint=cmd,
+        ~~~~~~~~~~~~~~~
+    )(*cmd_args)
+    ~^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\launcher\api.py", line 197, in __call__
+    return launch_agent(
+        self._config,
+    ...<2 lines>...
+        health_check_server=self._health_check_server,
+    )
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\launcher\api.py", line 346, in launch_agent
+    rdzv_handler=rdzv_registry.get_rendezvous_handler(rdzv_parameters),
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\rendezvous\registry.py", line 96, in get_rendezvous_handler
+    return handler_registry.create_handler(params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\rendezvous\api.py", line 377, in create_handler
+    handler = creator(params)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\rendezvous\registry.py", line 46, in _create_c10d_handler
+    backend, store = create_backend(params)
+                     ~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\rendezvous\c10d_rendezvous_backend.py", line 254, in create_backend
+    store = _create_tcp_store(params)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\rendezvous\c10d_rendezvous_backend.py", line 180, in _create_tcp_store
+    raise RendezvousConnectionError(
+        "The connection to the C10d store has failed. See inner exception for details."
+    ) from exc
+torch.distributed.elastic.rendezvous.api.RendezvousConnectionError: The connection to the C10d store has failed. See inner exception for details.
+код 1, 5.3 с
+
+[22:27:04] q_ddp1_b_lr0: -m torch.distributed.run --standalone --nproc_per_node=1 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task quality --sync ddp --batch 96 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\q_ddp1_b_lr0.json
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\rendezvous\c10d_rendezvous_backend.py", line 156, in _create_tcp_store
+    store = TCPStore(
+        host,
+    ...<3 lines>...
+        timeout=timedelta(seconds=read_timeout),
+    )
+torch.distributed.DistStoreError: use_libuv was requested but PyTorch was built without libuv support, run with USE_LIBUV=0 to disable it.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\run.py", line 1142, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\errors\__init__.py", line 380, in wrapper
+    return f(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\run.py", line 1138, in main
+    run(args)
+    ~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\run.py", line 1129, in run
+    elastic_launch(
+    ~~~~~~~~~~~~~~~
+        config=config,
+        ~~~~~~~~~~~~~~
+        entrypoint=cmd,
+        ~~~~~~~~~~~~~~~
+    )(*cmd_args)
+    ~^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\launcher\api.py", line 197, in __call__
+    return launch_agent(
+        self._config,
+    ...<2 lines>...
+        health_check_server=self._health_check_server,
+    )
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\launcher\api.py", line 346, in launch_agent
+    rdzv_handler=rdzv_registry.get_rendezvous_handler(rdzv_parameters),
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\rendezvous\registry.py", line 96, in get_rendezvous_handler
+    return handler_registry.create_handler(params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\rendezvous\api.py", line 377, in create_handler
+    handler = creator(params)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\rendezvous\registry.py", line 46, in _create_c10d_handler
+    backend, store = create_backend(params)
+                     ~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\rendezvous\c10d_rendezvous_backend.py", line 254, in create_backend
+    store = _create_tcp_store(params)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\rendezvous\c10d_rendezvous_backend.py", line 180, in _create_tcp_store
+    raise RendezvousConnectionError(
+        "The connection to the C10d store has failed. See inner exception for details."
+    ) from exc
+torch.distributed.elastic.rendezvous.api.RendezvousConnectionError: The connection to the C10d store has failed. See inner exception for details.
+код 1, 5.3 с
+

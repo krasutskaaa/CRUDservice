@@ -1,0 +1,33 @@
+{
+ "cpu": "Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz",
+ "c_phys": 4,
+ "c_logical": 8,
+ "mem_gb": 7.8,
+ "os": "Windows-11-10.0.26300-SP0",
+ "python": "3.14.5",
+ "torch": "2.14.1+cu130",
+ "n_th": 1,
+ "dataset": "Д6 (octmnist)",
+ "K": 4,
+ "C": 1,
+ "widths": [
+  16,
+  32,
+  128
+ ],
+ "n_params": 206148,
+ "n_params_formula": 206148,
+ "M_MiB": 0.7863922119140625,
+ "N": 7000,
+ "B": 384,
+ "P_max": 4,
+ "variant": {
+  "dataset": "Д6",
+  "width": "Ш1",
+  "P_max": 4,
+  "B": 384,
+  "K_c": 10,
+  "s_f": 25
+ },
+ "host": "DESKTOP-67R728T"
+}

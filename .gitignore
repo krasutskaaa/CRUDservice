@@ -2,3 +2,7 @@
 __pycache__/
 *.pyc
 .venv/
+# ЛР6: датасет MedMNIST і контрольні точки
+data/
+*.pt
+*.tmp

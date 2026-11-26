@@ -1,0 +1,676 @@
+[22:28:45] q_single_B: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task quality --sync none --batch 384 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\q_single_B.json
+{"task": "quality", "sync": "none", "P": 1, "B": 384, "b": 384, "acc": 0.25, "auc": 0.6090266666666667, "steps": 54}
+код 0, 18.1 с
+
+[22:29:03] equiv: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --standalone --nproc_per_node=4 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task equiv --sync manual --batch 384 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\equiv.json
+{"task": "equiv", "sync": "manual", "P": 4, "B": 384, "b": 96, "max_ratio": 1.0308443961548619e-05, "weight_sum_spread": 0.0}
+[W1125 22:29:07.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52000 (system error: 10049 - unknown error).
+[W1125 22:29:07.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52003 (system error: 10049 - unknown error).
+[W1125 22:29:07.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52003 (system error: 10049 - unknown error).
+W1125 22:29:07.845000 17996 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:29:07.845000 17996 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:29:07.845000 17996 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:29:07.845000 17996 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:29:07.845000 17996 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:29:10.006000 17996 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:29:10.006000 17996 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:29:10.006000 17996 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:29:10.006000 17996 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:29:10.006000 17996 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:29:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52003 (system error: 10049 - unknown error).
+[W1125 22:29:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52003 (system error: 10049 - unknown error).
+[W1125 22:29:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52003 (system error: 10049 - unknown error).
+[W1125 22:29:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52003 (system error: 10049 - unknown error).
+[W1125 22:29:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52003 (system error: 10049 - unknown error).
+[W1125 22:29:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52003 (system error: 10049 - unknown error).
+[W1125 22:29:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52003 (system error: 10049 - unknown error).
+[W1125 22:29:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52003 (system error: 10049 - unknown error).
+код 0, 26.1 с
+
+[22:29:29] q_ddp_B_lr0: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --standalone --nproc_per_node=4 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task quality --sync ddp --batch 384 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\q_ddp_B_lr0.json
+{"task": "quality", "sync": "ddp", "P": 4, "B": 384, "b": 96, "acc": 0.25, "auc": 0.6090306666666666, "steps": 54}
+[W1125 22:29:33.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:49615 (system error: 10049 - unknown error).
+[W1125 22:29:33.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:49618 (system error: 10049 - unknown error).
+[W1125 22:29:33.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:49618 (system error: 10049 - unknown error).
+W1125 22:29:33.985000 16424 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:29:33.985000 16424 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:29:33.985000 16424 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:29:33.985000 16424 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:29:33.985000 16424 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:29:36.180000 16424 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:29:36.180000 16424 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:29:36.180000 16424 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:29:36.180000 16424 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:29:36.180000 16424 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:29:40.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:49618 (system error: 10049 - unknown error).
+[W1125 22:29:40.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:49618 (system error: 10049 - unknown error).
+[W1125 22:29:40.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:49618 (system error: 10049 - unknown error).
+[W1125 22:29:40.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:49618 (system error: 10049 - unknown error).
+[W1125 22:29:40.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:49618 (system error: 10049 - unknown error).
+[W1125 22:29:40.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:49618 (system error: 10049 - unknown error).
+[W1125 22:29:40.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:49618 (system error: 10049 - unknown error).
+[W1125 22:29:40.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:49618 (system error: 10049 - unknown error).
+код 0, 26.5 с
+
+[22:29:56] q_ddp1_b_lr0: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --standalone --nproc_per_node=1 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task quality --sync ddp --batch 96 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\q_ddp1_b_lr0.json
+{"task": "quality", "sync": "ddp", "P": 1, "B": 96, "b": 96, "acc": 0.361, "auc": 0.707944, "steps": 216}
+[W1125 22:30:00.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:49656 (system error: 10049 - unknown error).
+[W1125 22:30:00.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:49659 (system error: 10049 - unknown error).
+[W1125 22:30:00.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:49659 (system error: 10049 - unknown error).
+W1125 22:30:00.401000 8724 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:30:00.401000 8724 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:30:00.401000 8724 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:30:00.401000 8724 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:30:00.401000 8724 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:30:02.557000 8724 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:30:02.557000 8724 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:30:02.557000 8724 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:30:02.557000 8724 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:30:02.557000 8724 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:30:05.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:49659 (system error: 10049 - unknown error).
+[W1125 22:30:05.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:49659 (system error: 10049 - unknown error).
+код 0, 24.2 с
+
+[22:30:20] q_ddp_B_lrP: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --standalone --nproc_per_node=4 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task quality --sync ddp --batch 384 --lr 0.08 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\q_ddp_B_lrP.json
+{"task": "quality", "sync": "ddp", "P": 4, "B": 384, "b": 96, "acc": 0.337, "auc": 0.6640886666666665, "steps": 54}
+[W1125 22:30:24.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:57059 (system error: 10049 - unknown error).
+[W1125 22:30:24.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:57062 (system error: 10049 - unknown error).
+[W1125 22:30:24.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:57062 (system error: 10049 - unknown error).
+W1125 22:30:24.870000 5684 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:30:24.870000 5684 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:30:24.870000 5684 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:30:24.870000 5684 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:30:24.870000 5684 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:30:27.347000 5684 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:30:27.347000 5684 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:30:27.347000 5684 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:30:27.347000 5684 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:30:27.347000 5684 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:30:32.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:57062 (system error: 10049 - unknown error).
+[W1125 22:30:32.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:57062 (system error: 10049 - unknown error).
+[W1125 22:30:32.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:57062 (system error: 10049 - unknown error).
+[W1125 22:30:32.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:57062 (system error: 10049 - unknown error).
+[W1125 22:30:32.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:57062 (system error: 10049 - unknown error).
+[W1125 22:30:32.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:57062 (system error: 10049 - unknown error).
+[W1125 22:30:32.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:57062 (system error: 10049 - unknown error).
+[W1125 22:30:32.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:57062 (system error: 10049 - unknown error).
+код 0, 27.8 с
+
+[22:30:48] sp_single_B_r1: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task speed --sync none --batch 384 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\sp_single_B_r1.json
+{"task": "speed", "sync": "none", "P": 1, "B": 384, "b": 384, "t_step_ms": 130.40690000070754, "X": 2811.911420806757}
+код 0, 16.2 с
+
+[22:31:04] sp_manual_P4_r1: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --standalone --nproc_per_node=4 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task speed --sync manual --batch 384 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\sp_manual_P4_r1.json
+{"task": "speed", "sync": "manual", "P": 4, "B": 384, "b": 96, "t_step_ms": 93.76255000006495, "t_sync_ms": 18.416449999676843, "X": 3881.650105633317}
+[W1125 22:31:08.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:56514 (system error: 10049 - unknown error).
+[W1125 22:31:08.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:56517 (system error: 10049 - unknown error).
+[W1125 22:31:08.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:56517 (system error: 10049 - unknown error).
+W1125 22:31:08.833000 15172 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:31:08.833000 15172 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:31:08.833000 15172 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:31:08.833000 15172 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:31:08.833000 15172 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:31:10.982000 15172 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:31:10.982000 15172 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:31:10.982000 15172 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:31:10.982000 15172 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:31:10.982000 15172 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:31:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:56517 (system error: 10049 - unknown error).
+[W1125 22:31:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:56517 (system error: 10049 - unknown error).
+[W1125 22:31:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:56517 (system error: 10049 - unknown error).
+[W1125 22:31:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:56517 (system error: 10049 - unknown error).
+[W1125 22:31:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:56517 (system error: 10049 - unknown error).
+[W1125 22:31:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:56517 (system error: 10049 - unknown error).
+[W1125 22:31:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:56517 (system error: 10049 - unknown error).
+[W1125 22:31:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:56517 (system error: 10049 - unknown error).
+код 0, 25.5 с
+
+[22:31:29] sp_strong_ddp_P1_r1: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --standalone --nproc_per_node=1 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task speed --sync ddp --batch 384 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\sp_strong_ddp_P1_r1.json
+{"task": "speed", "sync": "ddp", "P": 1, "B": 384, "b": 384, "t_step_ms": 129.15195000005042, "X": 2909.569136454343}
+[W1125 22:31:34.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:50395 (system error: 10049 - unknown error).
+[W1125 22:31:34.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:50398 (system error: 10049 - unknown error).
+[W1125 22:31:34.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:50398 (system error: 10049 - unknown error).
+W1125 22:31:34.889000 19120 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:31:34.889000 19120 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:31:34.889000 19120 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:31:34.889000 19120 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:31:34.889000 19120 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:31:37.063000 19120 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:31:37.063000 19120 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:31:37.063000 19120 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:31:37.063000 19120 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:31:37.063000 19120 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:31:40.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:50398 (system error: 10049 - unknown error).
+[W1125 22:31:40.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:50398 (system error: 10049 - unknown error).
+код 0, 23.9 с
+
+[22:31:53] sp_strong_nosync_P1_r1: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --standalone --nproc_per_node=1 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task speed --sync ddp_nosync --batch 384 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\sp_strong_nosync_P1_r1.json
+{"task": "speed", "sync": "ddp_nosync", "P": 1, "B": 384, "b": 384, "t_step_ms": 130.2372000000105, "X": 2898.231805380671}
+[W1125 22:31:57.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52430 (system error: 10049 - unknown error).
+[W1125 22:31:58.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52433 (system error: 10049 - unknown error).
+[W1125 22:31:58.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52433 (system error: 10049 - unknown error).
+W1125 22:31:58.301000 17016 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:31:58.301000 17016 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:31:58.301000 17016 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:31:58.301000 17016 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:31:58.301000 17016 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:32:00.478000 17016 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:32:00.478000 17016 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:32:00.478000 17016 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:32:00.478000 17016 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:32:00.478000 17016 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:32:03.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52433 (system error: 10049 - unknown error).
+[W1125 22:32:03.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52433 (system error: 10049 - unknown error).
+код 0, 23.8 с
+
+[22:32:17] sp_strong_ddp_P2_r1: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --standalone --nproc_per_node=2 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task speed --sync ddp --batch 384 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\sp_strong_ddp_P2_r1.json
+{"task": "speed", "sync": "ddp", "P": 2, "B": 384, "b": 192, "t_step_ms": 88.1990499992753, "X": 4045.916516516078}
+[W1125 22:32:21.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52443 (system error: 10049 - unknown error).
+[W1125 22:32:21.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52446 (system error: 10049 - unknown error).
+[W1125 22:32:21.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52446 (system error: 10049 - unknown error).
+W1125 22:32:21.993000 18304 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:32:21.993000 18304 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:32:21.993000 18304 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:32:21.993000 18304 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:32:21.993000 18304 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:32:24.135000 18304 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:32:24.135000 18304 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:32:24.135000 18304 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:32:24.135000 18304 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:32:24.135000 18304 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:32:27.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52446 (system error: 10049 - unknown error).
+[W1125 22:32:27.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52446 (system error: 10049 - unknown error).
+[W1125 22:32:27.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52446 (system error: 10049 - unknown error).
+[W1125 22:32:27.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52446 (system error: 10049 - unknown error).
+код 0, 21.8 с
+
+[22:32:39] sp_strong_nosync_P2_r1: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --standalone --nproc_per_node=2 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task speed --sync ddp_nosync --batch 384 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\sp_strong_nosync_P2_r1.json
+{"task": "speed", "sync": "ddp_nosync", "P": 2, "B": 384, "b": 192, "t_step_ms": 78.81255000029341, "X": 4613.429896264859}
+[W1125 22:32:43.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:53942 (system error: 10049 - unknown error).
+[W1125 22:32:43.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:53945 (system error: 10049 - unknown error).
+[W1125 22:32:43.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:53945 (system error: 10049 - unknown error).
+W1125 22:32:43.597000 19512 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:32:43.597000 19512 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:32:43.597000 19512 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:32:43.597000 19512 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:32:43.597000 19512 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:32:45.712000 19512 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:32:45.712000 19512 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:32:45.712000 19512 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:32:45.712000 19512 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:32:45.712000 19512 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:32:49.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:53945 (system error: 10049 - unknown error).
+[W1125 22:32:49.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:53945 (system error: 10049 - unknown error).
+[W1125 22:32:49.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:53945 (system error: 10049 - unknown error).
+[W1125 22:32:49.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:53945 (system error: 10049 - unknown error).
+код 0, 20.8 с
+
+[22:33:00] sp_strong_ddp_P3_r1: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --standalone --nproc_per_node=3 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task speed --sync ddp --batch 384 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\sp_strong_ddp_P3_r1.json
+{"task": "speed", "sync": "ddp", "P": 3, "B": 384, "b": 128, "t_step_ms": 78.9856499995949, "X": 4659.783389967398}
+[W1125 22:33:04.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58032 (system error: 10049 - unknown error).
+[W1125 22:33:04.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58035 (system error: 10049 - unknown error).
+[W1125 22:33:04.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:58035 (system error: 10049 - unknown error).
+W1125 22:33:04.677000 21440 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:33:04.677000 21440 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:33:04.677000 21440 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:33:04.677000 21440 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:33:04.677000 21440 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:33:06.797000 21440 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:33:06.797000 21440 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:33:06.797000 21440 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:33:06.797000 21440 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:33:06.797000 21440 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:33:10.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58035 (system error: 10049 - unknown error).
+[W1125 22:33:10.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58035 (system error: 10049 - unknown error).
+[W1125 22:33:10.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58035 (system error: 10049 - unknown error).
+[W1125 22:33:10.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:58035 (system error: 10049 - unknown error).
+[W1125 22:33:10.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:58035 (system error: 10049 - unknown error).
+[W1125 22:33:10.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:58035 (system error: 10049 - unknown error).
+код 0, 21.6 с
+
+[22:33:21] sp_strong_nosync_P3_r1: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --standalone --nproc_per_node=3 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task speed --sync ddp_nosync --batch 384 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\sp_strong_nosync_P3_r1.json
+{"task": "speed", "sync": "ddp_nosync", "P": 3, "B": 384, "b": 128, "t_step_ms": 65.53959999928338, "X": 5645.701530462897}
+[W1125 22:33:25.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58060 (system error: 10049 - unknown error).
+[W1125 22:33:26.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58063 (system error: 10049 - unknown error).
+[W1125 22:33:26.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:58063 (system error: 10049 - unknown error).
+W1125 22:33:26.051000 11700 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:33:26.051000 11700 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:33:26.051000 11700 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:33:26.051000 11700 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:33:26.051000 11700 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:33:28.168000 11700 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:33:28.168000 11700 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:33:28.168000 11700 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:33:28.168000 11700 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:33:28.168000 11700 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:33:31.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58063 (system error: 10049 - unknown error).
+[W1125 22:33:31.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58063 (system error: 10049 - unknown error).
+[W1125 22:33:31.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:58063 (system error: 10049 - unknown error).
+[W1125 22:33:31.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:58063 (system error: 10049 - unknown error).
+[W1125 22:33:31.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58063 (system error: 10049 - unknown error).
+[W1125 22:33:31.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:58063 (system error: 10049 - unknown error).
+код 0, 20.4 с
+
+[22:33:42] sp_strong_ddp_P4_r1: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --standalone --nproc_per_node=4 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task speed --sync ddp --batch 384 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\sp_strong_ddp_P4_r1.json
+{"task": "speed", "sync": "ddp", "P": 4, "B": 384, "b": 96, "t_step_ms": 75.21929999984422, "X": 4942.857605514744}
+[W1125 22:33:46.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58092 (system error: 10049 - unknown error).
+[W1125 22:33:46.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58095 (system error: 10049 - unknown error).
+[W1125 22:33:46.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:58095 (system error: 10049 - unknown error).
+W1125 22:33:46.515000 16788 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:33:46.515000 16788 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:33:46.515000 16788 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:33:46.515000 16788 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:33:46.515000 16788 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:33:48.622000 16788 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:33:48.622000 16788 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:33:48.622000 16788 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:33:48.622000 16788 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:33:48.622000 16788 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:33:52.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58095 (system error: 10049 - unknown error).
+[W1125 22:33:52.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:58095 (system error: 10049 - unknown error).
+[W1125 22:33:52.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58095 (system error: 10049 - unknown error).
+[W1125 22:33:52.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:58095 (system error: 10049 - unknown error).
+[W1125 22:33:52.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58095 (system error: 10049 - unknown error).
+[W1125 22:33:52.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:58095 (system error: 10049 - unknown error).
+[W1125 22:33:52.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58095 (system error: 10049 - unknown error).
+[W1125 22:33:52.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:58095 (system error: 10049 - unknown error).
+код 0, 22.2 с
+
+[22:34:04] sp_strong_nosync_P4_r1: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --standalone --nproc_per_node=4 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task speed --sync ddp_nosync --batch 384 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\sp_strong_nosync_P4_r1.json
+{"task": "speed", "sync": "ddp_nosync", "P": 4, "B": 384, "b": 96, "t_step_ms": 65.35055000040302, "X": 5669.468230453665}
+[W1125 22:34:08.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58131 (system error: 10049 - unknown error).
+[W1125 22:34:08.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58134 (system error: 10049 - unknown error).
+[W1125 22:34:08.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:58134 (system error: 10049 - unknown error).
+W1125 22:34:08.780000 21108 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:34:08.780000 21108 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:34:08.780000 21108 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:34:08.780000 21108 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:34:08.780000 21108 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:34:10.905000 21108 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:34:10.905000 21108 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:34:10.905000 21108 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:34:10.905000 21108 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:34:10.905000 21108 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:34:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58134 (system error: 10049 - unknown error).
+[W1125 22:34:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:58134 (system error: 10049 - unknown error).
+[W1125 22:34:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58134 (system error: 10049 - unknown error).
+[W1125 22:34:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:58134 (system error: 10049 - unknown error).
+[W1125 22:34:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58134 (system error: 10049 - unknown error).
+[W1125 22:34:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:58134 (system error: 10049 - unknown error).
+[W1125 22:34:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58134 (system error: 10049 - unknown error).
+[W1125 22:34:15.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:58134 (system error: 10049 - unknown error).
+код 0, 22.3 с
+
+[22:34:26] sp_weak_ddp_P1_r1: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --standalone --nproc_per_node=1 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task speed --sync ddp --batch 96 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\sp_weak_ddp_P1_r1.json
+{"task": "speed", "sync": "ddp", "P": 1, "B": 96, "b": 96, "t_step_ms": 27.275499999632302, "X": 3351.6222515036297}
+[W1125 22:34:30.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58173 (system error: 10049 - unknown error).
+[W1125 22:34:30.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58176 (system error: 10049 - unknown error).
+[W1125 22:34:30.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:58176 (system error: 10049 - unknown error).
+W1125 22:34:30.774000 19512 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:34:30.774000 19512 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:34:30.774000 19512 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:34:30.774000 19512 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:34:30.774000 19512 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:34:32.825000 19512 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:34:32.825000 19512 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:34:32.825000 19512 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:34:32.825000 19512 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:34:32.825000 19512 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:34:36.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:58176 (system error: 10049 - unknown error).
+[W1125 22:34:36.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:58176 (system error: 10049 - unknown error).
+код 0, 16.8 с
+
+[22:34:43] sp_weak_ddp_P2_r1: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --standalone --nproc_per_node=2 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task speed --sync ddp --batch 192 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\sp_weak_ddp_P2_r1.json
+{"task": "speed", "sync": "ddp", "P": 2, "B": 192, "b": 96, "t_step_ms": 44.31095000018104, "X": 3894.5892106991855}
+[W1125 22:34:47.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52847 (system error: 10049 - unknown error).
+[W1125 22:34:47.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52850 (system error: 10049 - unknown error).
+[W1125 22:34:47.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52850 (system error: 10049 - unknown error).
+W1125 22:34:47.763000 16364 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:34:47.763000 16364 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:34:47.763000 16364 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:34:47.763000 16364 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:34:47.763000 16364 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:34:49.780000 16364 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:34:49.780000 16364 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:34:49.780000 16364 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:34:49.780000 16364 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:34:49.780000 16364 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:34:53.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52850 (system error: 10049 - unknown error).
+[W1125 22:34:53.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52850 (system error: 10049 - unknown error).
+[W1125 22:34:53.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52850 (system error: 10049 - unknown error).
+[W1125 22:34:53.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52850 (system error: 10049 - unknown error).
+код 0, 18.5 с
+
+[22:35:02] sp_weak_ddp_P3_r1: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --standalone --nproc_per_node=3 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task speed --sync ddp --batch 288 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\sp_weak_ddp_P3_r1.json
+{"task": "speed", "sync": "ddp", "P": 3, "B": 288, "b": 96, "t_step_ms": 55.508000000372704, "X": 5017.032826444412}
+[W1125 22:35:06.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52869 (system error: 10049 - unknown error).
+[W1125 22:35:06.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52872 (system error: 10049 - unknown error).
+[W1125 22:35:06.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52872 (system error: 10049 - unknown error).
+W1125 22:35:06.435000 6764 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:35:06.435000 6764 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:35:06.435000 6764 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:35:06.435000 6764 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:35:06.435000 6764 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:35:08.554000 6764 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:35:08.554000 6764 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:35:08.554000 6764 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:35:08.554000 6764 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:35:08.554000 6764 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:35:12.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52872 (system error: 10049 - unknown error).
+[W1125 22:35:12.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52872 (system error: 10049 - unknown error).
+[W1125 22:35:12.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52872 (system error: 10049 - unknown error).
+[W1125 22:35:12.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52872 (system error: 10049 - unknown error).
+[W1125 22:35:12.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52872 (system error: 10049 - unknown error).
+[W1125 22:35:12.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52872 (system error: 10049 - unknown error).
+код 0, 20.0 с
+
+[22:38:49] fault/result: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --nnodes=1 --max-restarts=1 --rdzv-backend=static --master-addr=127.0.0.1 --master-port=29500 --node-rank=0 --nproc_per_node=4 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task quality --sync ddp --batch 384 --ckpt-every 10 --fail-step 25 --workdir C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\fault --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\fault\result.json
+[W1125 22:38:53.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+W1125 22:38:53.904000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:38:53.904000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:38:53.904000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:38:53.904000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:38:53.904000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:38:56.133000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:38:56.133000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:38:56.133000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:38:56.133000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:38:56.133000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:39:02.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+[W1125 22:39:02.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+[W1125 22:39:02.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+[W1125 22:39:02.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+W1125 22:39:11.048000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:1028] Sending process 7796 closing signal CTRL_C_EVENT
+W1125 22:39:11.054000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:1028] Sending process 10652 closing signal CTRL_C_EVENT
+W1125 22:39:11.054000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:1028] Sending process 18400 closing signal CTRL_C_EVENT
+W1125 22:39:41.064000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:1047] Unable to shutdown process 7796 via 0, forcefully exiting via 0
+E1125 22:40:11.068000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:1061] Process 7796 did not exit after CTRL_C_EVENT within 30s; abandoning and continuing teardown. Worker may be in uninterruptible kernel sleep (e.g. wedged on GPU/NIC); host may need to be recycled.
+W1125 22:40:11.068000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:1047] Unable to shutdown process 10652 via 0, forcefully exiting via 0
+E1125 22:40:41.077000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:1061] Process 10652 did not exit after CTRL_C_EVENT within 30s; abandoning and continuing teardown. Worker may be in uninterruptible kernel sleep (e.g. wedged on GPU/NIC); host may need to be recycled.
+W1125 22:40:41.078000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:1047] Unable to shutdown process 18400 via 0, forcefully exiting via 0
+E1125 22:41:11.091000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:1061] Process 18400 did not exit after CTRL_C_EVENT within 30s; abandoning and continuing teardown. Worker may be in uninterruptible kernel sleep (e.g. wedged on GPU/NIC); host may need to be recycled.
+E1125 22:41:11.096000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:1002] failed (exitcode: 1) local_rank: 3 (pid: 18772) of binary: C:\Users\User\AppData\Local\Programs\Python\Python314\python.exe
+W1125 22:41:11.097000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:1028] Sending process 7796 closing signal SIGTERM
+W1125 22:41:11.106000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:1028] Sending process 10652 closing signal SIGTERM
+W1125 22:41:11.106000 19428 site-packages\torch\distributed\elastic\multiprocessing\api.py:1028] Sending process 18400 closing signal SIGTERM
+W1125 22:41:12.197000 19428 site-packages\torch\distributed\elastic\agent\server\api.py:753] Received 2 death signal, shutting down workers
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py", line 36, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\errors\__init__.py", line 380, in wrapper
+    return f(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\run.py", line 1138, in main
+    run(args)
+    ~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\run.py", line 1129, in run
+    elastic_launch(
+    ~~~~~~~~~~~~~~~
+        config=config,
+        ~~~~~~~~~~~~~~
+        entrypoint=cmd,
+        ~~~~~~~~~~~~~~~
+    )(*cmd_args)
+    ~^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\launcher\api.py", line 197, in __call__
+    return launch_agent(
+        self._config,
+    ...<2 lines>...
+        health_check_server=self._health_check_server,
+    )
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\launcher\api.py", line 377, in launch_agent
+    result = agent.run()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\metrics\api.py", line 134, in wrapper
+    result = f(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\agent\server\api.py", line 745, in run
+    result = self._invoke_run(role)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\agent\server\api.py", line 952, in _invoke_run
+    self._restart_workers(self._worker_group)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\metrics\api.py", line 134, in wrapper
+    result = f(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\agent\server\api.py", line 734, in _restart_workers
+    self._stop_workers(worker_group)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\metrics\api.py", line 134, in wrapper
+    result = f(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\agent\server\local_elastic_agent.py", line 398, in _stop_workers
+    self._shutdown()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\agent\server\local_elastic_agent.py", line 537, in _shutdown
+    self._pcontext.close(death_sig, timeout)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 661, in close
+    self._close(death_sig=death_sig, timeout=timeout)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 1040, in _close
+    handler.proc.wait(time_to_wait)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1279, in wait
+    return self._wait(timeout=timeout)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1605, in _wait
+    result = _winapi.WaitForSingleObject(self._handle,
+                                         timeout_millis)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 86, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 19428 got signal: 2
+код 1, 144.5 с
+
+[22:41:13] fault_manual/result: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --nnodes=1 --max-restarts=1 --rdzv-backend=static --master-addr=127.0.0.1 --master-port=29500 --node-rank=0 --nproc_per_node=4 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task quality --sync manual --batch 384 --ckpt-every 10 --fail-step 25 --workdir C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\fault_manual --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\fault_manual\result.json
+[W1125 22:41:19.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+W1125 22:41:19.042000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:41:19.042000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:41:19.042000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:41:19.042000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:41:19.042000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:41:21.975000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:41:21.975000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:41:21.975000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:41:21.975000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:41:21.975000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:41:28.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+[W1125 22:41:28.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+[W1125 22:41:28.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+[W1125 22:41:28.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+W1125 22:41:37.094000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:1028] Sending process 15120 closing signal CTRL_C_EVENT
+W1125 22:41:37.097000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:1028] Sending process 21012 closing signal CTRL_C_EVENT
+W1125 22:41:37.097000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:1028] Sending process 19160 closing signal CTRL_C_EVENT
+W1125 22:42:07.099000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:1047] Unable to shutdown process 15120 via 0, forcefully exiting via 0
+E1125 22:42:37.103000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:1061] Process 15120 did not exit after CTRL_C_EVENT within 30s; abandoning and continuing teardown. Worker may be in uninterruptible kernel sleep (e.g. wedged on GPU/NIC); host may need to be recycled.
+W1125 22:42:37.104000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:1047] Unable to shutdown process 21012 via 0, forcefully exiting via 0
+E1125 22:43:07.108000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:1061] Process 21012 did not exit after CTRL_C_EVENT within 30s; abandoning and continuing teardown. Worker may be in uninterruptible kernel sleep (e.g. wedged on GPU/NIC); host may need to be recycled.
+W1125 22:43:07.108000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:1047] Unable to shutdown process 19160 via 0, forcefully exiting via 0
+E1125 22:43:37.119000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:1061] Process 19160 did not exit after CTRL_C_EVENT within 30s; abandoning and continuing teardown. Worker may be in uninterruptible kernel sleep (e.g. wedged on GPU/NIC); host may need to be recycled.
+E1125 22:43:37.120000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:1002] failed (exitcode: 1) local_rank: 3 (pid: 21372) of binary: C:\Users\User\AppData\Local\Programs\Python\Python314\python.exe
+W1125 22:43:37.121000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:1028] Sending process 15120 closing signal SIGTERM
+W1125 22:43:37.130000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:1028] Sending process 21012 closing signal SIGTERM
+W1125 22:43:37.130000 18936 site-packages\torch\distributed\elastic\multiprocessing\api.py:1028] Sending process 19160 closing signal SIGTERM
+W1125 22:43:38.218000 18936 site-packages\torch\distributed\elastic\agent\server\api.py:753] Received 2 death signal, shutting down workers
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py", line 36, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\errors\__init__.py", line 380, in wrapper
+    return f(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\run.py", line 1138, in main
+    run(args)
+    ~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\run.py", line 1129, in run
+    elastic_launch(
+    ~~~~~~~~~~~~~~~
+        config=config,
+        ~~~~~~~~~~~~~~
+        entrypoint=cmd,
+        ~~~~~~~~~~~~~~~
+    )(*cmd_args)
+    ~^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\launcher\api.py", line 197, in __call__
+    return launch_agent(
+        self._config,
+    ...<2 lines>...
+        health_check_server=self._health_check_server,
+    )
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\launcher\api.py", line 377, in launch_agent
+    result = agent.run()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\metrics\api.py", line 134, in wrapper
+    result = f(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\agent\server\api.py", line 745, in run
+    result = self._invoke_run(role)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\agent\server\api.py", line 952, in _invoke_run
+    self._restart_workers(self._worker_group)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\metrics\api.py", line 134, in wrapper
+    result = f(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\agent\server\api.py", line 734, in _restart_workers
+    self._stop_workers(worker_group)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\metrics\api.py", line 134, in wrapper
+    result = f(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\agent\server\local_elastic_agent.py", line 398, in _stop_workers
+    self._shutdown()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\agent\server\local_elastic_agent.py", line 537, in _shutdown
+    self._pcontext.close(death_sig, timeout)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 661, in close
+    self._close(death_sig=death_sig, timeout=timeout)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 1040, in _close
+    handler.proc.wait(time_to_wait)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1279, in wait
+    return self._wait(timeout=timeout)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1605, in _wait
+    result = _winapi.WaitForSingleObject(self._handle,
+                                         timeout_millis)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 86, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 18936 got signal: 2
+код 1, 145.6 с
+
+[22:43:39] q_manual_B_lr0: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --standalone --nproc_per_node=4 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task quality --sync manual --batch 384 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\q_manual_B_lr0.json
+{"task": "quality", "sync": "manual", "P": 4, "B": 384, "b": 96, "acc": 0.25, "auc": 0.6090326666666667, "steps": 54}
+[W1125 22:43:43.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:57190 (system error: 10049 - unknown error).
+[W1125 22:43:43.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:57193 (system error: 10049 - unknown error).
+[W1125 22:43:43.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:57193 (system error: 10049 - unknown error).
+W1125 22:43:43.878000 3936 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:43:43.878000 3936 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:43:43.878000 3936 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:43:43.878000 3936 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:43:43.878000 3936 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:43:46.127000 3936 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:43:46.127000 3936 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:43:46.127000 3936 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:43:46.127000 3936 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:43:46.127000 3936 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:43:51.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:57193 (system error: 10049 - unknown error).
+[W1125 22:43:51.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:57193 (system error: 10049 - unknown error).
+[W1125 22:43:51.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:57193 (system error: 10049 - unknown error).
+[W1125 22:43:51.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:57193 (system error: 10049 - unknown error).
+[W1125 22:43:51.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:57193 (system error: 10049 - unknown error).
+[W1125 22:43:51.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:57193 (system error: 10049 - unknown error).
+[W1125 22:43:51.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:57193 (system error: 10049 - unknown error).
+[W1125 22:43:51.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:57193 (system error: 10049 - unknown error).
+код 0, 27.1 с
+
+[22:44:40] fault/result: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --nnodes=1 --max-restarts=1 --rdzv-backend=static --master-addr=127.0.0.1 --master-port=29500 --node-rank=0 --nproc_per_node=4 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task quality --sync ddp --batch 384 --ckpt-every 10 --fail-step 25 --workdir C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\fault --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\fault\result.json
+{"task": "quality", "sync": "ddp", "P": 4, "B": 384, "b": 96, "acc": 0.25, "auc": 0.6090346666666667, "steps": 54}
+[W1125 22:44:45.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+W1125 22:44:45.619000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:44:45.619000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:44:45.619000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:44:45.619000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:44:45.619000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:44:47.682000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:44:47.682000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:44:47.682000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:44:47.682000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:44:47.682000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:44:52.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+[W1125 22:44:52.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+[W1125 22:44:52.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+[W1125 22:44:52.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+W1125 22:44:59.891000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:1028] Sending process 21016 closing signal SIGTERM
+W1125 22:44:59.891000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:1028] Sending process 16808 closing signal SIGTERM
+W1125 22:44:59.891000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:1028] Sending process 18004 closing signal SIGTERM
+E1125 22:44:59.997000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:1002] failed (exitcode: 1) local_rank: 3 (pid: 10256) of binary: C:\Users\User\AppData\Local\Programs\Python\Python314\python.exe
+W1125 22:45:00.010000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:45:00.010000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:45:00.010000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:45:00.010000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:45:00.010000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:45:00.011000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:45:00.011000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:45:00.011000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:45:00.011000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:45:00.011000 12992 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:45:04.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+[W1125 22:45:04.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+[W1125 22:45:04.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+[W1125 22:45:04.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+код 0, 36.1 с
+
+[22:45:16] fault_manual/result: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --nnodes=1 --max-restarts=1 --rdzv-backend=static --master-addr=127.0.0.1 --master-port=29500 --node-rank=0 --nproc_per_node=4 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task quality --sync manual --batch 384 --ckpt-every 10 --fail-step 25 --workdir C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\fault_manual --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\fault_manual\result.json
+{"task": "quality", "sync": "manual", "P": 4, "B": 384, "b": 96, "acc": 0.25, "auc": 0.6090326666666667, "steps": 54}
+[W1125 22:45:20.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+W1125 22:45:21.028000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:45:21.028000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:45:21.028000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:45:21.028000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:45:21.028000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:45:23.087000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:45:23.087000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:45:23.087000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:45:23.087000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:45:23.087000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:45:27.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+[W1125 22:45:27.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+[W1125 22:45:27.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+[W1125 22:45:27.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+W1125 22:45:36.182000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:1028] Sending process 11388 closing signal SIGTERM
+W1125 22:45:36.185000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:1028] Sending process 12396 closing signal SIGTERM
+W1125 22:45:36.185000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:1028] Sending process 12208 closing signal SIGTERM
+E1125 22:45:36.266000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:1002] failed (exitcode: 1) local_rank: 3 (pid: 19008) of binary: C:\Users\User\AppData\Local\Programs\Python\Python314\python.exe
+W1125 22:45:36.289000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:45:36.289000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:45:36.289000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:45:36.289000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:45:36.289000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:45:36.291000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:45:36.291000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:45:36.291000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:45:36.291000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:45:36.291000 21420 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:45:40.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+[W1125 22:45:40.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+[W1125 22:45:40.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+[W1125 22:45:40.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:29500 (system error: 10049 - unknown error).
+код 0, 36.9 с
+
+[22:45:53] q_manual_B_lr0: C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\torchrun_win.py --standalone --nproc_per_node=4 C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\ddp\train.py --task quality --sync manual --batch 384 --threads 1 --out C:\Users\User\OneDrive\Робочий стіл\Високопродуктивні обчислювальні с-ми\ЛР1_ЗК-61мп_Красуцька\results\lab6\quick\q_manual_B_lr0.json
+{"task": "quality", "sync": "manual", "P": 4, "B": 384, "b": 96, "acc": 0.25, "auc": 0.6090326666666667, "steps": 54}
+[W1125 22:45:57.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52662 (system error: 10049 - unknown error).
+[W1125 22:45:57.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52665 (system error: 10049 - unknown error).
+[W1125 22:45:57.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52665 (system error: 10049 - unknown error).
+W1125 22:45:57.857000 17672 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGHUP
+W1125 22:45:57.857000 17672 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:45:57.857000 17672 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:45:57.857000 17672 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:45:57.857000 17672 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGHUP'
+W1125 22:45:59.914000 17672 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Failed to register signal handler for SIGQUIT
+W1125 22:45:59.914000 17672 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] Traceback (most recent call last):
+W1125 22:45:59.914000 17672 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]   File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\torch\distributed\elastic\multiprocessing\api.py", line 545, in start
+W1125 22:45:59.914000 17672 site-packages\torch\distributed\elastic\multiprocessing\api.py:549]     sig = getattr(signal, sig_name.strip())
+W1125 22:45:59.914000 17672 site-packages\torch\distributed\elastic\multiprocessing\api.py:549] AttributeError: module 'signal' has no attribute 'SIGQUIT'
+[W1125 22:46:03.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52665 (system error: 10049 - unknown error).
+[W1125 22:46:03.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52665 (system error: 10049 - unknown error).
+[W1125 22:46:03.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52665 (system error: 10049 - unknown error).
+[W1125 22:46:03.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52665 (system error: 10049 - unknown error).
+[W1125 22:46:03.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52665 (system error: 10049 - unknown error).
+[W1125 22:46:03.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52665 (system error: 10049 - unknown error).
+[W1125 22:46:03.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T]:52665 (system error: 10049 - unknown error).
+[W1125 22:46:03.000000000 socket.cpp:764] [c10d] The client socket has failed to connect to [DESKTOP-67R728T.mshome.net]:52665 (system error: 10049 - unknown error).
+код 0, 23.9 с
+
